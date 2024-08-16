@@ -1,0 +1,56 @@
+---
+
+
+---
+<aside>
+  <nav>
+    <ul>
+      <li><a href="">About</a></li>
+      <li><a href="">Work</a></li>
+      <li><a href="">LinkedIn</a></li>
+      <li><a href="">GitHub</a></li>
+    </ul>
+    <p>Based in the Yarra Valley, Australia</p>
+  </nav>  
+
+</aside>
+
+<style>
+
+  aside {
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--space-7);
+    flex-direction: column;
+    z-index: 2;
+    padding-left: var(--space-7);
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-6);
+  }
+  a, p {
+    line-height: var(--font-7);
+    color: var(--color-nav);
+    text-decoration: none;
+    font-size: var(--font-2);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+
+  }
+  li {
+    list-style: none;
+    margin-bottom: var(--space-4);
+  }
+</style>

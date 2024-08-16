@@ -1,0 +1,52 @@
+---
+import Bg from "../../images/smoke-hero.png";
+import { Image } from "astro:assets";
+---
+
+<section class="section">
+  <div class="grid">
+    <h1 class="hero">
+      FRONT END DEVELOPER
+      <br />+ DIGITAL
+      <br />
+      DESIGNER
+    </h1>
+    <Image
+      src={Bg}
+      class="bgImage"
+      alt="descriptive text"
+      width={2000}
+      height={1333}
+      quality="max"
+    />
+  </div>
+</section>
+
+<style>
+  .section {
+    grid-column: 2 / span 5;
+    min-height: 100vh;
+    width: 100%;
+  }
+  .bgImage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    object-fit: fill;
+    display: flex;
+    min-width: 2000px;
+    width: 100%;
+    z-index: 1;
+    mix-blend-mode: exclusion;
+  }
+  .hero {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xxl);
+    line-height: 1;
+    color: var(--color-accent);
+    width: 100%;
+    max-width: 1012px;
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import Bg from "@images/smoke-work.png";
+import Card from "./card/card.astro";
+import ChooseTap from "@images/choose-tap.jpg";
+import RMIT from "@images/rmit.jpg";
+import CCM from "@images/ccm.jpg";
+import DataBeast from "@images/databeast.jpg";
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Work<span>.</span>
+    </h1>
+
+    <div class="card-list">
+      <Card img={ChooseTap} title="Choose Tap" />
+      <Card img={RMIT} title="Choose Tap" />
+      <Card img={CCM} title="Choose Tap" />
+      <Card img={DataBeast} title="Choose Tap" />
+    </div>
+  </div>
+
+  <Image
+    src={Bg}
+    class="bgImage"
+    alt="descriptive text"
+    width={2000}
+    height={1333}
+  />
+</section>
+
+<style>
+  .section {
+    position: relative;
+    grid-column: 1 / span all;
+  }
+  .container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    padding-top: var(--space-9);
+  }
+  .title {
+    top: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-title);
+    text-align: right;
+    span {
+      color: var(--color-title-stop);
+    }
+  }
+
+  .bgImage {
+    opacity: 0.4;
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    height: auto;
+    width: 70vw;
+    max-width: 1100px;
+    pointer-events: none;
+    object-fit: fill;
+    display: flex;
+    z-index: 1;
+    mix-blend-mode: lighten;
+  }
+
+  .card-list {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
+    /* .card {
+      &:nth-child(even) {
+        margin-top: 280px;
+        margin-left: -20px;
+        z-index: 1;
+      }
+      &:nth-child(odd) {
+        margin-left: 20px;
+        margin-top: -80px;
+        z-index: 0;
+      }
+    } */
+  }
+</style>

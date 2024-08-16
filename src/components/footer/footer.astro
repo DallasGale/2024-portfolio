@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import Bg from "../../images/smoke-footer.jpg";
+---
+
+<footer>
+  <h2>Say Hi!</h2>
+
+  <Image src={Bg} class="bgImage" 
+    alt="descriptive text"
+    width={2030}
+    height={713}/>
+</footer>
+
+
+<style>
+  footer {
+    position: relative;
+    bottom: 0;
+    height: 713px;
+    width: 100%;
+    /* background-color: var(--color-footer);
+    color: var(--color-footer-text);
+    padding: var(--space-4); */
+    text-align: center;
+    overflow: visible;
+  }
+
+  h2 {
+    font-size: var(--font-5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+  }
+  .bgImage {
+    opacity: 0.4;
+    position: absolute;
+    top: -150px;;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    display: flex;
+    align-items: flex-start;
+    width: 100vw;
+    height: auto;
+    z-index: 1;
+    mix-blend-mode: lighten;
+  }
+</style>

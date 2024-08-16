@@ -1,0 +1,166 @@
+[
+  {
+    "title": "Agencies",
+    "data": [
+      {
+        "name": "Hardhat",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Prime Motive",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Isobar",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Gee Digital",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Big Mirror Labs",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Corporate",
+    "data": [
+      {
+        "name": "ABC",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Monster Energy",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Start Ups",
+    "data": [
+      {
+        "name": "Rarity Punks",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Homepolish",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "HIA Technologies",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "My Local Broker",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Freelance",
+    "data": [
+      {
+        "name": "Caravan Cleaning Melbourne",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Hardhat",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Prime Motive",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Gee Digital",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      },
+      {
+        "name": "Big Mirror Labs",
+        "url": "https://hardhat.com.au/",
+        "position": "Front End Developer",
+        "location": "Melbourne, Australia",
+        "date": [
+          "2019 - 2020"
+        ]
+      }
+    ]
+  }
+]

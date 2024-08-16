@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import Dallas from "../../images/dallas.png";
+---
+
+<header class="header">
+  <Image
+    class="logo"
+    src={Dallas}
+    width={193}
+    height={75}
+    alt="Dallas"
+    quality="max"
+  />
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    z-index: 2;
+  }
+  .logo {
+    position: relative;
+    left: var(--space-5);
+    top: var(--space-5);
+    width: 193px;
+    height: 75px;
+    z-index: 10;
+  }
+</style>

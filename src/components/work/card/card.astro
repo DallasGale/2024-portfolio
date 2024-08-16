@@ -1,0 +1,86 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { img, title, description, link } = Astro.props;
+---
+
+<div class="card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link}>Read more</a>
+
+  <Image
+    src={img}
+    class="image"
+    alt="descriptive text"
+    width={600}
+    height={600}
+    decoding="async"
+    loading="lazy"
+    quality="max"
+    format="jpg"
+  />
+</div>
+
+<style>
+  .card {
+    height: 487px;
+    width: 487px;
+    overflow: hidden;
+    border-radius: calc(var(--space-4) + var(--space-2));
+    position: relative;
+    border: 3px solid transparent;
+    transition: all 0.25s ease;
+    &:nth-child(odd) {
+      margin-top: -80px;
+      transform: translateX(50px);
+      z-index: 0;
+    }
+    &:nth-child(even) {
+      transform: translateX(-50px);
+      margin-top: 280px;
+      z-index: 1;
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--color-bg);
+      opacity: 0.3;
+      position: absolute;
+      z-index: 1;
+    }
+    &:hover {
+      filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.55));
+      border-color: var(--color-accent);
+      transition: all 0.5s ease;
+      .image {
+        filter: grayscale(0);
+        transform: rotate(0.3deg) scale(1.01);
+        transition: all 0.5s ease;
+      }
+      &:before {
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  .image {
+    filter: grayscale();
+    transform: rotate(0);
+    transition: all 0.5s ease;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>

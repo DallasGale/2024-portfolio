@@ -1,0 +1,61 @@
+---
+type Employer = {
+  name: string;
+  url: string;
+  position: string;
+  location: string;
+  date: string[];
+};
+
+interface Props {
+  employerList: Employer[];
+  title: string;
+}
+
+const {title, employerList } = Astro.props;
+---
+
+<div class="container">
+  <h2 class="title">{title}</h2>
+  <ul>
+    {employerList.map((employer: Employer) => (
+      <li>
+        <button class="button">
+          {employer.name}
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
+
+<style>
+  .container {
+    margin-bottom: var(--space-6);
+  }
+
+  h2 {
+    font-size: var(--font-5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+  }
+ ul {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0;
+ }
+
+ li {
+  list-style: none;
+ }
+  button {
+    background-color: var(--color-button);
+    border: none;
+    border-radius: var(--space-2);
+    font-size: var(--font-8);
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-3) var(--space-4);
+  }
+</style>

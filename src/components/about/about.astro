@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "../../images/avatar.png";
+import EmployerGroup from "./employerGroup/employerGroup.astro";
+import data from "./data.json";
+---
+
+<section class="section">
+  <div class="col-1">
+    <h1 class="title">
+      About<span>.</span>
+    </h1>
+    <Image
+      src={Avatar}
+      class="avatar"
+      alt="Dallas Gale head shot"
+      width={170}
+      height={186}
+      quality="max"
+    />
+  </div>
+  <div class="col-2">
+    <p class="paragraph">
+      Over the past decade, I've honed my skills through good old-fashioned <strong
+        >self-teaching</strong
+      > and hands-on experience, proving that <strong
+        >passion and determination</strong
+      > can take you places.
+    </p>
+    <p class="paragraph">
+      My career has been a mix of big and small, <strong
+        >corporate and startup</strong
+      >. I've navigated the halls of <strong>large agencies like Isobar</strong
+      >, and thrived in the tight-knit atmosphere of <strong
+        >boutique shops like Hardhat</strong
+      >.
+    </p>
+    <p class="paragraph">
+      For a taste of something different, I even packed my bags for <strong
+        >LA</strong
+      >, and <strong>NYC</strong> diving into the fast-paced world of startups.
+    </p>
+    <p class="paragraph">
+      These days, I keep things interesting by balancing my main gigs with the <strong
+        >occasional freelance project</strong
+      >. It's this diverse experience that keeps my skills sharp and my love for
+      coding alive.
+    </p>
+  </div>
+
+  <div class="col-3">
+    {
+      data.map((employerGroup) => (
+        <EmployerGroup
+          title={employerGroup.title}
+          employerList={employerGroup.data}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .section {
+    grid-column: 1 / span all;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    gap: 20px;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    padding-top: var(--space-9);
+  }
+  .title {
+    left: -170px;
+    top: -170px;
+    position: absolute;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-title);
+    text-align: right;
+    span {
+      color: var(--color-title-stop);
+    }
+  }
+
+  .col-1 {
+    position: relative;
+    grid-column: 1 / span 1;
+  }
+  .col-2 {
+    grid-column: 2 / span 2;
+    padding-right: var(--space-5);
+  }
+  .col-3 {
+    grid-column: 4 / span 2;
+    padding-top: var(--space-9);
+  }
+  .paragraph {
+    line-height: var(--font-12);
+    font-size: var(--font-5);
+    color: var(--color-paragraph);
+  }
+
+  strong {
+    color: var(--color-paragraph-strong);
+  }
+</style>
