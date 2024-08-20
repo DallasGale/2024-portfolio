@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
   <div class="grid">
     <h1 class="hero">
       FRONT END DEVELOPER
-      <br />+ DIGITAL
+      <br /><span>+</span> DIGITAL
       <br />
       DESIGNER
     </h1>
@@ -24,9 +24,11 @@ import { Image } from "astro:assets";
 
 <style>
   .section {
-    grid-column: 2 / span 5;
+    grid-column: 3 / span 5;
     min-height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
   }
   .bgImage {
     position: absolute;
@@ -48,5 +50,8 @@ import { Image } from "astro:assets";
     color: var(--color-accent);
     width: 100%;
     max-width: 1012px;
+    span {
+      color: var(--color-title-stop);
+    }
   }
 </style>

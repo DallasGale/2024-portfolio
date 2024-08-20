@@ -5,21 +5,23 @@ const { img, title, description, link } = Astro.props;
 ---
 
 <div class="card">
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <a href={link}>Read more</a>
+  <button data-audio-button>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={link}>Read more</a>
 
-  <Image
-    src={img}
-    class="image"
-    alt="descriptive text"
-    width={600}
-    height={600}
-    decoding="async"
-    loading="lazy"
-    quality="max"
-    format="jpg"
-  />
+    <Image
+      src={img}
+      class="image"
+      alt="descriptive text"
+      width={600}
+      height={600}
+      decoding="async"
+      loading="lazy"
+      quality="max"
+      format="jpg"
+    /></button
+  >
 </div>
 
 <style>
@@ -30,7 +32,7 @@ const { img, title, description, link } = Astro.props;
     border-radius: calc(var(--space-4) + var(--space-2));
     position: relative;
     border: 3px solid transparent;
-    transition: all 0.25s ease;
+    transition: var(--transition-card);
     &:nth-child(odd) {
       margin-top: -80px;
       transform: translateX(50px);
@@ -56,15 +58,15 @@ const { img, title, description, link } = Astro.props;
     &:hover {
       filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.55));
       border-color: var(--color-accent);
-      transition: all 0.5s ease;
+      transition: var(--transition-card);
       .image {
         filter: grayscale(0);
-        transform: rotate(0.3deg) scale(1.01);
-        transition: all 0.5s ease;
+        transform: scale(1.01);
+        transition: var(--transition-card);
       }
       &:before {
         opacity: 0;
-        transition: all 0.5s ease;
+        transition: var(--transition-card);
       }
     }
   }
@@ -72,7 +74,7 @@ const { img, title, description, link } = Astro.props;
   .image {
     filter: grayscale();
     transform: rotate(0);
-    transition: all 0.5s ease;
+    transition: var(--transition-card);
     width: 100%;
     max-width: 600px;
     display: flex;

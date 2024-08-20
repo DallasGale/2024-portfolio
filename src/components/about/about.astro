@@ -6,10 +6,12 @@ import data from "./data.json";
 ---
 
 <section class="section">
-  <div class="col-1">
+  <div class="section-title">
     <h1 class="title">
       About<span>.</span>
     </h1>
+  </div>
+  <div class="col-1">
     <Image
       src={Avatar}
       class="avatar"
@@ -70,17 +72,19 @@ import data from "./data.json";
     min-height: 100vh;
     overflow: hidden;
     width: 100%;
+    margin: auto;
+    max-width: 1080px;
     align-items: flex-start;
     justify-content: center;
     position: relative;
     overflow: visible;
-    padding-top: var(--space-9);
+    padding-top: var(--space-8);
   }
   .title {
-    left: -170px;
-    top: -170px;
+    left: -232px;
+    top: -0;
     position: absolute;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     color: var(--color-title);
     text-align: right;

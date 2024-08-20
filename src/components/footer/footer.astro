@@ -6,35 +6,59 @@ import Bg from "../../images/smoke-footer.jpg";
 <footer>
   <h2>Say Hi!</h2>
 
-  <Image src={Bg} class="bgImage" 
+  <div class="link-group">
+    <a href="mailto:dallasgale.digital@gmail.com" class="link"
+      >dallasgale.digital@gmail.com</a
+    >
+
+    <a href="https://www.linkedin.com/in/dallas-gale/" class="link"
+      >linkedin.com/in/dallas-gale</a
+    >
+  </div>
+
+  <div class="foot-note">
+    <small>Designed by Me</small>
+    <small>Built with Astro.js</small>
+    <small>Deployed to Vercel.</small>
+    <small>Footer image by rawpixel.com</small>
+  </div>
+
+  <Image
+    src={Bg}
+    class="bgImage"
     alt="descriptive text"
     width={2030}
-    height={713}/>
+    height={713}
+  />
 </footer>
-
 
 <style>
   footer {
     position: relative;
     bottom: 0;
+    margin-top: -150px;
     height: 713px;
     width: 100%;
-    /* background-color: var(--color-footer);
-    color: var(--color-footer-text);
-    padding: var(--space-4); */
     text-align: center;
     overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-5);
+    z-index: 1;
+    background-color: var(--color-bg);
+    mix-blend-mode: luminosity;
   }
 
   h2 {
-    font-size: var(--font-5);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
   }
   .bgImage {
     opacity: 0.4;
     position: absolute;
-    top: -150px;;
     right: 0;
     width: 100%;
     pointer-events: none;
@@ -44,6 +68,24 @@ import Bg from "../../images/smoke-footer.jpg";
     width: 100vw;
     height: auto;
     z-index: 1;
-    mix-blend-mode: lighten;
+    mix-blend-mode: plus-lighter;
+  }
+  .link-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .foot-note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    position: absolute;
+    bottom: var(--space-6);
+  }
+  small {
+    color: var(--color-paragraph);
+    font-weight: var(--font-weight-semibold);
   }
 </style>

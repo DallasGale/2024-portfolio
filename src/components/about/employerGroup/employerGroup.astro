@@ -12,22 +12,63 @@ interface Props {
   title: string;
 }
 
-const {title, employerList } = Astro.props;
+const { title, employerList } = Astro.props;
+// import clickAudop from "/click.wav";
 ---
 
+<!-- <audio id="hoverSound">
+  <source src={audio} type="audio/wav" />
+  Your browser does not support the audio element.
+</audio> -->
 <div class="container">
   <h2 class="title">{title}</h2>
   <ul>
-    {employerList.map((employer: Employer) => (
-      <li>
-        <button class="button">
-          {employer.name}
-        </button>
-      </li>
-    ))}
+    {
+      employerList.map((employer: Employer) => (
+        <li>
+          <button data-audio-button class="button">
+            {employer.name}
+          </button>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
+<script>
+  let audioContext: AudioContext | null = null;
+  let audioBuffer: AudioBuffer | null = null;
+
+  async function loadAudio() {
+    audioContext = new window.AudioContext();
+    const response = await fetch("/Inst-1.wav");
+    const arrayBuffer = await response.arrayBuffer();
+    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+  }
+
+  function playAudio() {
+    if (audioContext && audioBuffer) {
+      const source = audioContext.createBufferSource();
+      source.buffer = audioBuffer;
+      source.connect(audioContext.destination);
+      source.start(0);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadAudio();
+
+    const buttons = document.querySelectorAll("[data-audio-button]");
+    buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        if (audioContext?.state === "suspended") {
+          audioContext.resume();
+        }
+        playAudio();
+      });
+    });
+  });
+</script>
 
 <style>
   .container {
@@ -39,23 +80,33 @@ const {title, employerList } = Astro.props;
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
   }
- ul {
-  display: flex;
-  gap: var(--space-4);
-  margin: 0;
-  flex-wrap: wrap;
-  padding: 0;
- }
+  ul {
+    display: flex;
+    gap: var(--space-4);
+    margin: 0;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: var(--space-4);
+  }
 
- li {
-  list-style: none;
- }
-  button {
+  li {
+    list-style: none;
+  }
+  .button {
     background-color: var(--color-button);
     border: none;
     border-radius: var(--space-2);
+    color: var(--color-button-text);
     font-size: var(--font-8);
     font-weight: var(--font-weight-bold);
     padding: var(--space-3) var(--space-4);
+    transition: var(--transition-card);
+    transform: translateY(0) translateX(0);
+    &:hover {
+      background-color: var(--color-accent);
+      transition: var(--transition-card);
+      transform: translateY(-3px) translateX(2px);
+      box-shadow: -2px 2px 0px var(--color-accent-dark);
+    }
   }
 </style>

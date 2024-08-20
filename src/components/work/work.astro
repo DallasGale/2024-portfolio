@@ -9,11 +9,12 @@ import DataBeast from "@images/databeast.jpg";
 ---
 
 <section class="section">
-  <div class="container">
+  <div class="section-title">
     <h1 class="title">
       Work<span>.</span>
     </h1>
-
+  </div>
+  <div class="container">
     <div class="card-list">
       <Card img={ChooseTap} title="Choose Tap" />
       <Card img={RMIT} title="Choose Tap" />
@@ -47,14 +48,15 @@ import DataBeast from "@images/databeast.jpg";
     justify-content: center;
     position: relative;
     overflow: visible;
-    padding-top: var(--space-9);
+    max-width: 888px;
+    padding-top: var(--space-7);
   }
   .title {
     top: 0;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     color: var(--color-title);
-    text-align: right;
+    position: relative;
     span {
       color: var(--color-title-stop);
     }
@@ -71,25 +73,15 @@ import DataBeast from "@images/databeast.jpg";
     pointer-events: none;
     object-fit: fill;
     display: flex;
-    z-index: 1;
+    z-index: 2;
     mix-blend-mode: lighten;
   }
 
   .card-list {
-    z-index: 2;
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
-    /* .card {
-      &:nth-child(even) {
-        margin-top: 280px;
-        margin-left: -20px;
-        z-index: 1;
-      }
-      &:nth-child(odd) {
-        margin-left: 20px;
-        margin-top: -80px;
-        z-index: 0;
-      }
-    } */
+    position: relative;
+    margin-bottom: 150px;
   }
 </style>
