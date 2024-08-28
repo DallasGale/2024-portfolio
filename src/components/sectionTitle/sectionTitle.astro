@@ -14,16 +14,16 @@ const { title, id } = Astro.props;
 
   .section-title {
     position: fixed;
-    top: 40vh;
-    left: 10vw;
+    top: 30vh;
+    left: 15vw;
     opacity: 0;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: -1;
+    z-index: -4;
   }
   .title {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    color: var(--color-title);
+    color: var(--color-accent);
     animation: zoomOut 120s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
       forwards;
 

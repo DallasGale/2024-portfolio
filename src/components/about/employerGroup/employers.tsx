@@ -1,7 +1,4 @@
-import { ConfigProvider, Modal } from "antd";
-import { useRef, useState } from "react";
-import type { DraggableData, DraggableEvent } from "react-draggable";
-import Draggable from "react-draggable";
+import { useState } from "react";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import DraggableModal from "@components/modal";

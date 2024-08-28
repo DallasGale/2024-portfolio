@@ -94,7 +94,7 @@ const { title } = Astro.props;
     --color-button-text: #000000;
     --color-link: #ffffff;
     --color-toggle-on: #fff;
-    --color-toggle-off: #aefc79;
+    /* --color-toggle-off: var(--color-toggle-on); */
     --color-togglef: #000000;
     --color-modal-bg: #000000;
     --color-modal-content: #fff;
@@ -166,24 +166,25 @@ const { title } = Astro.props;
   [data-theme="1"] {
     --color-accent: #aefc79;
     --color-toggle-on: #aefc79;
-    --color-toggle-off: #aefc79;
     --color-bg: #000;
   }
   [data-theme="2"] {
     --color-accent: #e7a42f;
-    --color-title-stop: #e7a42f;
+    --color-title-stop: #ffffff;
     --color-bg: #140f08;
+
+    --color-toggle-on: #e7a42f;
   }
   [data-theme="3"] {
     --color-accent: #a620aa;
-    --color-title-stop: #a620aa;
+    --color-title-stop: #ffffff;
     --color-bg: #1d172b;
   }
 
   [data-theme="4"] {
     --color-accent: #e43737;
     --color-title: #000;
-    --color-title-stop: #e43737;
+    --color-title-stop: #000;
     --color-bg: #fff;
     --color-nav: #000;
     --color-paragraph: #000;
@@ -191,15 +192,15 @@ const { title } = Astro.props;
     --color-button: #e43737;
     --color-button-text: #fff;
     --color-link: #e43737;
+    --color-toggle-on: #e43737;
 
     --header-logo: url(../images/dallas-black.png);
   }
 
   [data-theme="5"] {
     --color-accent: #5c9dbd;
-    --color-title-stop: #5c9dbd;
+    --color-title-stop: #ffffff;
     --color-bg: #1e4287;
-    --color-toggle-off: #1e4287;
   }
 
   [data-theme="6"] {
@@ -210,6 +211,7 @@ const { title } = Astro.props;
     --color-bg: #83dfbc;
     --color-paragraph: #000;
     --color-paragraph-strong: #000;
+    --color-toggle-on: #000;
 
     --header-logo: url(../images/dallas-black.png);
   }

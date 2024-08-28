@@ -7,9 +7,8 @@ import { Image } from "astro:assets";
   <div class="grid">
     <h1 class="hero">
       FRONT END DEVELOPER
-      <br /><span>+</span> DIGITAL
-      <br />
-      DESIGNER
+      <br /><div class="hero-line-2">+</div> DIGITAL
+      <br />DESIGNER
     </h1>
   </div>
   <Image
@@ -55,9 +54,13 @@ import { Image } from "astro:assets";
     color: var(--color-accent);
     width: 100%;
     max-width: 1012px;
-    span {
-      color: var(--color-title-stop);
-    }
+  }
+
+  .hero-line-2 {
+    display: inline-block;
+    color: var(--color-title-stop);
+    animation: fadeOut 80s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
+      forwards;
   }
 
   @media only screen and (min-width: $breakpoint-xl) {

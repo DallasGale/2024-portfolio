@@ -4,7 +4,7 @@
     "data": [
       {
         "name": "Hardhat",
-        "logo": "/images/logos/prime-motive.svg",
+        "logo": "/images/logos/hardhat.svg",
         "url": "https://hardhat.com.au/",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
@@ -24,8 +24,8 @@
       },
       {
         "name": "Isobar",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/isobar.png",
+        "url": "https://www.dentsucreative.com/",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
         "date": [
@@ -34,8 +34,8 @@
       },
       {
         "name": "Gee Digital",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/gee.png",
+        "url": "https://www.ggg.com.au/",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
         "date": [
@@ -44,7 +44,7 @@
       },
       {
         "name": "Big Mirror Labs",
-        "logo": "/images/logos/prime-motive.svg",
+        "logo": "/images/logos/bigmirrorlabs.jpg",
         "url": "https://hardhat.com.au/",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
@@ -59,7 +59,7 @@
     "data": [
       {
         "name": "ABC",
-        "logo": "/images/logos/prime-motive.svg",
+        "logo": "/images/logos/abc.svg",
         "url": "https://hardhat.com.au/",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",

@@ -78,8 +78,11 @@ const DraggableModal = ({
           onBlur={() => {}}
         >
           <div className={styles.modalTitle}>
-            <img src={`${logo}`} alt={title} />
-            <h2 className={styles.title}>{title}</h2>
+            <img
+              src={`${logo}`}
+              alt={title}
+              style={{ maxHeight: 50, maxWidth: 200, width: "auto" }}
+            />
           </div>
         </div>
       }

@@ -87,7 +87,7 @@
 .handle {
   width: var(--space-4);
   height: var(--space-4);
-  background-color: var(--color-toggle-off);
+  background-color: var(--color-toggle-on);
   border-radius: 40px;
   opacity: 0.5;
 }
