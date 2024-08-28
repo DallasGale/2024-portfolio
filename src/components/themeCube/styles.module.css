@@ -1,45 +1,93 @@
-@keyframes cubeanimation {
-  0% {
-    transform: translateY(0) scale(1.3);
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(302px) scale(0.6);
-    opacity: 0;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1.3);
-  }
+@import "../../scss/animations.scss";
+
+.themeCubeContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--space-5);
+  align-items: center;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
 }
 .cube {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  margin-left: -6px;
 }
 
 .face {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 70px;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
   transition: var(--transition-card);
-  /* border: 1px solid var(--color-accent); */
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  &.isTheme {
+    color: var(--color-accent);
+  }
 }
 
 .wrapper {
-  animation: cubeanimation 10s cubic-bezier(0.07, 1, 0.14, 0.94) infinite;
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  /* animation: cubeanimation 8s ease-in-out infinite forwards; */
+  margin-left: -20px;
+}
+
+/* .isChecked {
+  animation: drop 3s cubic-bezier(0.07, 1, 0.14, 0.94) forwards;
+} */
+
+/* .isUnChecked {
+  opacity: 0;
+  animation: throw 1s cubic-bezier(0.07, 1, 0.14, 0.94) forwards;
+} */
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--space-5);
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+}
+
+.switch {
+  width: 55px;
+  height: 32px;
+  background-color: var(--color-toggle);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid var(--color-title-stop);
+}
+
+.switch[data-ison="true"] {
+  justify-content: flex-end;
+  .handle {
+    background-color: var(--color-toggle-on);
+    opacity: 1;
+  }
+}
+
+.handle {
+  width: var(--space-4);
+  height: var(--space-4);
+  background-color: var(--color-toggle-off);
+  border-radius: 40px;
+  opacity: 0.5;
 }

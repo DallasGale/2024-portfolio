@@ -3,14 +3,11 @@ import { Image } from "astro:assets";
 import Avatar from "../../images/avatar.png";
 import EmployerGroup from "./employerGroup/employerGroup.astro";
 import data from "./data.json";
+import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 ---
 
-<section class="section">
-  <div class="section-title">
-    <h1 class="title">
-      About<span>.</span>
-    </h1>
-  </div>
+<section class="section" id="about">
+  <SectionTitle title="About" id="about-title" />
   <div class="col-1">
     <Image
       src={Avatar}
@@ -63,8 +60,15 @@ import data from "./data.json";
   </div>
 </section>
 
-<style>
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+
+  .avatar {
+    width: 100px;
+    height: auto;
+  }
   .section {
+    padding-top: var(--space-8);
     grid-column: 1 / span all;
     display: grid;
     grid-template-columns: repeat(5, 200px);
@@ -78,24 +82,12 @@ import data from "./data.json";
     justify-content: center;
     position: relative;
     overflow: visible;
-    padding-top: var(--space-8);
-  }
-  .title {
-    left: -232px;
-    top: -0;
-    position: absolute;
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-title);
-    text-align: right;
-    span {
-      color: var(--color-title-stop);
-    }
+    padding-top: var(--space-9);
   }
 
   .col-1 {
     position: relative;
-    grid-column: 1 / span 1;
+    grid-column: 3 / span 1;
   }
   .col-2 {
     grid-column: 2 / span 2;
@@ -113,5 +105,28 @@ import data from "./data.json";
 
   strong {
     color: var(--color-paragraph-strong);
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    .title {
+      left: -232px;
+      top: 0;
+      position: absolute;
+      font-size: var(--font-size-lg);
+    }
+    .col-1 {
+      grid-column: 1 / span 1;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-xxl) {
+    .title {
+      left: -102px;
+    }
+
+    .avatar {
+      width: 170px;
+      height: 186px;
+    }
   }
 </style>

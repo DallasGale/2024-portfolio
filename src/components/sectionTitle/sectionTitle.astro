@@ -1,0 +1,43 @@
+---
+const { title, id } = Astro.props;
+---
+
+<div class="section-title" id={id}>
+  <h1 class="title">
+    {title}<span>.</span>
+  </h1>
+</div>
+
+<style lang="scss">
+  @import "../../scss/animations.scss";
+  @import "../../scss/breakpoints.scss";
+
+  .section-title {
+    position: fixed;
+    top: 40vh;
+    left: 10vw;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: -1;
+  }
+  .title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-title);
+    animation: zoomOut 120s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
+      forwards;
+
+    span {
+      color: var(--color-title-stop);
+    }
+  }
+  .visible {
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+  }
+  @media only screen and (min-width: $breakpoint-xl) {
+    .title {
+      font-size: var(--font-size-xxl);
+    }
+  }
+</style>

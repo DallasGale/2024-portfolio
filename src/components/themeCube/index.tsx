@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import { Switch } from "antd";
+import classnames from "classnames";
+import { motion } from "framer-motion";
 
 type ThemeProps = {
   color: string;
@@ -13,22 +16,26 @@ const ThemeCube = () => {
 
   const themes = [
     { name: "1", color: "#aefc79", rotateX: 0, rotateY: 0 },
-    { name: "2", color: "#545454", rotateX: 90, rotateY: 0 },
-    { name: "3", color: "#171717", rotateX: 0, rotateY: -90 },
-    { name: "4", color: "#fff", rotateX: 0, rotateY: 90 },
-    { name: "5", color: "#000", rotateX: -90, rotateY: 0 },
-    { name: "6", color: "#e67e22", rotateX: 180, rotateY: 0 },
+    { name: "2", color: "#e7a42f", rotateX: 90, rotateY: 0 },
+    { name: "3", color: "#a620aa", rotateX: 0, rotateY: -90 },
+    { name: "4", color: "#e43737", rotateX: 0, rotateY: 90 },
+    { name: "5", color: "#5c9dbd", rotateX: -90, rotateY: 0 },
+    { name: "6", color: "#000000", rotateX: 180, rotateY: 0 },
   ];
 
   const cubeStyle = {
     transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
   };
 
+  const [isOn, setIsOn] = useState(false);
+  const toggleSwitch = () => setIsOn(!isOn);
+
   const faceStyle = (theme: ThemeProps) => ({
-    backgroundColor: currentTheme === theme.name ? theme.color : "#000",
+    opacity: isOn ? 1 : 0,
     // border: `1px solid #000`,
-    transform: `rotateX(${theme.rotateX}deg) rotateY(${theme.rotateY}deg) translateZ(25px)`,
-    opacity: currentTheme === theme.name ? 1 : 0.7,
+    transform: `rotateX(${theme.rotateX}deg) rotateY(${theme.rotateY}deg) translateZ(50px)`,
+    // opacity: currentTheme === theme.name ? 1 : 0.7,
+    color: currentTheme === theme.name ? theme.color : "rgba(144,144,144,0.2)",
   });
 
   const handleFaceClick = (theme: ThemeProps) => {
@@ -39,23 +46,80 @@ const ThemeCube = () => {
     };
     setRotation(newRotation);
   };
+
+  const [checked, setChecked] = useState(false);
+
+  const spring = {
+    type: "spring",
+    stiffness: 700,
+    damping: 30,
+  };
+
+  const containerClasses = classnames(styles.container, {
+    [styles.drop]: isOn,
+  });
+
+  useEffect(() => {
+    // Update the meta tag when the theme changes
+    const metaTag = document.querySelector('meta[name="color-scheme"]');
+    if (metaTag) {
+      metaTag.setAttribute("content", currentTheme);
+    } else {
+      const newMetaTag = document.createElement("meta");
+      newMetaTag.name = "color-scheme";
+      newMetaTag.content = currentTheme;
+      document.head.appendChild(newMetaTag);
+    }
+
+    // Set the data-theme attribute on the body
+    document.body.setAttribute("data-theme", currentTheme);
+
+    // Update CSS custom property
+    document.documentElement.style.setProperty("--theme", currentTheme);
+  }, [currentTheme]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOn(true);
+    }, 3000);
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.cube} style={cubeStyle}>
-        {themes.map((theme) => (
-          <div
-            onMouseEnter={() => setCurrentTheme(theme.name)}
-            className={styles.face}
-            key={theme.name}
-            style={faceStyle(theme)}
-            onClick={() => handleFaceClick(theme)}
-          >
-            <span style={{ pointerEvents: "none" }}>{theme.name}</span>
-          </div>
-        ))}
+    <motion.div className={containerClasses}>
+      <div className={styles.switch} data-ison={isOn} onClick={toggleSwitch}>
+        <motion.div
+          className={styles.handle}
+          layout
+          transition={spring}
+          whileHover={{ scale: 0.9 }}
+          whileTap={{ scale: 0.95 }}
+        />
       </div>
-      {/* <p>Current Theme: {currentTheme}</p> */}
-    </div>
+      <motion.div
+        initial={{ top: 0 }}
+        animate={isOn ? { y: 300 } : { y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: isOn ? 400 : 150,
+          damping: isOn ? 20 : 22,
+        }}
+      >
+        <div className={styles.wrapper}>
+          <div className={styles.cube} style={cubeStyle}>
+            {themes.map((theme) => (
+              <div
+                className={styles.face}
+                key={theme.name}
+                style={faceStyle(theme)}
+                onClick={() => handleFaceClick(theme)}
+              >
+                <span style={{ pointerEvents: "none" }}>{theme.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

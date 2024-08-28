@@ -23,21 +23,21 @@ import Bg from "../../images/smoke-footer.jpg";
     <small>Footer image by rawpixel.com</small>
   </div>
 
-  <Image
+  <!-- <Image
     src={Bg}
     class="bgImage"
     alt="descriptive text"
     width={2030}
     height={713}
-  />
+  /> -->
 </footer>
 
-<style>
+<style lang="scss">
+  @import "../../scss/animations.scss";
   footer {
     position: relative;
     bottom: 0;
-    margin-top: -150px;
-    height: 713px;
+    height: 700px;
     width: 100%;
     text-align: center;
     overflow: visible;
@@ -47,18 +47,18 @@ import Bg from "../../images/smoke-footer.jpg";
     flex-direction: column;
     gap: var(--space-5);
     z-index: 1;
-    background-color: var(--color-bg);
-    mix-blend-mode: luminosity;
   }
 
   h2 {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
+    z-index: 10;
   }
+
   .bgImage {
     opacity: 0.4;
-    position: absolute;
+    position: relative;
     right: 0;
     width: 100%;
     pointer-events: none;
@@ -68,6 +68,7 @@ import Bg from "../../images/smoke-footer.jpg";
     width: 100vw;
     height: auto;
     z-index: 1;
+    top: 0;
     mix-blend-mode: plus-lighter;
   }
   .link-group {

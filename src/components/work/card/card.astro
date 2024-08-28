@@ -1,17 +1,16 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { img, title, description, link } = Astro.props;
+export interface Props {
+  image: string;
+}
+const { image } = Astro.props;
 ---
 
 <div class="card">
-  <button data-audio-button>
-    <h3>{title}</h3>
-    <p>{description}</p>
-    <a href={link}>Read more</a>
-
+  <button>
     <Image
-      src={img}
+      src={image}
       class="image"
       alt="descriptive text"
       width={600}
@@ -25,23 +24,106 @@ const { img, title, description, link } = Astro.props;
 </div>
 
 <style>
+  @keyframes move1 {
+    0% {
+      transform: translateX(50px) rotate3d(-40, -21, -13, 382deg) scale(1);
+    }
+    50% {
+      transform: translateX(50px) rotate3d(-30, -21, -13, 372deg) scale(0.9);
+    }
+    100% {
+      transform: translateX(50px) rotate3d(-40, -21, -13, 382deg) scale(1);
+    }
+  }
+
+  @keyframes move2 {
+    0% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 382deg) scale(1);
+    }
+    50% {
+      transform: translateX(-50px) rotate3d(-50, 1, 3, 372deg) scale(0.91);
+    }
+    100% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 382deg) scale(1);
+    }
+  }
+
+  @keyframes move3 {
+    0% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 362deg) scale(1);
+    }
+    50% {
+      transform: translateX(-50px) rotate3d(-50, 1, 3, 372deg) scale(1.1);
+    }
+    100% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 362deg) scale(1);
+    }
+  }
+
+  @keyframes move4 {
+    0% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 385deg) scale(1);
+    }
+    50% {
+      transform: translateX(-50px) rotate3d(-30, 1, 3, 372deg) scale(0.85);
+    }
+    100% {
+      transform: translateX(-50px) rotate3d(-40, 1, 3, 385deg) scale(1);
+    }
+  }
+
+  .image {
+    filter: grayscale(1);
+    transition: var(--transition-card);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .card {
-    height: 487px;
-    width: 487px;
+    height: 587px;
+    width: 587px;
     overflow: hidden;
     border-radius: calc(var(--space-4) + var(--space-2));
     position: relative;
-    border: 3px solid transparent;
     transition: var(--transition-card);
-    &:nth-child(odd) {
+    &:nth-child(1) {
+      animation: move1 25s ease-in-out infinite forwards;
       margin-top: -80px;
-      transform: translateX(50px);
       z-index: 0;
+      &:hover {
+        transform: translateX(50px) rotate3d(-30, 0, 0, 352deg) scale(1.1);
+      }
     }
-    &:nth-child(even) {
-      transform: translateX(-50px);
+    &:nth-child(2) {
+      animation: move2 29s ease-in-out infinite forwards;
       margin-top: 280px;
       z-index: 1;
+      &:hover {
+        transform: translateX(-50px) rotate3d(-30, 0, 0, 352deg) scale(1.1);
+      }
+    }
+    &:nth-child(3) {
+      animation: move3 26s ease-in-out infinite forwards;
+      margin-top: -80px;
+      z-index: 0;
+      &:hover {
+        transform: translateX(50px) rotate3d(-30, 0, 0, 352deg) scale(1.1);
+      }
+    }
+    &:nth-child(4) {
+      animation: move4 27s ease-in-out infinite forwards;
+      margin-top: 280px;
+      z-index: 1;
+      &:hover {
+        transform: translateX(-50px) rotate3d(-30, 0, 0, 352deg) scale(1.1);
+      }
     }
 
     &:before {
@@ -58,7 +140,9 @@ const { img, title, description, link } = Astro.props;
     &:hover {
       filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.55));
       border-color: var(--color-accent);
+      border-width: 3px;
       transition: var(--transition-card);
+      transform-origin: center center;
       .image {
         filter: grayscale(0);
         transform: scale(1.01);
@@ -69,20 +153,5 @@ const { img, title, description, link } = Astro.props;
         transition: var(--transition-card);
       }
     }
-  }
-
-  .image {
-    filter: grayscale();
-    transform: rotate(0);
-    transition: var(--transition-card);
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 </style>

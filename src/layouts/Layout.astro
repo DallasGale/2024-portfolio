@@ -38,6 +38,7 @@ const { title } = Astro.props;
     --font-weight-semibold: 600;
     --font-weight-regular: 400;
     --font-weight-light: 300;
+    --font-size-md: 60px;
     --font-size-lg: 80px;
     --font-size-xl: 100px;
     --font-size-xxl: 180px;
@@ -78,6 +79,8 @@ const { title } = Astro.props;
     --grid-column: 200px;
     --grid-column-negative: -200px;
 
+    --header-logo: url(../images/dallas-white.png);
+
     --color-nav: #fff;
     --color-accent: #aefc79;
     --color-accent-dark: #436e27;
@@ -90,8 +93,15 @@ const { title } = Astro.props;
     --color-button: #ffffff;
     --color-button-text: #000000;
     --color-link: #ffffff;
+    --color-toggle-on: #fff;
+    --color-toggle-off: #aefc79;
+    --color-togglef: #000000;
+    --color-modal-bg: #000000;
+    --color-modal-content: #fff;
+    --color-modal-border: #494949;
 
-    --transition-card: all 0.25s ease;
+    --transition-card: all 0.65s ease;
+    --transition-button: all 0.25s ease;
 
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -102,16 +112,23 @@ const { title } = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+
+    --breakpoint-sm: 414px;
+    --breakpoint-md: 1024px;
   }
 
   body {
     margin: 0;
     padding: 0;
-  }
-  html {
-    font-family: "Poppins", system-ui, sans-serif;
     background: var(--color-bg);
   }
+  html {
+    font-family: "Poppins", system-ui, sans-serif !important;
+  }
+
+  /* main {
+    background: var(--color-bg);
+  } */
   h1,
   h2,
   h3,
@@ -123,13 +140,124 @@ const { title } = Astro.props;
     cursor: pointer;
   }
 
-  .section-title {
-    width: 100%;
-    max-width: 1488px;
-    margin: auto;
-  }
   .link {
     color: var(--color-link);
     font-weight: var(--font-weight-semibold);
   }
+
+  .modal-text,
+  .modal-text-strong {
+    color: var(--color-paragraph);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-4);
+    font-family: "Poppins", system-ui, sans-serif !important;
+  }
+  .modal-text-strong {
+    color: var(--color-paragraph-strong);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .modal-text-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+
+  [data-theme="1"] {
+    --color-accent: #aefc79;
+    --color-toggle-on: #aefc79;
+    --color-toggle-off: #aefc79;
+    --color-bg: #000;
+  }
+  [data-theme="2"] {
+    --color-accent: #e7a42f;
+    --color-title-stop: #e7a42f;
+    --color-bg: #140f08;
+  }
+  [data-theme="3"] {
+    --color-accent: #a620aa;
+    --color-title-stop: #a620aa;
+    --color-bg: #1d172b;
+  }
+
+  [data-theme="4"] {
+    --color-accent: #e43737;
+    --color-title: #000;
+    --color-title-stop: #e43737;
+    --color-bg: #fff;
+    --color-nav: #000;
+    --color-paragraph: #000;
+    --color-paragraph-strong: #000;
+    --color-button: #e43737;
+    --color-button-text: #fff;
+    --color-link: #e43737;
+
+    --header-logo: url(../images/dallas-black.png);
+  }
+
+  [data-theme="5"] {
+    --color-accent: #5c9dbd;
+    --color-title-stop: #5c9dbd;
+    --color-bg: #1e4287;
+    --color-toggle-off: #1e4287;
+  }
+
+  [data-theme="6"] {
+    --color-accent: #000000;
+    --color-nav: #000;
+    --color-title: #000;
+    --color-title-stop: #ffffff;
+    --color-bg: #83dfbc;
+    --color-paragraph: #000;
+    --color-paragraph-strong: #000;
+
+    --header-logo: url(../images/dallas-black.png);
+  }
 </style>
+
+<script lang="ts">
+  document.addEventListener("DOMContentLoaded", () => {
+    const aboutTarget = document.getElementById("about");
+    const aboutTitle = document.getElementById("about-title");
+    const workTarget = document.getElementById("work");
+    const workTitle = document.getElementById("work-title");
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.35, // Changed to 0.1 for earlier detection
+    };
+
+    const aboutCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("About section is visible");
+          aboutTitle.classList.add("visible");
+          workTitle.classList.remove("visible");
+        } else {
+          console.log("About section is not visible");
+          aboutTitle.classList.remove("visible");
+        }
+      });
+    };
+
+    const aboutObserver = new IntersectionObserver(aboutCallback, options);
+    aboutObserver.observe(aboutTarget);
+
+    const workCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Work section is visible");
+          workTitle.classList.add("visible");
+          aboutTitle.classList.remove("visible");
+        } else {
+          console.log("Work section is not visible");
+          workTitle.classList.remove("visible");
+        }
+      });
+    };
+
+    const workObserver = new IntersectionObserver(workCallback, options);
+    workObserver.observe(workTarget);
+  });
+</script>

@@ -1,0 +1,99 @@
+@keyframes smoke {
+  0% {
+    transform: translateX(50px) rotate3d(-40, -21, -13, 382deg) scale(1.05)
+      skew(0deg);
+  }
+  50% {
+    transform: translateX(50px) rotate3d(-30, -21, -13, 362deg) scale(1)
+      skew(20deg);
+  }
+  100% {
+    transform: translateX(50px) rotate3d(-40, -21, -13, 382deg) scale(1.05)
+      skew(0deg);
+  }
+}
+
+@keyframes smoke2 {
+  0% {
+    transform: scale(1.05) skew(0deg);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(0.9) skew(-30deg);
+    filter: blur(3px);
+  }
+  100% {
+    transform: scale(1.05) skew(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes smoke3 {
+  0% {
+    transform: scale(1.15) skew(0deg);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15) skew(0deg);
+  }
+}
+
+@keyframes cubeanimation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(302px);
+  }
+}
+@keyframes throw {
+  0% {
+    transform: translateY(302px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) skew(0deg);
+    opacity: 0.5;
+  }
+}

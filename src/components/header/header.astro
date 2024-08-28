@@ -1,23 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import DallasLogo from "../../images/dallas.png";
+import DallasLogoWhite from "../../images/dallas-white.png";
+import DallasLogoBlack from "../../images/dallas-black.png";
+import ThemeCube from "@components/themeCube";
 ---
 
 <header class="header">
-  <Image
-    class="logo"
-    src={DallasLogo}
-    width={193}
-    height={75}
-    alt="Dallas"
-    quality="max"
-  />
+  <span style="visibility: hidden">Dallas</span>
+  <ThemeCube client:load />
 </header>
 
 <style>
   .header {
     position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: var(--space-7);
+    padding-top: var(--space-4);
     z-index: 2;
+    background: var(--header-logo);
+    background-repeat: no-repeat;
+    background-size: 193px;
+    background-position: top var(--space-5) left var(--space-5);
+    height: 110px;
+    width: 100%;
   }
   .logo {
     position: relative;
@@ -26,5 +33,22 @@ import DallasLogo from "../../images/dallas.png";
     width: 193px;
     height: 75px;
     z-index: 10;
+    mix-blend-mode: lighten;
+  }
+
+  #logo-white {
+    display: block;
+  }
+
+  #logo-black {
+    display: none;
+  }
+  body[data-theme="4"] {
+    #logo-white.logo {
+      display: none;
+    }
+    #logo-black.logo {
+      display: block;
+    }
   }
 </style>
