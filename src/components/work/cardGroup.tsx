@@ -10,11 +10,9 @@ interface Props {
   cards: CardGroupProps[];
 }
 const CardGroup = ({ cards }: Props) => {
-  console.log({ cards });
-
   const [activeCard, setActiveCard] = useState<PopupInfo | null>(null);
 
-  console.log({ activeCard });
+  console.log({ cards });
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
