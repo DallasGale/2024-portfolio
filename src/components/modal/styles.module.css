@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-title);
+  color: var(--color-modal-title);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-8);
 }
@@ -67,12 +67,13 @@
 }
 
 .modalLink {
-  color: var(--color-accent);
+  color: var(--color-modal-link);
   font-size: var(--font-4);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    color: currentColor;
+    text-decoration: none;
   }
 }
 
@@ -87,7 +88,8 @@
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    color: currentColor;
+    text-decoration: none;
   }
 }
 .modalHeading {

@@ -33,16 +33,7 @@ const ThemeSlider = () => {
   return (
     <div style={style}>
       <FrownOutlined className={preColorCls} />
-      {/* <div style={style}>
-        <Slider vertical defaultValue={30} />
-      </div> */}
-      {/* <div style={style}> */}
       <Slider vertical range step={20} defaultValue={[20, 50]} />
-      {/* </div> */}
-      {/* <div style={style}>
-        <Slider vertical range marks={marks} defaultValue={[26, 37]} />
-      </div> */}
-      {/* <Slider vertical onChange={setValue} value={value} /> */}
       <SmileOutlined className={nextColorCls} />
     </div>
   );

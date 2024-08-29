@@ -7,10 +7,12 @@ export type Employer = {
   name: string;
   logo: string;
   url: string;
+  info: string;
+  workType: string;
   projectUrl?: string;
   position: string;
   location: string;
-  date: string[];
+  date: string;
 };
 
 interface Props {
@@ -57,16 +59,25 @@ const Employers = ({ employerList }: Props) => {
         content={
           <>
             <div className="modal-text-row">
+              <p className="modal-text">{currentEmployer?.info}</p>
+            </div>
+            <div className="modal-text-row">
               <h3 className="modal-text-strong">Position</h3>{" "}
               <p className="modal-text">{currentEmployer?.position}</p>
             </div>
+
+            <div className="modal-text-row">
+              <h3 className="modal-text-strong">Type</h3>{" "}
+              <p className="modal-text">{currentEmployer?.workType}</p>
+            </div>
+
             <div className="modal-text-row">
               <h3 className="modal-text-strong">Location</h3>{" "}
               <p className="modal-text">{currentEmployer?.location}</p>
             </div>
             <div className="modal-text-row">
               <h3 className="modal-text-strong">When</h3>{" "}
-              <p className="modal-text">{currentEmployer?.date.join(" - ")}</p>
+              <p className="modal-text">{currentEmployer?.date}</p>
             </div>
           </>
         }

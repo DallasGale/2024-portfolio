@@ -49,8 +49,8 @@ import { Image } from "astro:assets";
   }
   .hero {
     font-weight: var(--font-weight-bold);
-    font-size: 12vw;
     line-height: 1;
+    font-size: 12vw;
     color: var(--color-accent);
     width: 100%;
     max-width: 1012px;
@@ -64,6 +64,11 @@ import { Image } from "astro:assets";
   }
 
   @media only screen and (min-width: $breakpoint-xl) {
+    .hero {
+      font-size: var(--font-size-xxl);
+    }
+  }
+  @media only screen and (min-width: $breakpoint-xxl) {
     .section {
       grid-column: 3 / span 5;
     }

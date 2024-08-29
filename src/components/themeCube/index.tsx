@@ -116,7 +116,7 @@ const ThemeCube = () => {
         </div>
       </motion.div>
       <motion.div
-        initial={{ x: 300 }}
+        initial={{ x: 300, y: 450 }}
         animate={isOn ? { x: 0 } : { x: 300 }}
         transition={{
           type: "spring",

@@ -89,8 +89,7 @@ const DraggableModal = ({
               style={{
                 height: "100%",
                 width: "100%",
-                maxHeight: 100,
-                maxWidth: 100,
+                maxWidth: 90,
               }}
             />
           </div>
@@ -118,7 +117,7 @@ const DraggableModal = ({
           rel="noreferrer"
           className={styles.modalLink}
         >
-          {url.split("/")[2]}
+          {url.split("//")[1]}
         </a>
 
         {projectUrl && (
@@ -130,7 +129,7 @@ const DraggableModal = ({
               rel="noreferrer"
               className={styles.projectLink}
             >
-              {projectUrl.split("/")[2]}
+              {projectUrl.split("//")[1]}
             </a>
           </div>
         )}

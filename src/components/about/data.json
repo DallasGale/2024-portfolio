@@ -5,52 +5,52 @@
       {
         "name": "Hardhat",
         "logo": "/images/logos/hardhat.svg",
-        "url": "https://hardhat.com.au/",
+        "info": "As a key developer at Hardhat, a prominent Melbourne-based advertising agency, I was instrumental in the development and maintenance of multiple high-profile websites. Our client portfolio included industry leaders such as Ventia, Simply Energy, University of Sydney, Moulin Rouge, and Yarra Valley Water. My responsibilities extended beyond development, as I regularly participated in initial project scoping and strategic roadmapping sessions, contributing to project direction and client satisfaction. In terms of technical expertise, I leveraged a diverse stack of cutting-edge technologies to deliver robust and efficient web solutions. This toolkit primarily comprised React, TypeScript, Ruby on Rails (RoR), Storybook, Gatsby, and Next.js, enabling the creation of scalable, performant, and user-centric web applications.",
+        "url": "https://www.hardhat.com.au",
         "position": "Front End Developer",
+        "workType": "Full Time / Contract / IRL / Remote",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "date": "Oct 2019 - Apr 2022"
       },
       {
         "name": "Prime Motive",
         "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "info": "As a contracted frontend developer, I contributed to two significant projects showcasing diverse technical skills: <br /><br />CGU ABN Rescue Campaign (Prime Motive): Implemented a sophisticated, highly animated user experience for the campaign website. The platform featured scroll-activated animated content and location-based dynamic messaging to enhance user engagement. Leveraging the abr.gov.au API endpoint, we integrated state-specific ABN data to provide tailored information based on visitors' geographic locations. Technologies used: NextJS/React with GSAP for animations. <br /><br />RMIT Open Day 2022: Developed key components for the RMIT Open Day virtual experience. The project involved creating interactive elements to showcase university offerings and engage prospective students in an online environment. Utilized React for building reusable UI components and implemented responsive design principles to ensure a seamless experience across devices. Integrated real-time data feeds to display up-to-date event information and schedules. Both projects demonstrated proficiency in modern frontend technologies, API integration, and creating engaging user experiences for diverse audiences.",
+        "url": "https://www.primemotive.com.au",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Contract / IRL / Remote",
+        "date": "Jul 2019 - Sep 2019 / Jun 2022 - Aug 2022"
       },
       {
         "name": "Isobar",
         "logo": "/images/logos/isobar.png",
-        "url": "https://www.dentsucreative.com/",
+        "info": "Isobar was a fast-paced global advertising agency where I was hired as a contractor to build out features for Holden.com.au.",
+        "url": "https://www.dentsucreative.com",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Contract / IRL",
+        "date": "Nov 2017 - Feb 2018"
       },
       {
         "name": "Gee Digital",
         "logo": "/images/logos/gee.png",
-        "url": "https://www.ggg.com.au/",
-        "position": "Front End Developer",
+        "info": "As a fast paced digital agency I designed and developed responsive sites, landing pages & EDM’s and daily web banners for retail giant Target. I converted existing static sites to be responsive using Bootstrap, JavaScript, jQuery & Green Sock animation library. I created wire-frames, site-maps & style guides for new projects and designed client branding.",
+        "url": "https://www.ggg.com.au",
+        "position": "Digital Designer & Front End Developer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Full Time / IRL",
+        "date": "Jul 2013 - Sep 2025"
       },
       {
         "name": "Big Mirror Labs",
         "logo": "/images/logos/bigmirrorlabs.jpg",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "info": "At Big Mirror Labs/Icon Interactive, an innovative incubator for experimental digital solutions and consultancy, I played a key role in a high-priority cybersecurity initiative called ConsortiumX. As part of this project, I developed critical dashboard features, including advanced filtering and search functionalities for security products. These enhancements significantly improved the user interface, contributing to the overall success of this cutting-edge cybersecurity solution.",
+        "url": "http://www.bigmirrorlabs.com",
+        "position": "Senior Front End Developer",
+        "location": "New York, USA",
+        "workType": "Contract / IRL / Remote",
+        "date": "Mar 2019 - Apr 2019"
       }
     ]
   },
@@ -60,22 +60,22 @@
       {
         "name": "ABC",
         "logo": "/images/logos/abc.svg",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "info": "As a member of the ABC News Digital team, I implemented dark mode styles for the 2022 national election pages across both web and mobile app platforms. To achieve complex layouts, I refactored the home page design, replacing separate mobile and desktop components with a single, unified layout component. This optimization reduced code and bundle size, resulting in a significantly smoother responsive experience. Additionally, I had the notable opportunity to work on the front-page coverage of Queen Elizabeth II's passing.",
+        "url": "https://www.abc.net.au/news",
+        "position": "Senior Front End Developer",
+        "location": "Brisbane, Australia",
+        "workType": "Full Time / Remote",
+        "date": "Apr 2022 - Nov 2022"
       },
       {
         "name": "Monster Energy",
         "logo": "/images/logos/monster.png",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
+        "info": "During my tenure at Monster Energy, I contributed to various creative projects. I was responsible for creating the Monster Girls calendar in 2012 and designing digital assets for monsterenergy.com.au. My role involved advanced Photoshop retouching of photographs and artwork. Additionally, I produced weekly interactive PDF media reports, showcasing my skills in both visual design and data presentation.",
+        "url": "https://www.monsterenergy.com/en-au",
+        "position": "Digital Designer & Media Producer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Full Time / Remote",
+        "date": "Jan 2011 - Jun 2011"
       }
     ]
   },
@@ -83,44 +83,44 @@
     "title": "Start Ups",
     "data": [
       {
-        "name": "Rarity Punks",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
+        "name": "Rarity Punks (Gigabuddy)",
+        "logo": "/images/logos/gigabuddy.svg",
+        "info": "Rarity Punks is a start-up that initially created the nftDb project, where I led the front-end development for nftdb.ai, dropbeast.xyz, and databeast.xyz. Their latest project, Gigabuddy, is an AI-based Slack bot designed for community onboarding. I spearheaded the frontend development for all these projects, utilizing React, Next.js, and Firebase/Firestore. To ensure consistency across all projects, I implemented Mantine UI components.",
+        "url": "https://www.gigabuddy.com.au",
+        "position": "Senior Front End Developer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Full Time / Remote",
+        "date": "Nov 2022 - Aug 2024"
       },
       {
         "name": "Homepolish",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/homepolish.png",
+        "info": "During my time at Homepolish, an innovative interior design startup, I focused on developing advanced features for the client-facing admin dashboard. Our team implemented these enhancements using React for the frontend, coupled with a GraphQL data layer to ensure efficient and flexible data management. This tech stack allowed us to create a robust and user-friendly interface for our clients.",
+        "url": "https://www.homepolish.com",
         "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "location": "New York, USA",
+        "workType": "Full Time / IRL",
+        "date": "Apr 2019 - Jul 2019"
       },
       {
         "name": "HIA Technologies",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/hia.png",
+        "info": "HIA was a startup in the AI industry. For this role, I learned Unity development to work on their flagship app, which utilized 3D virtual human technology. I was responsible for user interface design and development for both web and iOS/Android platforms. My duties included creating prototypes, wireframes, and style guides. Additionally, I collaborated with 3D animators and developers at the Institute of Creative Technology and University of Southern California.",
+        "url": "https://www.hia.ai",
         "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "location": "Los Angeles, USA",
+        "workType": "Full Time / IRL / Remote",
+        "date": "Feb 2018 - Jan 2019"
       },
       {
         "name": "My Local Broker",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/mlb.png",
+        "info": "MLG was a start-up in the broker industry where I contributed front-end development & design of Umbraco CMS, AngularJS + Angular sites & landing pages. I Integrated Angular Material Design, Bootstrap and Materialize UI components. I also built responsive EDMs that were delivered using Campaign Monitor & MailChimp. MLG implemented agile development process’ with daily stand-ups.",
+        "url": "https://hardhat.com.au",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "workType": "Full Time / IRL",
+        "date": "Oct 2015 - Oct 2017"
       }
     ]
   },
@@ -129,53 +129,33 @@
     "data": [
       {
         "name": "Caravan Cleaning Melbourne",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/ccm.svg",
+        "info": "Caravan Cleaning Melbourne, an independent business, is undergoing a website redesign set to launch in late September 2024. The project employs Next.js to build a more efficient and search engine-friendly site. Sanity.io serves as the content management system, offering the client significant flexibility in content updates. This technology stack allows for improved performance and easier maintenance, supporting Caravan Cleaning Melbourne's online presence in the mobile cleaning industry.",
+        "url": "https://www.caravancleaningmelbourne.com.au",
         "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "location": "Yarra Valley, Australia",
+        "workType": "Freelance / Remote",
+        "date": "Jun 2025 - Aug 2024"
       },
       {
         "name": "Hardhat",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "logo": "/images/logos/hardhat.svg",
+        "info": "To commence September 2024 a landing page for Open Universities Australia",
+        "url": "https://www.hardhat.com.au",
         "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "location": "Yarra Valley, Australia",
+        "workType": "Freelance / Remote",
+        "date": "Sep 2024"
       },
       {
         "name": "Prime Motive",
         "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
+        "info": "As a contracted frontend developer, I contributed to two significant projects showcasing diverse technical skills: <br /><br />CGU ABN Rescue Campaign (Prime Motive): Implemented a sophisticated, highly animated user experience for the campaign website. The platform featured scroll-activated animated content and location-based dynamic messaging to enhance user engagement. Leveraging the abr.gov.au API endpoint, we integrated state-specific ABN data to provide tailored information based on visitors' geographic locations. Technologies used: NextJS/React with GSAP for animations. <br /><br />RMIT Open Day 2022: Developed key components for the RMIT Open Day virtual experience. The project involved creating interactive elements to showcase university offerings and engage prospective students in an online environment. Utilized React for building reusable UI components and implemented responsive design principles to ensure a seamless experience across devices. Integrated real-time data feeds to display up-to-date event information and schedules. Both projects demonstrated proficiency in modern frontend technologies, API integration, and creating engaging user experiences for diverse audiences.",
+        "url": "https://hardhat.com.au",
         "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
-      },
-      {
-        "name": "Gee Digital",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
-      },
-      {
-        "name": "Big Mirror Labs",
-        "logo": "/images/logos/prime-motive.svg",
-        "url": "https://hardhat.com.au/",
-        "position": "Front End Developer",
-        "location": "Melbourne, Australia",
-        "date": [
-          "2019 - 2020"
-        ]
+        "location": "Yarra Valley, Australia",
+        "workType": "Contract / Remote",
+        "date": "Jul 2019 - Sep 2019 / Jun 2022 - Aug 2022"
       }
     ]
   }

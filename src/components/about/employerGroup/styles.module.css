@@ -19,16 +19,17 @@
   padding: var(--space-3) var(--space-4);
   transition: var(--transition-button);
   transform: translateY(0) translateX(0);
-  &:hover,
-  &.active {
-    background-color: var(--color-accent);
-    transition: var(--transition-button);
-    transform: translateY(-3px) translateX(2px);
-    box-shadow: -2px 2px 0px var(--color-accent-dark);
-  }
   &.default {
     background-color: var(--color-button);
     box-shadow: none;
+  }
+  &:hover,
+  &.active {
+    background-color: transparent;
+    color: var(--color-button-text-active);
+    transition: var(--transition-button);
+    transform: translateY(-3px) translateX(2px);
+    box-shadow: -2px 2px 0px var(--color-accent);
   }
 }
 
