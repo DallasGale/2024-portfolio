@@ -5,9 +5,10 @@ export type PopupInfo = {
   name: string;
   logo: string;
   url: string;
+  projectUrl: string;
   date: string;
   info: string;
-  hashtags: string[];
+  tech: string[];
 };
 
 export interface CardProps extends PopupInfo {
@@ -20,9 +21,10 @@ const Card = ({
   name,
   logo,
   url,
+  projectUrl,
   date,
   info,
-  hashtags,
+  tech,
   image,
   imageAltText,
   onClick,
@@ -34,7 +36,7 @@ const Card = ({
   return (
     <div
       className={cardClasses}
-      onClick={() => onClick({ name, logo, url, date, info, hashtags })}
+      onClick={() => onClick({ name, logo, url, projectUrl, date, info, tech })}
     >
       <img
         src={image}

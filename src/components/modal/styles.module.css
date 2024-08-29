@@ -50,6 +50,14 @@
   z-index: 2;
 }
 
+.modalHeaderRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  justify-content: space-between;
+  align-items: center;
+}
+
 .modalTitle {
   display: flex;
   flex-direction: row;
@@ -68,6 +76,20 @@
   }
 }
 
+.projectLinkWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-3);
+}
+.projectLink {
+  color: #fff;
+  font-size: var(--font-4);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .modalHeading {
   color: var(--color-paragraph);
   font-size: var(--font-3);
@@ -79,4 +101,8 @@
   color: var(--color-paragraph-strong);
   font-size: var(--font-3);
   font-weight: var(--font-weight-bold);
+}
+
+.tech {
+  opacity: 0.6;
 }

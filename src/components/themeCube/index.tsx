@@ -27,15 +27,17 @@ const ThemeCube = () => {
     transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
   };
 
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   const toggleSwitch = () => setIsOn(!isOn);
 
   const faceStyle = (theme: ThemeProps) => ({
-    opacity: isOn ? 1 : 0,
+    // opacity: isOn ? 1 : 0,
     // border: `1px solid #000`,
     transform: `rotateX(${theme.rotateX}deg) rotateY(${theme.rotateY}deg) translateZ(50px)`,
     // opacity: currentTheme === theme.name ? 1 : 0.7,
     color: currentTheme === theme.name ? theme.color : "rgba(144,144,144,0.2)",
+    borderColor:
+      currentTheme === theme.name ? theme.color : "rgba(144,144,144,0.2)",
   });
 
   const handleFaceClick = (theme: ThemeProps) => {
@@ -78,12 +80,6 @@ const ThemeCube = () => {
     document.documentElement.style.setProperty("--theme", currentTheme);
   }, [currentTheme]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsOn(true);
-    }, 3000);
-  }, []);
-
   return (
     <motion.div className={containerClasses}>
       <div className={styles.switch} data-ison={isOn} onClick={toggleSwitch}>
@@ -96,8 +92,8 @@ const ThemeCube = () => {
         />
       </div>
       <motion.div
-        initial={{ top: 0 }}
-        animate={isOn ? { y: 300 } : { y: 0 }}
+        initial={{ top: 0, y: -220 }}
+        animate={isOn ? { y: 300 } : { y: -220 }}
         transition={{
           type: "spring",
           stiffness: isOn ? 400 : 150,
@@ -118,6 +114,18 @@ const ThemeCube = () => {
             ))}
           </div>
         </div>
+      </motion.div>
+      <motion.div
+        initial={{ x: 300 }}
+        animate={isOn ? { x: 0 } : { x: 300 }}
+        transition={{
+          type: "spring",
+          stiffness: isOn ? 200 : 150,
+          damping: isOn ? 30 : 22,
+        }}
+        className={styles.instruction}
+      >
+        Click a side!
       </motion.div>
     </motion.div>
   );

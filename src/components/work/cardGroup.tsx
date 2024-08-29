@@ -36,6 +36,8 @@ const CardGroup = ({ cards }: Props) => {
           title={activeCard?.name}
           logo={activeCard?.logo}
           url={activeCard?.url}
+          projectUrl={activeCard?.projectUrl}
+          tech={activeCard?.tech}
           content={
             <>
               <div>

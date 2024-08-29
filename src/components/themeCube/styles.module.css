@@ -41,26 +41,17 @@
   z-index: 1;
   opacity: 1;
   transition: all 0.5s ease-in-out;
-  /* animation: cubeanimation 8s ease-in-out infinite forwards; */
-  margin-left: -20px;
+  padding-right: 20px;
 }
-
-/* .isChecked {
-  animation: drop 3s cubic-bezier(0.07, 1, 0.14, 0.94) forwards;
-} */
-
-/* .isUnChecked {
-  opacity: 0;
-  animation: throw 1s cubic-bezier(0.07, 1, 0.14, 0.94) forwards;
-} */
 
 .container {
   display: flex;
   justify-content: flex-start;
   gap: var(--space-5);
-  align-items: flex-start;
+  align-items: flex-end;
   height: 100%;
   position: relative;
+  padding-right: 20px;
   flex-direction: column;
 }
 
@@ -74,6 +65,22 @@
   padding: 4px;
   cursor: pointer;
   border: 1px solid var(--color-title-stop);
+}
+
+.instruction {
+  font-size: var(--font-2);
+  color: var(--color-toggle-on);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 500px;
+  position: fixed;
+  height: 32px;
+  padding: 0;
+  top: 19vw;
+  right: -380px;
 }
 
 .switch[data-ison="true"] {

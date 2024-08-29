@@ -10,6 +10,8 @@ interface Props {
   logo: string;
   title: string;
   url: string;
+  projectUrl?: string;
+  tech?: string[];
   content: React.ReactNode;
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -19,6 +21,8 @@ const DraggableModal = ({
   logo,
   title,
   url,
+  projectUrl,
+  tech,
   content,
   open,
   setOpen,
@@ -77,11 +81,17 @@ const DraggableModal = ({
           onFocus={() => {}}
           onBlur={() => {}}
         >
-          <div className={styles.modalTitle}>
+          <div className={styles.modalHeaderRow}>
+            <h2 className={styles.title}>{title}</h2>
             <img
               src={`${logo}`}
               alt={title}
-              style={{ maxHeight: 50, maxWidth: 200, width: "auto" }}
+              style={{
+                height: "100%",
+                width: "100%",
+                maxHeight: 100,
+                maxWidth: 100,
+              }}
             />
           </div>
         </div>
@@ -95,6 +105,7 @@ const DraggableModal = ({
           bounds={bounds}
           nodeRef={dragRef}
           onStart={(event, uiData) => onStart(event, uiData)}
+          position={{ x: 500, y: 0 }}
         >
           <div ref={dragRef}>{modal}</div>
         </Draggable>
@@ -109,7 +120,30 @@ const DraggableModal = ({
         >
           {url.split("/")[2]}
         </a>
-        {content}
+
+        {projectUrl && (
+          <div className={styles.projectLinkWrapper}>
+            <p className="modal-text-strong">Project</p>
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.projectLink}
+            >
+              {projectUrl.split("/")[2]}
+            </a>
+          </div>
+        )}
+
+        <div>{content}</div>
+        {tech && (
+          <div className={styles.techWrapper}>
+            <p className="modal-text-strong">Tech Used</p>
+            {tech.map((tech) => (
+              <p className={styles.tech}>#{tech}</p>
+            ))}
+          </div>
+        )}
       </div>
     </Modal>
   );
