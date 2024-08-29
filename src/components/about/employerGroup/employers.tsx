@@ -7,7 +7,7 @@ export type Employer = {
   name: string;
   logo: string;
   url: string;
-  projectUrl: string;
+  projectUrl?: string;
   position: string;
   location: string;
   date: string[];
