@@ -1,9 +1,14 @@
 import DraggableModal from "@components/modal";
 import Card, { type PopupInfo } from "./card";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import { ParallaxProvider, useParallax } from "react-scroll-parallax";
 import ParallaxCard from "./card/parallaxCard";
+import {
+  Parallax,
+  ParallaxLayer,
+  type IParallax,
+} from "@react-spring/parallax";
 
 export interface CardGroupProps extends PopupInfo {
   image: string;
@@ -23,23 +28,23 @@ const CardGroup = ({ cards }: Props) => {
       setActiveCard(null);
     }
   }, [open]);
+
+  const parallax = useRef<IParallax>(null!);
+
   return (
     <>
-      {cards.map((data: CardGroupProps, index) => (
+      {/* <Parallax ref={parallax} pages={1}> */}
+      {cards.map((card: CardGroupProps, index) => (
+        // <ParallaxLayer key={card.name} offset={index * 2.5} speed={4.5}>
         <Card
-          key={data.name}
-          {...data}
+          key={card.name}
+          {...card}
           onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
-          isActive={activeCard?.name === data.name}
+          isActive={activeCard?.name === card.name}
         />
-        // <ParallaxCard
-        //   index={index}
-        //   key={data.name}
-        //   {...data}
-        //   onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
-        //   isActive={activeCard?.name === data.name}
-        // />
+        // </ParallaxLayer>
       ))}
+      {/* </Parallax> */}
       {activeCard && (
         <DraggableModal
           open={open}

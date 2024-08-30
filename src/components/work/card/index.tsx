@@ -1,9 +1,5 @@
 import classNames from "classnames";
 import styles from "./styles.module.css";
-import { forwardRef, useEffect, useRef, useState } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
-import { Parallax } from "react-scroll-parallax";
-import { useParallax } from "react-scroll-parallax";
 
 export type PopupInfo = {
   name: string;

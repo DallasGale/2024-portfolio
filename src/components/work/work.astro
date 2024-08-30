@@ -19,7 +19,7 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 
   .section {
     position: relative;
-    grid-column: 1 / span all;
+    grid-column: 2 / span all;
     padding-top: var(--space-10);
     max-width: 90vw;
     margin: auto;
@@ -73,5 +73,12 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
     position: relative;
     margin-bottom: 200px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    .section {
+      position: relative;
+      grid-column: 1 / span all;
+    }
   }
 </style>
