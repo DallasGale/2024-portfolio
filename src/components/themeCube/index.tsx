@@ -15,9 +15,9 @@ const ThemeCube = () => {
   const [rotation, setRotation] = useState({ x: -22.5, y: 38 });
 
   const themes = [
-    { name: "1", color: "#aefc79", rotateX: 0, rotateY: 0 },
+    { name: "1", color: "#a620aa", rotateX: 0, rotateY: 0 },
     { name: "2", color: "#e7a42f", rotateX: 90, rotateY: 0 },
-    { name: "3", color: "#a620aa", rotateX: 0, rotateY: -90 },
+    { name: "3", color: "#aefc79", rotateX: 0, rotateY: -90 },
     { name: "4", color: "#e43737", rotateX: 0, rotateY: 90 },
     { name: "5", color: "#5c9dbd", rotateX: -90, rotateY: 0 },
     { name: "6", color: "#000000", rotateX: 180, rotateY: 0 },

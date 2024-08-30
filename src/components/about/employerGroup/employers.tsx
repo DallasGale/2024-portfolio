@@ -59,7 +59,10 @@ const Employers = ({ employerList }: Props) => {
         content={
           <>
             <div className="modal-text-row">
-              <p className="modal-text">{currentEmployer?.info}</p>
+              <p
+                className="modal-text"
+                dangerouslySetInnerHTML={{ __html: `${currentEmployer?.info}` }}
+              />
             </div>
             <div className="modal-text-row">
               <h3 className="modal-text-strong">Position</h3>{" "}

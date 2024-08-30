@@ -21,6 +21,9 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     position: relative;
     grid-column: 1 / span all;
     padding-top: var(--space-8);
+    max-width: 90vw;
+    margin: auto;
+    z-index: 3;
   }
   .container {
     display: flex;
@@ -71,10 +74,4 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     position: relative;
     margin-bottom: 200px;
   }
-
-  // @media only screen and (min-width: $breakpoint-xxl) {
-  //   .container {
-  //     max-width: 688px;
-  //   }
-  // }
 </style>

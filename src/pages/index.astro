@@ -16,9 +16,10 @@ import Footer from "../components/footer/footer.astro";
   <Footer />
 </Layout>
 
-<style>
+<style lang="scss">
+  @import "../scss/breakpoints.scss";
   .main {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
     justify-content: center;
     gap: var(--grid-gap);
@@ -28,5 +29,11 @@ import Footer from "../components/footer/footer.astro";
     width: 100%;
     flex-direction: column;
     overflow: hidden;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .main {
+      display: grid;
+    }
   }
 </style>

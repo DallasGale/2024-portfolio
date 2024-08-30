@@ -4,6 +4,12 @@ import Bg from "../../images/smoke-footer.jpg";
 ---
 
 <footer>
+  <div class="mobile-message">
+    <p class="primary-text">
+      Thanks for visiting my site!<br />The desktop version is a bit more fun,
+      so check it out on a larger screen.
+    </p>
+  </div>
   <h2>Say Hi!</h2>
 
   <div class="link-group">
@@ -20,20 +26,12 @@ import Bg from "../../images/smoke-footer.jpg";
     <small>Designed by Me</small>
     <small>Built with Astro.js</small>
     <small>Deployed to Vercel.</small>
-    <small>Footer image by rawpixel.com</small>
   </div>
-
-  <!-- <Image
-    src={Bg}
-    class="bgImage"
-    alt="descriptive text"
-    width={2030}
-    height={713}
-  /> -->
 </footer>
 
 <style lang="scss">
   @import "../../scss/animations.scss";
+  @import "../../scss/breakpoints.scss";
   footer {
     position: relative;
     bottom: 0;
@@ -54,6 +52,11 @@ import Bg from "../../images/smoke-footer.jpg";
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
     z-index: 10;
+  }
+
+  .mobile-message {
+    display: flex;
+    padding: var(--space-5);
   }
 
   .bgImage {
@@ -78,7 +81,7 @@ import Bg from "../../images/smoke-footer.jpg";
   }
 
   .foot-note {
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     gap: var(--space-4);
@@ -88,5 +91,15 @@ import Bg from "../../images/smoke-footer.jpg";
   small {
     color: var(--color-paragraph);
     font-weight: var(--font-weight-semibold);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .foot-note {
+      display: flex;
+    }
+
+    .mobile-message {
+      display: none;
+    }
   }
 </style>

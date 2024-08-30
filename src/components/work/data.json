@@ -1,67 +1,120 @@
 [
   {
-    "name": "Rarity Punks",
+    "name": "Databeast",
     "logo": "/images/logos/gigabuddy.svg",
-    "url": "https://www.gigabuddy.com.au/",
-    "projectUrl": "https://databeast.xyz/",
-    "date": "2019 - 2020",
+    "projectUrl": "https://databeast.xyz",
+    "date": "Nov 2022 - Aug 2024",
     "image": "/images/screens/databeast.jpg",
-    "imageAltText": "/images/screens/choose-tap.jpg",
-    "info": "",
+    "imageAltText": "Databeast website",
+    "info": "A dashboard for NFT analytics.",
+    "role": "Frontend Developer",
     "tech": [
-      "Next.js",
-      "React",
-      "Sanity.io",
-      "Vercel"
+      "react",
+      "next.js",
+      "firebase",
+      "firestore",
+      "mantine ui",
+      "framer motion",
+      "marqo",
+      "mobx",
+      "storybook",
+      "chromatic",
+      "vercel"
     ]
   },
   {
-    "name": "Hardhat",
-    "logo": "/images/logos/hardhat.svg",
-    "url": "https://hardhat.com.au/",
-    "projectUrl": "https://choosetap.com.au/",
-    "date": "2019 - 2020",
-    "image": "/images/screens/choose-tap.jpg",
-    "imageAltText": "/images/screens/choose-tap.jpg",
-    "info": "",
+    "name": "Dropbeast",
+    "logo": "/images/logos/gigabuddy.svg",
+    "projectUrl": "https://dropbeast.xyz",
+    "date": "Nov 2022 - Aug 2024",
+    "image": "/images/screens/dropbeast.jpg",
+    "imageAltText": "Dropbeast website",
+    "info": "A platform for NFT air drops and farming.",
+    "role": "Frontend Developer",
     "tech": [
-      "Gatsby",
-      "React",
-      "DatoCMS",
-      "GraphQL",
-      "Netlify"
+      "react",
+      "next.js",
+      "firebase",
+      "firestore",
+      "mantine ui",
+      "framer motion",
+      "marqo",
+      "mobx",
+      "storybook",
+      "chromatic",
+      "vercel"
+    ]
+  },
+  {
+    "name": "Choose Tap",
+    "logo": "/images/logos/hardhat.svg",
+    "projectUrl": "https://choosetap.com.au",
+    "date": "Oct 2019 - Apr 2022",
+    "image": "/images/screens/choose-tap.jpg",
+    "imageAltText": "Choose Tap website",
+    "role": "Frontend Developer",
+    "info": "Yarra Valley Water's Choose Tap campaign website promotes awareness about plastic bottle usage and provides information on locating free water refill stations across Australia.",
+    "tech": [
+      "react",
+      "gatsby",
+      "datoCMS",
+      "framer motion",
+      "graphQL",
+      "google Maps API",
+      "storybook",
+      "chromatic",
+      "netlify"
     ]
   },
   {
     "name": "Prime Motive",
     "logo": "/images/logos/prime-motive.svg",
-    "url": "https://primemotive.com.au/",
-    "projectUrl": "https://rmit.edu.au/",
-    "date": "2019 - 2020",
+    "projectUrl": "https://primemotive.com.au/work/rmit-virtual-open-day-strategic-design",
+    "date": "Jul 2022 - Aug 2022",
     "image": "/images/screens/rmit.jpg",
-    "imageAltText": "/images/screens/choose-tap.jpg",
-    "info": "",
+    "imageAltText": "RMIT Open Day 2022 website",
+    "role": "Frontend Developer",
+    "info": "The RMIT Open Day landing page was designed to engage prospective students and showcase the school through an innovative and interactive user experience.",
     "tech": [
-      "Next.js",
-      "React",
-      "Sanity.io",
-      "Vercel"
+      "react",
+      "meteor",
+      "graphQL",
+      "gsap"
     ]
   },
   {
     "name": "Freelance",
     "logo": "/images/logos/dallas-white.png",
-    "url": "https://www.caravancleaningmelbourne.com.au/",
-    "projectUrl": "https://caravan-cleaning-melbourne.vercel.app/",
-    "date": "2019 - 2020",
+    "projectUrl": "https://caravan-cleaning-melbourne.vercel.app",
+    "date": "Jul 2024 - Sep 2024",
     "image": "/images/screens/ccm.jpg",
-    "imageAltText": "/images/screens/choose-tap.jpg",
+    "imageAltText": "Caravan Cleaning Melbourne website",
+    "role": "Frontend Developer & Designer",
     "info": "I designed and built the 2024 site for CCM, doing away with their existing Wix application and providing a bespoke cms using Sanity.io, single click deployment using Vercel and faster page loading using Next.js static builds.",
     "tech": [
-      "Next.js",
-      "React",
-      "Sanity.io",
-      "Vercel"
+      "react",
+      "next.js",
+      "sanity.io",
+      "framer motion",
+      "storybook",
+      "chromatic",
+      "vercel"
+    ]
+  },
+  {
+    "name": "Hardhat",
+    "logo": "/images/logos/hardhat.svg",
+    "projectUrl": "https://ventia.com.au",
+    "date": "Oct 2019 - Apr 2022",
+    "image": "/images/screens/ventia.jpg",
+    "imageAltText": "Ventia website",
+    "role": "Frontend Developer",
+    "info": "Ventia, a leading essential infrastructure services provider in Australia and New Zealand, underwent a significant digital transformation. As part of the development team, I contributed to rebuilding their legacy Rails site. A key aspect of this project was the introduction of React components through rails-react, a strategic decision aimed at future-proofing the platform for subsequent developers. This integration enhanced the site's flexibility and maintainability, aligning with Ventia's position as a major player in the infrastructure sector.",
+    "tech": [
+      "rails",
+      "react",
+      "storybook",
+      "chromatic"
     ]
   }
 ]

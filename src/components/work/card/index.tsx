@@ -1,13 +1,15 @@
 import classNames from "classnames";
 import styles from "./styles.module.css";
+import { forwardRef, useEffect, useRef, useState } from "react";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 export type PopupInfo = {
   name: string;
   logo: string;
-  url: string;
   projectUrl: string;
   date: string;
   info: string;
+  role: string;
   tech: string[];
 };
 
@@ -20,10 +22,10 @@ export interface CardProps extends PopupInfo {
 const Card = ({
   name,
   logo,
-  url,
   projectUrl,
   date,
   info,
+  role,
   tech,
   image,
   imageAltText,
@@ -36,7 +38,9 @@ const Card = ({
   return (
     <div
       className={cardClasses}
-      onClick={() => onClick({ name, logo, url, projectUrl, date, info, tech })}
+      onClick={() =>
+        onClick({ name, role, logo, projectUrl, date, info, tech })
+      }
     >
       <img
         src={image}
@@ -50,5 +54,4 @@ const Card = ({
     </div>
   );
 };
-
 export default Card;

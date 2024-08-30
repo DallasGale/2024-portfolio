@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 interface Props {
   logo: string;
   title: string;
-  url: string;
+  url?: string;
   projectUrl?: string;
   tech?: string[];
   content: React.ReactNode;
@@ -111,18 +111,20 @@ const DraggableModal = ({
       )}
     >
       <div className={styles.modal}>
-        <a
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className={styles.modalLink}
-        >
-          {url.split("//")[1]}
-        </a>
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.modalLink}
+          >
+            {url.split("//")[1]}
+          </a>
+        )}
 
-        {projectUrl && (
+        {/* {projectUrl && (
           <div className={styles.projectLinkWrapper}>
-            <p className="modal-text-strong">Project</p>
+            <p className="modal-text-strong">Project URL</p>
             <a
               href={projectUrl}
               target="_blank"
@@ -132,7 +134,7 @@ const DraggableModal = ({
               {projectUrl.split("//")[1]}
             </a>
           </div>
-        )}
+        )} */}
 
         <div>{content}</div>
         {tech && (

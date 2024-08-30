@@ -10,7 +10,8 @@ import ThemeCube from "@components/themeCube";
   <ThemeCube client:load />
 </header>
 
-<style>
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
   .header {
     position: fixed;
     display: flex;
@@ -21,7 +22,7 @@ import ThemeCube from "@components/themeCube";
     background: var(--header-logo);
     background-repeat: no-repeat;
     background-size: 193px;
-    background-position: top var(--space-5) left var(--space-5);
+    background-position: top var(--space-5) center;
     height: 110px;
     width: 100%;
   }
@@ -48,6 +49,12 @@ import ThemeCube from "@components/themeCube";
     }
     #logo-black.logo {
       display: block;
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .header {
+      background-position: top var(--space-5) left var(--space-5);
     }
   }
 </style>

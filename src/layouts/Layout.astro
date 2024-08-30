@@ -32,7 +32,8 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
+  @import "../scss/breakpoints.scss";
   :root {
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
@@ -82,12 +83,12 @@ const { title } = Astro.props;
     --header-logo: url(../images/dallas-white.png);
 
     --color-nav: #fff;
-    --color-accent: #aefc79;
+    --color-accent: #a620aa;
     --color-accent-dark: #436e27;
-    --color-active: #aefc79;
-    --color-bg: #000;
+    --color-active: #a620aa;
+    --color-bg: #1d172b;
     --color-title: #ffffff;
-    --color-title-stop: #545454;
+    --color-title-stop: #ffffff;
     --color-paragraph: #bababa;
     --color-paragraph-strong: #ffffff;
     --color-modal-title: #ffffff;
@@ -121,7 +122,7 @@ const { title } = Astro.props;
     );
 
     --breakpoint-sm: 414px;
-    --breakpoint-md: 1024px;
+    --breakpoint-md: 768px;
   }
 
   body {
@@ -147,6 +148,10 @@ const { title } = Astro.props;
     cursor: pointer;
   }
 
+  .primary-text {
+    font-size: var(--font-7);
+    color: var(--color-paragraph);
+  }
   .link {
     color: var(--color-link);
     font-weight: var(--font-weight-semibold);
@@ -156,8 +161,15 @@ const { title } = Astro.props;
   .modal-text-strong {
     color: var(--color-modal-paragraph);
     font-weight: var(--font-weight-regular);
-    font-size: var(--font-4);
+    font-size: var(--font-3);
     font-family: "Poppins", system-ui, sans-serif !important;
+  }
+
+  @media only screen and (min-width: $breakpoint-xxl) {
+    .modal-text,
+    .modal-text-strong {
+      font-size: var(--font-5);
+    }
   }
   .modal-text-strong {
     color: var(--color-modal-paragraph-strong);
@@ -170,8 +182,16 @@ const { title } = Astro.props;
     gap: var(--space-3);
     margin-bottom: var(--space-3);
   }
-
   [data-theme="1"] {
+    --color-accent: #a620aa;
+    --color-title-stop: #ffffff;
+    --color-bg: #1d172b;
+    --color-cube-instruction: #fff;
+    --color-button-text-active: #fff;
+
+    --color-modal-link: #a620aa;
+  }
+  [data-theme="3"] {
     --color-accent: #aefc79;
     --color-toggle-on: #aefc79;
     --color-bg: #000;
@@ -185,15 +205,6 @@ const { title } = Astro.props;
 
     --color-button-text-active: #e7a42f;
     --color-modal-link: #e7a42f;
-  }
-  [data-theme="3"] {
-    --color-accent: #a620aa;
-    --color-title-stop: #ffffff;
-    --color-bg: #1d172b;
-    --color-cube-instruction: #fff;
-    --color-button-text-active: #fff;
-
-    --color-modal-link: #a620aa;
   }
 
   [data-theme="4"] {
@@ -253,7 +264,7 @@ const { title } = Astro.props;
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.35, // Changed to 0.1 for earlier detection
+      threshold: 0.25, // Changed to 0.1 for earlier detection
     };
 
     const aboutCallback = (entries, observer) => {
