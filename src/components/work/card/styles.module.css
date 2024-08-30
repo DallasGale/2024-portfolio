@@ -1,4 +1,3 @@
-@import "../../../scss/breakpoints.scss";
 @keyframes move1 {
   0% {
     transform: translateX(50px) rotate3d(-40, -21, -13, 382deg) scale(1);
@@ -51,10 +50,8 @@
   height: 100%;
 }
 .image {
-  /* filter: grayscale(1); */
   transition: var(--transition-card);
   width: 100%;
-  /* max-width: 30vw; */
   width: 100%;
   height: auto;
   display: flex;
