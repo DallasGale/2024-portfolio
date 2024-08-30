@@ -1,9 +1,8 @@
-import DraggableModal from "@components/modal";
-import Card, { type PopupInfo } from "./card";
 import { useEffect, useState } from "react";
+import { useParallax } from "react-scroll-parallax";
+import Card, { type PopupInfo } from "./card";
+import DraggableModal from "@components/modal";
 import styles from "./styles.module.css";
-import { ParallaxProvider, useParallax } from "react-scroll-parallax";
-import ParallaxCard from "./card/parallaxCard";
 
 export interface CardGroupProps extends PopupInfo {
   image: string;
@@ -12,7 +11,8 @@ export interface CardGroupProps extends PopupInfo {
 interface Props {
   cards: CardGroupProps[];
 }
-const CardGroup = ({ cards }: Props) => {
+
+const Cards = ({ cards }: Props) => {
   const [activeCard, setActiveCard] = useState<PopupInfo | null>(null);
 
   console.log({ cards });
@@ -23,22 +23,16 @@ const CardGroup = ({ cards }: Props) => {
       setActiveCard(null);
     }
   }, [open]);
+  const { ref } = useParallax<HTMLDivElement>({ speed: 100 });
   return (
-    <>
-      {cards.map((data: CardGroupProps, index) => (
+    <div ref={ref}>
+      {cards.map((data: CardGroupProps) => (
         <Card
           key={data.name}
           {...data}
           onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
           isActive={activeCard?.name === data.name}
         />
-        // <ParallaxCard
-        //   index={index}
-        //   key={data.name}
-        //   {...data}
-        //   onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
-        //   isActive={activeCard?.name === data.name}
-        // />
       ))}
       {activeCard && (
         <DraggableModal
@@ -78,8 +72,7 @@ const CardGroup = ({ cards }: Props) => {
           }
         />
       )}
-    </>
+    </div>
   );
 };
-
-export default CardGroup;
+export default Cards;
