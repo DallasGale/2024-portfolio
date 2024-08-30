@@ -2,6 +2,7 @@ import DraggableModal from "@components/modal";
 import Card, { type PopupInfo } from "./card";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export interface CardGroupProps extends PopupInfo {
   image: string;
@@ -70,8 +71,6 @@ const CardGroup = ({ cards }: Props) => {
           }
         />
       )}
-      {/* </div>
-    </div> */}
     </>
   );
 };
