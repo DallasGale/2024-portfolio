@@ -47,13 +47,14 @@
   justify-content: center;
   gap: var(--space-5);
   align-items: center;
-  height: 75vh;
-  top: 0;
+  height: auto;
+  top: -22vh;
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
   flex-direction: column;
+  z-index: 10;
 }
 
 .switch {
@@ -69,11 +70,11 @@
 }
 
 .instruction {
+  display: none;
   font-size: var(--font-5);
   color: var(--color-toggle-on);
   font-weight: var(--font-weight-semibold);
   margin-top: var(--space-6);
-  display: flex;
   align-items: center;
   justify-content: center;
   width: auto;
