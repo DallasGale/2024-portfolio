@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./styles.module.css";
+import SimpleParallax from "simple-parallax-js";
 
 export type PopupInfo = {
   name: string;
@@ -41,15 +42,17 @@ const Card = ({
         onClick({ name, role, logo, projectUrl, date, info, tech })
       }
     >
-      <img
-        src={image}
-        className={styles.image}
-        alt={imageAltText}
-        width={600}
-        height={600}
-        decoding="async"
-        loading="lazy"
-      />
+      <SimpleParallax scale={1.25} orientation="down">
+        <img
+          src={image}
+          className={styles.image}
+          alt={imageAltText}
+          width={600}
+          height={600}
+          decoding="async"
+          loading="lazy"
+        />
+      </SimpleParallax>
     </div>
   );
 };
