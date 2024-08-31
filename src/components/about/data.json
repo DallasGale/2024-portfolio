@@ -5,7 +5,7 @@
       {
         "name": "Hardhat",
         "logo": "/images/logos/hardhat.svg",
-        "info": "As a key developer at Hardhat, a prominent Melbourne-based advertising agency, I was instrumental in the development and maintenance of multiple high-profile websites. Our client portfolio included industry leaders such as Ventia, Simply Energy, University of Sydney, Moulin Rouge, and Yarra Valley Water. My responsibilities extended beyond development, as I regularly participated in initial project scoping and strategic roadmapping sessions, contributing to project direction and client satisfaction. In terms of technical expertise, I leveraged a diverse stack of cutting-edge technologies to deliver robust and efficient web solutions. This toolkit primarily comprised React, TypeScript, Ruby on Rails (RoR), Storybook, Gatsby, and Next.js, enabling the creation of scalable, performant, and user-centric web applications.",
+        "info": "As a key developer at Hardhat, a prominent Melbourne-based advertising agency, I was instrumental in the development and maintenance of multiple high-profile websites. <br /><br />Our client portfolio included <strong>Ventia, Simply Energy, University of Sydney, Moulin Rouge</strong>, and <strong>Yarra Valley Water</strong>.<br /><br/>My responsibilities extended beyond development, as I regularly participated in initial project scoping and strategic roadmapping sessions, contributing to project direction and client satisfaction. <br /><br />In terms of technical expertise, I leveraged a diverse stack of cutting-edge technologies to deliver robust and efficient web solutions. This toolkit primarily comprised <strong>React, TypeScript, Ruby on Rails (RoR), Storybook, Gatsby, and Next.js</strong>, enabling the creation of scalable, performant, and user-centric web applications.",
         "url": "https://www.hardhat.com.au",
         "position": "Front End Developer",
         "workType": "Full Time / Contract / IRL / Remote",
@@ -15,7 +15,7 @@
       {
         "name": "Prime Motive",
         "logo": "/images/logos/prime-motive.svg",
-        "info": "As a contracted frontend developer, I contributed to two significant projects showcasing diverse technical skills: <br /><br />CGU ABN Rescue Campaign (Prime Motive): Implemented a sophisticated, highly animated user experience for the campaign website. The platform featured scroll-activated animated content and location-based dynamic messaging to enhance user engagement. Leveraging the abr.gov.au API endpoint, we integrated state-specific ABN data to provide tailored information based on visitors' geographic locations. Technologies used: NextJS/React with GSAP for animations. <br /><br />RMIT Open Day 2022: Developed key components for the RMIT Open Day virtual experience. The project involved creating interactive elements to showcase university offerings and engage prospective students in an online environment. Utilized React for building reusable UI components and implemented responsive design principles to ensure a seamless experience across devices. Integrated real-time data feeds to display up-to-date event information and schedules. Both projects demonstrated proficiency in modern frontend technologies, API integration, and creating engaging user experiences for diverse audiences.",
+        "info": "As a contracted frontend developer, I contributed to two significant projects showcasing diverse technical skills: <br /><br /><strong>CGU ABN Rescue Campaign</strong>: Implemented a sophisticated, highly animated user experience for the campaign website. The platform featured scroll-activated animated content and location-based dynamic messaging to enhance user engagement. Leveraging the abr.gov.au API endpoint, we integrated state-specific ABN data to provide tailored information based on visitors' geographic locations. <br /><br />Technologies used:<strong> NextJS/React</strong> with <strong>GSAP</strong> for animations. <br /><br /><strong>RMIT Open Day 2022:</strong> I developed key components for the RMIT Open Day virtual experience. The project involved creating interactive elements to showcase university offerings and engage prospective students in an online environment. Utilized React for building reusable UI components and implemented responsive design principles to ensure a seamless experience across devices. <br /><br />Integrated real-time data feeds to display up-to-date event information and schedules. Both projects demonstrated proficiency in modern frontend technologies, API integration, and creating engaging user experiences for diverse audiences.",
         "url": "https://www.primemotive.com.au",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
@@ -25,7 +25,7 @@
       {
         "name": "Isobar",
         "logo": "/images/logos/isobar.png",
-        "info": "Isobar was a fast-paced global advertising agency where I was hired as a contractor to build out features for Holden.com.au.",
+        "info": "Isobar was a fast-paced global advertising agency where I was hired as a contractor to build out features for <strong>holden.com.au</strong>. Tech stack included <strong>Vue.js</strong>.",
         "url": "https://www.dentsucreative.com",
         "position": "Front End Developer",
         "location": "Melbourne, Australia",
@@ -35,7 +35,7 @@
       {
         "name": "Gee Digital",
         "logo": "/images/logos/gee.png",
-        "info": "As a fast paced digital agency I designed and developed responsive sites, landing pages & EDM’s and daily web banners for retail giant Target. I converted existing static sites to be responsive using Bootstrap, JavaScript, jQuery & Green Sock animation library. I created wire-frames, site-maps & style guides for new projects and designed client branding.",
+        "info": "As a fast paced digital agency I designed and developed responsive sites, landing pages & EDM’s and daily web banners for retail giant <strong>Target</strong>. I converted existing static sites to be responsive using <strong>Bootstrap, JavaScript, jQuery</strong> & <strong>GSAP</strong> animation library. I created wire-frames, site-maps & style guides for new projects and designed client branding.",
         "url": "https://www.ggg.com.au",
         "position": "Digital Designer & Front End Developer",
         "location": "Melbourne, Australia",
@@ -45,7 +45,7 @@
       {
         "name": "Big Mirror Labs",
         "logo": "/images/logos/bigmirrorlabs.jpg",
-        "info": "At Big Mirror Labs/Icon Interactive, an innovative incubator for experimental digital solutions and consultancy, I played a key role in a high-priority cybersecurity initiative called ConsortiumX. As part of this project, I developed critical dashboard features, including advanced filtering and search functionalities for security products. These enhancements significantly improved the user interface, contributing to the overall success of this cutting-edge cybersecurity solution.",
+        "info": "At Big Mirror Labs/Icon Interactive, an innovative incubator for experimental digital solutions and consultancy, I played a key role in a high-priority cybersecurity initiative called <strong>ConsortiumX</strong>.<br /><br />As part of this project, I developed critical dashboard features, including advanced filtering and search functionalities for security products. These enhancements significantly improved the user interface, contributing to the overall success of this cutting-edge cybersecurity solution.",
         "url": "http://www.bigmirrorlabs.com",
         "position": "Senior Front End Developer",
         "location": "New York, USA",
