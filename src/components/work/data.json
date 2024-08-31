@@ -6,7 +6,7 @@
     "date": "Nov 2022 - Aug 2024",
     "image": "/images/screens/databeast.jpg",
     "imageAltText": "Databeast website",
-    "info": "A dashboard for NFT analytics.",
+    "info": "Databeast is an advanced analytics platform designed to provide real-time insights into the dynamic NFT market. Our intuitive interface leverages Chart.js to visually represent complex data through interactive charts and graphs, offering users a comprehensive understanding of NFT trends. A key feature is our live top 100 volume leaderboard, which tracks and displays the highest-performing NFTs in real-time, enabling users to stay ahead in this rapidly evolving digital asset space.",
     "role": "Frontend Developer",
     "tech": [
       "react",
@@ -19,6 +19,7 @@
       "mobx",
       "storybook",
       "chromatic",
+      "chart.js",
       "vercel"
     ]
   },
