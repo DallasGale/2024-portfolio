@@ -112,10 +112,12 @@ const DraggableModal = ({
       )}
     >
       <div className={styles.modal}>
-        <div className={styles.techWrapper}>
-          <p className="modal-text-strong">Company</p>
-          <p className={styles.tech}>{company}</p>
-        </div>
+        {company && (
+          <div className={styles.techWrapper}>
+            <p className="modal-text-strong">Company</p>
+            <p className={styles.tech}>{company}</p>
+          </div>
+        )}
 
         {url && (
           <a
