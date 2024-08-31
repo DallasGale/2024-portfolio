@@ -37,10 +37,10 @@ const CardGroup = ({ cards }: Props) => {
       {cards.map((card: CardGroupProps, index) => (
         // <ParallaxLayer key={card.name} offset={index * 2.5} speed={4.5}>
         <Card
-          key={card.name}
+          key={card.project}
           {...card}
           onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
-          isActive={activeCard?.name === card.name}
+          isActive={activeCard?.project === card.project}
         />
         // </ParallaxLayer>
       ))}
@@ -49,7 +49,8 @@ const CardGroup = ({ cards }: Props) => {
         <DraggableModal
           open={open}
           setOpen={setOpen}
-          title={activeCard?.name}
+          title={activeCard?.project}
+          company={activeCard?.company}
           logo={activeCard?.logo}
           projectUrl={activeCard?.projectUrl}
           tech={activeCard?.tech}

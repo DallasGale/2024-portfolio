@@ -3,7 +3,8 @@ import styles from "./styles.module.css";
 import SimpleParallax from "simple-parallax-js";
 
 export type PopupInfo = {
-  name: string;
+  project: string;
+  company: string;
   logo: string;
   projectUrl: string;
   date: string;
@@ -19,7 +20,8 @@ export interface CardProps extends PopupInfo {
   onClick: (props: PopupInfo) => void;
 }
 const Card = ({
-  name,
+  project,
+  company,
   logo,
   projectUrl,
   date,
@@ -39,7 +41,7 @@ const Card = ({
     <div
       className={cardClasses}
       onClick={() =>
-        onClick({ name, role, logo, projectUrl, date, info, tech })
+        onClick({ project, company, role, logo, projectUrl, date, info, tech })
       }
     >
       <SimpleParallax scale={1.25} orientation="down">

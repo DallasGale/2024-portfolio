@@ -11,6 +11,7 @@ interface Props {
   title: string;
   url?: string;
   projectUrl?: string;
+  company: string;
   tech?: string[];
   content: React.ReactNode;
   open: boolean;
@@ -21,7 +22,7 @@ const DraggableModal = ({
   logo,
   title,
   url,
-  projectUrl,
+  company,
   tech,
   content,
   open,
@@ -111,6 +112,11 @@ const DraggableModal = ({
       )}
     >
       <div className={styles.modal}>
+        <div className={styles.techWrapper}>
+          <p className="modal-text-strong">Company</p>
+          <p className={styles.tech}>{company}</p>
+        </div>
+
         {url && (
           <a
             href={url}
@@ -121,20 +127,6 @@ const DraggableModal = ({
             {url.split("//")[1]}
           </a>
         )}
-
-        {/* {projectUrl && (
-          <div className={styles.projectLinkWrapper}>
-            <p className="modal-text-strong">Project URL</p>
-            <a
-              href={projectUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={styles.projectLink}
-            >
-              {projectUrl.split("//")[1]}
-            </a>
-          </div>
-        )} */}
 
         <div>{content}</div>
         {tech && (
