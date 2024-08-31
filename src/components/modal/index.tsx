@@ -11,7 +11,7 @@ interface Props {
   title: string;
   url?: string;
   projectUrl?: string;
-  company: string;
+  company?: string;
   tech?: string[];
   content: React.ReactNode;
   open: boolean;

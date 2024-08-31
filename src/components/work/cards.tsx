@@ -28,17 +28,17 @@ const Cards = ({ cards }: Props) => {
     <div ref={ref}>
       {cards.map((data: CardGroupProps) => (
         <Card
-          key={data.name}
+          key={data.company}
           {...data}
           onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
-          isActive={activeCard?.name === data.name}
+          isActive={activeCard?.company === data.company}
         />
       ))}
       {activeCard && (
         <DraggableModal
           open={open}
           setOpen={setOpen}
-          title={activeCard?.name}
+          title={activeCard?.company}
           logo={activeCard?.logo}
           projectUrl={activeCard?.projectUrl}
           tech={activeCard?.tech}
