@@ -38,7 +38,7 @@ const Card = ({
   });
 
   return (
-    <div
+    <button
       className={cardClasses}
       onClick={() =>
         onClick({ project, company, role, logo, projectUrl, date, info, tech })
@@ -55,7 +55,7 @@ const Card = ({
           loading="lazy"
         />
       </SimpleParallax>
-    </div>
+    </button>
   );
 };
 export default Card;
