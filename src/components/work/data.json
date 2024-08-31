@@ -32,7 +32,7 @@
     "date": "Nov 2022 - Aug 2024",
     "image": "/images/screens/dropbeast.jpg",
     "imageAltText": "Dropbeast website",
-    "info": "A platform for NFT air drops and farming.",
+    "info": "Dropbeast is an innovative platform revolutionizing the NFT ecosystem by streamlining airdrop claims and wallet farming processes. Our user-centric design offers a seamless experience, empowering users to effortlessly participate in airdrops and engage in farming activities. Leveraging Mantine components, we've crafted a consistent tabular layout that enhances usability while maintaining a sleek, modern aesthetic. Built on the robust foundation of Next.js and Firebase, Dropbeast delivers lightning-fast performance and unwavering reliability.",
     "role": "Frontend Developer",
     "tech": [
       "react",
