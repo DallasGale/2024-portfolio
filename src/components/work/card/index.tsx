@@ -44,17 +44,17 @@ const Card = ({
         onClick({ project, company, role, logo, projectUrl, date, info, tech })
       }
     >
-      <SimpleParallax scale={1.25} orientation="down">
-        <img
-          src={image}
-          className={styles.image}
-          alt={imageAltText}
-          width={600}
-          height={600}
-          decoding="async"
-          loading="lazy"
-        />
-      </SimpleParallax>
+      {/* <SimpleParallax scale={1.25} orientation="down"> */}
+      <img
+        src={image}
+        className={styles.image}
+        alt={imageAltText}
+        width={600}
+        height={600}
+        decoding="async"
+        loading="lazy"
+      />
+      {/* </SimpleParallax> */}
     </button>
   );
 };

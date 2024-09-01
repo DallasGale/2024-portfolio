@@ -59,7 +59,7 @@
 
 .card:hover,
 .card.isActive {
-  filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.25));
   border-color: var(--color-accent);
   border-width: 3px;
   transform-origin: center center;
