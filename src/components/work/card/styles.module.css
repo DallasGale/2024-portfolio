@@ -1,14 +1,10 @@
 @keyframes move {
   0%,
   100% {
-    transform: translateX(var(--translateX))
-      rotate3d(var(--rotateX), var(--rotateY), var(--rotateZ), var(--rotateDeg))
-      scale(1);
+    transform: scale(1);
   }
   50% {
-    transform: translateX(var(--translateX))
-      rotate3d(var(--rotateX-mid), var(--rotateY), var(--rotateZ), 372deg)
-      scale(var(--scale-mid));
+    transform: scale(var(--scale-mid));
   }
 }
 
@@ -20,7 +16,7 @@
 .image {
   transition: var(--transition-card);
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +40,7 @@
   overflow: hidden;
   border-radius: calc(var(--space-4) + var(--space-2));
   position: relative;
+  /* animation: move 40s ease-in-out infinite forwards; */
   transition: var(--transition-card);
 }
 
@@ -75,66 +72,83 @@
   opacity: 0;
 }
 
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 /* Card-specific styles */
-.card:nth-child(odd) {
-  margin-top: -80px;
-  z-index: 0;
+.cardWrapper:nth-child(odd) {
+  .card {
+    /* margin-top: -80px; */
+    z-index: 0;
+  }
 }
 
-.card:nth-child(even) {
-  margin-top: 280px;
-  z-index: 1;
+.cardWrapper:nth-child(even) {
+  .card {
+    /* margin-top: 280px; */
+    z-index: 1;
+  }
 }
 
-.card:nth-child(1),
-.card:nth-child(5) {
-  --translateX: 50px;
-  --rotateX: -40;
-  --rotateY: -21;
-  --rotateZ: -13;
-  --rotateDeg: 382deg;
-  --rotateX-mid: -30;
-  --scale-mid: 0.9;
+.cardWrapper:nth-child(1),
+.cardWrapper:nth-child(5) {
+  .card {
+    --translateX: 50px;
+    --rotateX: -40;
+    --rotateY: -21;
+    --rotateZ: -13;
+    --rotateDeg: 382deg;
+    --rotateX-mid: -30;
+    --scale-mid: 0.9;
+  }
 }
 
-.card:nth-child(2),
-.card:nth-child(6) {
-  --translateX: -50px;
-  --rotateX: -40;
-  --rotateY: 1;
-  --rotateZ: 3;
-  --rotateDeg: 382deg;
-  --rotateX-mid: -50;
-  --scale-mid: 0.91;
+.cardWrapper:nth-child(2),
+.cardWrapper:nth-child(6) {
+  .card {
+    --translateX: -50px;
+    --rotateX: -40;
+    --rotateY: 1;
+    --rotateZ: 3;
+    --rotateDeg: 382deg;
+    --rotateX-mid: -50;
+    --scale-mid: 0.91;
+  }
 }
 
-.card:nth-child(3) {
-  --translateX: -50px;
-  --rotateX: -40;
-  --rotateY: 1;
-  --rotateZ: 3;
-  --rotateDeg: 362deg;
-  --rotateX-mid: -50;
-  --scale-mid: 1.05;
+.cardWrapper:nth-child(3) {
+  .card {
+    --translateX: -90px;
+    --rotateX: 20;
+    --rotateY: 1;
+    --rotateZ: 4;
+    --rotateDeg: 382deg;
+    --rotateX-mid: -30;
+    --scale-mid: 1.05;
+  }
 }
 
-.card:nth-child(4) {
-  --translateX: -50px;
-  --rotateX: -40;
-  --rotateY: 1;
-  --rotateZ: 3;
-  --rotateDeg: 385deg;
-  --rotateX-mid: -30;
-  --scale-mid: 0.85;
-}
-
-.card {
-  animation: move 20s ease-in-out infinite forwards;
+.cardWrapper:nth-child(4) {
+  .card {
+    --translateX: -50px;
+    --rotateX: -40;
+    --rotateY: 1;
+    --rotateZ: 3;
+    --rotateDeg: 385deg;
+    --rotateX-mid: -30;
+    --scale-mid: 0.85;
+  }
 }
 
 .card:hover {
-  transform: translateX(var(--translateX)) rotate3d(-30, 0, 0, 352deg)
-    scale(1.1);
+  /* transform: translateX(var(--translateX)) rotate3d(-30, 0, 0, 352deg) */
+  /* scale(1.1); */
 }
 
 @media only screen and (min-width: 1800px) {

@@ -3,6 +3,24 @@ import Bg from "../../images/smoke-hero.jpg";
 import { Image } from "astro:assets";
 ---
 
+<script is:inline>
+  function heroParallax() {
+    console.log("hey");
+
+    const img = document.querySelector("#hero-image");
+    if (img) {
+      console.log({ img });
+      const pos = window.scrollY * 0.025;
+      img.style.transform = `translateY(${pos}px) translateX(${pos}px)`;
+    } else {
+      console.log("no image found");
+    }
+  }
+
+  document.addEventListener("scroll", () => {
+    heroParallax();
+  });
+</script>
 <section class="section">
   <div class="grid">
     <h1 class="hero">
@@ -11,15 +29,17 @@ import { Image } from "astro:assets";
       <br />DESIGNER
     </h1>
   </div>
-  <Image
-    src={Bg}
-    class="bgImage"
-    alt="descriptive text"
-    width={2000}
-    height={1333}
-    quality="max"
-    style={{ opacity: 0.4 }}
-  />
+  <div id="hero-image" class="bgImageContainer">
+    <Image
+      src={Bg}
+      class="bgImage"
+      alt="descriptive text"
+      width={2000}
+      height={1333}
+      quality="max"
+      style="opacity: 0.4"
+    />
+  </div>
 </section>
 
 <style lang="scss">
@@ -34,19 +54,25 @@ import { Image } from "astro:assets";
     align-items: center;
     overflow: hidden;
   }
-  .bgImage {
-    animation: smoke 45s ease-in-out infinite forwards;
+
+  .bgImageContainer {
     position: fixed;
     bottom: 0;
     right: 0;
     width: 100%;
+    mix-blend-mode: exclusion;
+    z-index: 1;
+  }
+  .bgImage {
+    animation: smoke 25s ease-in-out infinite forwards;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     pointer-events: none;
     object-fit: fill;
     display: flex;
     min-width: 2000px;
     width: 100%;
-    z-index: 1;
-    mix-blend-mode: exclusion;
   }
   .hero {
     font-weight: var(--font-weight-bold);

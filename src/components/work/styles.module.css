@@ -1,25 +1,3 @@
-.container {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  overflow: hidden;
-  margin: auto;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: visible;
-  max-width: 588px;
-  padding-top: var(--space-7);
-}
-.card-list {
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
-  position: relative;
-  margin-bottom: 200px;
-}
-
 .projectLink {
   color: var(--color-modal-link);
   font-weight: var(--font-weight-semibold);

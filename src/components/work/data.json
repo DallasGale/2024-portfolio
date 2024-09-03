@@ -22,7 +22,8 @@
       "chromatic",
       "chart.js",
       "vercel"
-    ]
+    ],
+    "rate": 0.0
   },
   {
     "project": "Dropbeast",
@@ -46,7 +47,8 @@
       "storybook",
       "chromatic",
       "vercel"
-    ]
+    ],
+    "rate": 0.2
   },
   {
     "project": "Choose Tap",
@@ -68,7 +70,8 @@
       "storybook",
       "chromatic",
       "netlify"
-    ]
+    ],
+    "rate": 0.2
   },
   {
     "project": "RMIT Open Day 2022",
@@ -85,7 +88,8 @@
       "meteor",
       "graphQL",
       "gsap"
-    ]
+    ],
+    "rate": -0.2
   },
   {
     "project": "Caravan Cleaning Melbourne",
@@ -105,7 +109,8 @@
       "storybook",
       "chromatic",
       "vercel"
-    ]
+    ],
+    "rate": -0.2
   },
   {
     "project": "Ventia",
@@ -122,6 +127,7 @@
       "react",
       "storybook",
       "chromatic"
-    ]
+    ],
+    "rate": 0.1
   }
 ]

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import styles from "./styles.module.css";
-import SimpleParallax from "simple-parallax-js";
 
 export type PopupInfo = {
   project: string;
@@ -17,6 +16,7 @@ export interface CardProps extends PopupInfo {
   image: string;
   imageAltText: string;
   isActive: boolean;
+  rate: number;
   onClick: (props: PopupInfo) => void;
 }
 const Card = ({
@@ -32,30 +32,44 @@ const Card = ({
   imageAltText,
   onClick,
   isActive,
+  rate,
 }: CardProps) => {
   const cardClasses = classNames(styles.card, {
     [styles.isActive]: isActive,
   });
 
   return (
-    <button
-      className={cardClasses}
-      onClick={() =>
-        onClick({ project, company, role, logo, projectUrl, date, info, tech })
-      }
+    <div
+      className={`parallax-scroll ${styles.cardWrapper}`}
+      data-rate={rate}
+      data-direction="verticle"
     >
-      {/* <SimpleParallax scale={1.25} orientation="down"> */}
-      <img
-        src={image}
-        className={styles.image}
-        alt={imageAltText}
-        width={600}
-        height={600}
-        decoding="async"
-        loading="lazy"
-      />
-      {/* </SimpleParallax> */}
-    </button>
+      <div
+        className={cardClasses}
+        onClick={() =>
+          onClick({
+            project,
+            company,
+            role,
+            logo,
+            projectUrl,
+            date,
+            info,
+            tech,
+          })
+        }
+      >
+        <img
+          src={image}
+          className={styles.image}
+          alt={imageAltText}
+          width={600}
+          height={600}
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
   );
 };
 export default Card;
