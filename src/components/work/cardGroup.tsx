@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 export interface CardGroupProps extends PopupInfo {
   image: string;
   imageAltText: string;
+  rate: number;
 }
 interface Props {
   cards: CardGroupProps[];
@@ -26,8 +27,9 @@ const CardGroup = ({ cards }: Props) => {
     <>
       {cards.map((card: CardGroupProps, index) => (
         <Card
-          key={card.project}
           {...card}
+          key={card.project}
+          rate={card.rate}
           onClick={(e) => [setOpen(true), setActiveCard(e satisfies PopupInfo)]}
           isActive={activeCard?.project === card.project}
         />

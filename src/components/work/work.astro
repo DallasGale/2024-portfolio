@@ -4,6 +4,21 @@ import CardGroup from "./cardGroup";
 import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 ---
 
+<script is:inline>
+  function workParallax() {
+    document.querySelectorAll(".parallax-scroll").forEach((item, index) => {
+      if (item.dataset.direction === "verticle") {
+        const pos = window.scrollY * item.dataset.rate;
+        item.style.transform = `translateY(${pos}px)`;
+      }
+    });
+  }
+
+  document.addEventListener("scroll", () => {
+    workParallax();
+  });
+</script>
+
 <section class="section" id="work">
   <SectionTitle title="Work" id="work-title" />
   <div class="container">
@@ -72,10 +87,11 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     display: grid;
     grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 800px;
+    gap: var(--space-8);
   }
 
-  @media screen and (min-width: $breakpoint-xxl) {
+  @media screen and (min-width: $breakpoint-xl) {
     .section {
       position: relative;
       grid-column: 1 / span all;
