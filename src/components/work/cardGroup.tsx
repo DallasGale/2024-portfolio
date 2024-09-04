@@ -47,7 +47,10 @@ const CardGroup = ({ cards }: Props) => {
             <>
               <div>
                 <div className="modal-text-row">
-                  <p className="modal-text">{activeCard.info}</p>
+                  <p
+                    className="modal-text"
+                    dangerouslySetInnerHTML={{ __html: `${activeCard?.info}` }}
+                  />
                 </div>
                 <div className="modal-text-row">
                   <h3 className="modal-text-strong">Role</h3>

@@ -59,7 +59,7 @@
     "image": "/images/screens/choose-tap.jpg",
     "imageAltText": "Choose Tap website",
     "role": "Frontend Developer",
-    "info": "Yarra Valley Water's Choose Tap campaign website promotes awareness about plastic bottle usage and provides information on locating free water refill stations across Australia.",
+    "info": "As a key contributor to <strong>Yarra Valley Water</strong>'s impactful <strong>Choose Tap</strong> campaign, I spearheaded the development of an innovative website aimed at raising public awareness about plastic bottle consumption and promoting sustainable hydration practices. <br /><br />This pivotal project, which marked my debut at <strong>Hardhat</strong>, showcased my ability to create engaging digital experiences that merge education with user interaction. <br /><br />The cornerstone of the website was an immersive, scroll-based landing page featuring dynamic infographics that captivated visitors while conveying crucial information about the environmental impact of single-use plastics. I ensured that complex data was presented in an easily digestible, visually appealing format that resonated with a diverse audience. <br /><br />The crown jewel of the site was the <strong>Tap Finder</strong> map, a powerful tool that I implemented using Google Maps API integration. This feature allowed users to effortlessly locate free water refill stations across Australia, effectively removing barriers to adopting more sustainable hydration habits.",
     "tech": [
       "react",
       "gatsby",
