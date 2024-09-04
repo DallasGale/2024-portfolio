@@ -67,7 +67,7 @@ import { Image } from "astro:assets";
     animation: smoke 25s ease-in-out infinite forwards;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 80px;
     pointer-events: none;
     object-fit: fill;
     display: flex;
@@ -101,6 +101,9 @@ import { Image } from "astro:assets";
     }
     .hero {
       font-size: var(--font-size-xxl);
+    }
+    .bgImage {
+      min-width: 2800px;
     }
   }
 </style>
