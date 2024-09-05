@@ -1,5 +1,25 @@
 [
   {
+    "project": "Gigabuddy",
+    "company": "Rarity Punks/Gigabuddy",
+    "logo": "/images/logos/gigabuddy.svg",
+    "projectUrl": "https://gigabuddy.com",
+    "date": "Mar 2024",
+    "image": "/images/screens/gigabuddy.jpg",
+    "imageAltText": "Gigabuddy website",
+    "info": "Info coming soon.",
+    "role": "Frontend Developer",
+    "tech": [
+      "react",
+      "next.js",
+      "firebase",
+      "firestore",
+      "mantine ui",
+      "framer motion"
+    ],
+    "rate": 0.0
+  },
+  {
     "project": "Databeast",
     "company": "Rarity Punks/Gigabuddy",
     "logo": "/images/logos/gigabuddy.svg",
@@ -20,10 +40,9 @@
       "mobx",
       "storybook",
       "chromatic",
-      "chart.js",
-      "vercel"
+      "chart.js"
     ],
-    "rate": 0.0
+    "rate": 0.08
   },
   {
     "project": "Dropbeast",
@@ -45,10 +64,9 @@
       "marqo",
       "mobx",
       "storybook",
-      "chromatic",
-      "vercel"
+      "chromatic"
     ],
-    "rate": 0.2
+    "rate": 0.18
   },
   {
     "project": "Choose Tap",
@@ -71,7 +89,7 @@
       "chromatic",
       "netlify"
     ],
-    "rate": 0.2
+    "rate": 0.24
   },
   {
     "project": "RMIT Open Day 2022",
@@ -107,10 +125,9 @@
       "sanity.io",
       "framer motion",
       "storybook",
-      "chromatic",
-      "vercel"
+      "chromatic"
     ],
-    "rate": -0.2
+    "rate": -0.1
   },
   {
     "project": "Ventia",
@@ -128,6 +145,23 @@
       "storybook",
       "chromatic"
     ],
-    "rate": 0.1
+    "rate": 0.07
+  },
+  {
+    "project": "CGU - ABN Resuce Campaign",
+    "company": "Prime Motive",
+    "logo": "/images/logos/prime-motive.svg",
+    "projectUrl": "https://themonkeys.com.au/work/abn-rescue",
+    "date": "Oct 2019 - Sep 2019",
+    "image": "/images/screens/cgu.jpg",
+    "imageAltText": "CGU - ABN Rescue campaign  website",
+    "role": "Frontend Developer",
+    "info": "In 2019, a staggering 424,144 Australian Business Numbers (ABNs) were deregistered, signaling a concerning trend in the Australian business landscape. <strong>CGU Insurance</strong>, a company with a long-standing commitment to supporting ambitious Australians, decided to take action.<br /><br />To reverse this alarming trend, <strong>Prime Motive</strong> engaged me to collaborate with their senior developer on a crucial front-end campaign site. This project was part of a larger, multi-faceted initiative dubbed  <strong>'ABN Rescue</strong>', aimed at reinvigorating Australia's entrepreneurial spirit. Working in collaboration with <strong>The Monkeys</strong>, a renowned creative agency handling television commercials (TVCs) and billboard campaigns, we embarked on a mission to rescue Australia's ambition and reignite its business landscape.<br /><br />My role as a front-end developer was pivotal in bringing the digital aspect of this campaign to life. Working closely with the senior <strong>Prime Motive</strong> developer, I contributed to crafting an engaging, responsive, and innovative website featuring a vertically scrolling animated UX that served as a central hub for information, resources, and support for struggling and aspiring business owners.<br /><br />The site featured intuitive navigation, ensuring that despite its innovative design, users could easily access the information they needed.",
+    "tech": [
+      "react",
+      "next.js",
+      "GSAP"
+    ],
+    "rate": 0.15
   }
 ]

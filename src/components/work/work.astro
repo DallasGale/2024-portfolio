@@ -4,21 +4,6 @@ import CardGroup from "./cardGroup";
 import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 ---
 
-<script is:inline>
-  function workParallax() {
-    document.querySelectorAll(".parallax-scroll").forEach((item, index) => {
-      if (item.dataset.direction === "verticle") {
-        const pos = window.scrollY * item.dataset.rate;
-        item.style.transform = `translateY(${pos}px)`;
-      }
-    });
-  }
-
-  document.addEventListener("scroll", () => {
-    workParallax();
-  });
-</script>
-
 <section class="section" id="work">
   <SectionTitle title="Work" id="work-title" />
   <div class="container">
@@ -41,18 +26,18 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     z-index: 3;
   }
   .container {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    overflow: hidden;
-    margin: auto;
+    display: block;
+    // min-height: 100vh;
+    // flex-direction: column;
+    // overflow: hidden;
+    // margin: auto;
     width: 100%;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: visible;
-    max-width: 588px;
-    padding-top: var(--space-7);
+    // max-width: 588px;
+    // padding-top: var(--space-7);
   }
   .title {
     top: 0;
@@ -87,7 +72,7 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     display: grid;
     grid-template-columns: repeat(2, calc(var(--grid-column) * 2.5));
     position: relative;
-    margin-bottom: 800px;
+    padding-bottom: 1020px;
     gap: var(--space-8);
   }
 
@@ -98,3 +83,42 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     }
   }
 </style>
+
+<script type="module">
+  function workParallax() {
+    document.querySelectorAll(".parallax-scroll").forEach((item) => {
+      if (item.dataset.direction === "verticle") {
+        const pos = window.scrollY * item.dataset.rate;
+        item.style.transform = `translateY(${pos}px)`;
+      }
+    });
+  }
+
+  document.addEventListener("scroll", () => {
+    workParallax();
+  });
+
+  const target2 = document.getElementById("work");
+  const title2 = document.getElementById("work-title");
+
+  const options2 = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+  };
+
+  const cb2 = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("Work section is visible");
+        title2.classList.add("visible");
+      } else {
+        console.log("Work section is not visible");
+        title2.classList.remove("visible");
+      }
+    });
+  };
+
+  const ob2 = new IntersectionObserver(cb2, options2);
+  ob2.observe(target2);
+</script>

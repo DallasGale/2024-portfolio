@@ -11,19 +11,20 @@ import Sidebar from "../components/sidebar/sidebar.astro";
 interface Props {
   title: string;
 }
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Dallas Gale - Frontend Developer & Digital Designer based in the Yarra Valley, Australia. Explore my portfolio of web development and design projects at dallasgale.dev."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Dallas Gale - Frontend Developer + Digital Designer</title>
   </head>
   <body>
     <Header />
@@ -254,7 +255,7 @@ const { title } = Astro.props;
   }
 </style>
 
-<script lang="ts">
+<!-- <script lang="ts">
   document.addEventListener("DOMContentLoaded", () => {
     const aboutTarget = document.getElementById("about");
     const aboutTitle = document.getElementById("about-title");
@@ -299,4 +300,4 @@ const { title } = Astro.props;
     const workObserver = new IntersectionObserver(workCallback, options);
     workObserver.observe(workTarget);
   });
-</script>
+</script> -->

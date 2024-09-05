@@ -145,3 +145,29 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     }
   }
 </style>
+
+<script type="module">
+  const target = document.getElementById("about");
+  const title = document.getElementById("about-title");
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
+
+  const cb = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("About section is visible");
+        title.classList.add("visible");
+      } else {
+        console.log("About section is not visible");
+        title.classList.remove("visible");
+      }
+    });
+  };
+
+  const ob = new IntersectionObserver(cb, options);
+  ob.observe(target);
+</script>
