@@ -7,7 +7,7 @@
     "date": "Mar 2024",
     "image": "/images/screens/gigabuddy.jpg",
     "imageAltText": "Gigabuddy website",
-    "info": "Info coming soon.",
+    "info": "I developed the marketing website for <strong>Gigabuddy</strong>, an innovative Slack bot designed to streamline the onboarding process for new team members. The site was crafted as a concise, impactful one-page design, focused on two primary objectives: capturing potential user interest through a 'Register Interest' feature and providing information for prospective investors. <br /><br />The landing page was meticulously designed to showcase Gigabuddy's key features and benefits, emphasizing how it revolutionizes team onboarding through Slack integration.",
     "role": "Frontend Developer",
     "tech": [
       "react",
