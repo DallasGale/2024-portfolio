@@ -4,12 +4,12 @@ import Bg from "../../images/smoke-footer.jpg";
 ---
 
 <footer>
-  <div class="mobile-message">
+  <!-- <div class="mobile-message">
     <p class="primary-text">
       Thanks for visiting my site!<br />The desktop version is a bit more fun,
       so check it out on a larger screen.
     </p>
-  </div>
+  </div> -->
   <h2>Say Hi!</h2>
 
   <div class="link-group">
@@ -34,8 +34,8 @@ import Bg from "../../images/smoke-footer.jpg";
   @import "../../scss/breakpoints.scss";
   footer {
     background-color: var(--color-bg);
-    position: absolute;
-    bottom: 80px;
+    position: relative;
+    bottom: auto;
     height: auto;
     width: 100%;
     text-align: center;
@@ -53,13 +53,6 @@ import Bg from "../../images/smoke-footer.jpg";
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
     z-index: 10;
-  }
-
-  .mobile-message {
-    display: flex;
-    padding: var(--space-5);
-    position: fixed;
-    top: 40vh;
   }
 
   .bgImage {
@@ -101,18 +94,12 @@ import Bg from "../../images/smoke-footer.jpg";
       display: flex;
     }
 
-    .mobile-message {
-      display: none;
-    }
-
     h2 {
       font-size: var(--font-size-xl);
     }
 
     footer {
       height: 700px;
-      position: relative;
-      bottom: auto;
       z-index: 0;
     }
   }

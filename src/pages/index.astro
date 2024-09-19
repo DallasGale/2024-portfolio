@@ -4,23 +4,23 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/hero/hero.astro";
 import About from "../components/about/about.astro";
 import Work from "../components/work/work.astro";
-import Footer from "../components/footer/footer.astro";
 ---
 
-<Layout title="Welcome to DallasGale.dev">
+<Layout
+  title="Dallas Gale | Frontend Developer & Designer | Yarra Valley Web Services | 📃 Home"
+>
   <main class="main">
     <Hero />
     <About />
     <Work />
   </main>
-  <Footer />
 </Layout>
 
 <style lang="scss">
   @import "../scss/breakpoints.scss";
   .main {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
     justify-content: center;
     gap: var(--grid-gap);
     color: white;
@@ -34,6 +34,7 @@ import Footer from "../components/footer/footer.astro";
   @media (min-width: $breakpoint-md) {
     .main {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
     }
   }
 </style>

@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Dallas Gale | Frontend Developer & Designer | Yarra Valley Web Services | 📃 Services"
+>
+  <main class="main">
+    <h1>Coming soon.</h1>
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+  .main {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
+    justify-content: center;
+    gap: var(--grid-gap);
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .main {
+      display: grid;
+    }
+  }
+</style>
