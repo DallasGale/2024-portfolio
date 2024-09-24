@@ -21,23 +21,17 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     position: relative;
     grid-column: 2 / span all;
     padding-top: var(--space-10);
-    max-width: 90vw;
+    max-width: 70vw;
     margin: auto;
     z-index: 3;
   }
   .container {
     display: block;
-    // min-height: 100vh;
-    // flex-direction: column;
-    // overflow: hidden;
-    // margin: auto;
     width: 100%;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: visible;
-    // max-width: 588px;
-    // padding-top: var(--space-7);
   }
   .title {
     top: 0;
@@ -76,10 +70,11 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     gap: var(--space-8);
   }
 
-  @media screen and (min-width: $breakpoint-xl) {
+  @media screen and (min-width: $breakpoint-xxl) {
     .section {
       position: relative;
       grid-column: 1 / span all;
+      max-width: 90vw;
     }
   }
 </style>

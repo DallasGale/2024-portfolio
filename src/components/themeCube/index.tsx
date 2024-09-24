@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { Switch } from "antd";
 import classnames from "classnames";
 import { motion } from "framer-motion";
 
@@ -31,10 +30,7 @@ const ThemeCube = () => {
   const toggleSwitch = () => setIsOn(!isOn);
 
   const faceStyle = (theme: ThemeProps) => ({
-    // opacity: isOn ? 1 : 0,
-    // border: `1px solid #000`,
     transform: `rotateX(${theme.rotateX}deg) rotateY(${theme.rotateY}deg) translateZ(50px)`,
-    // opacity: currentTheme === theme.name ? 1 : 0.7,
     color: currentTheme === theme.name ? theme.color : "rgba(144,144,144,0.2)",
     borderColor:
       currentTheme === theme.name ? theme.color : "rgba(144,144,144,0.2)",
@@ -48,8 +44,6 @@ const ThemeCube = () => {
     };
     setRotation(newRotation);
   };
-
-  const [checked, setChecked] = useState(false);
 
   const spring = {
     type: "spring",
