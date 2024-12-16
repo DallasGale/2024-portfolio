@@ -66,15 +66,10 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 
   .avatar {
     width: 160px;
-    margin-left: -150px;
     height: auto;
   }
   .section {
     padding-top: var(--space-8);
-    grid-column: 1 / span all;
-    display: grid;
-    grid-template-columns: repeat(5, 200px);
-    gap: 20px;
     min-height: 100vh;
     overflow: hidden;
     width: 100%;
@@ -93,7 +88,6 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
   .col-1 {
     position: relative;
     grid-column: 2 / span 1;
-    // padding-top: var(--space-6);
   }
   .col-2 {
     grid-column: 2 / span 2;
@@ -101,7 +95,6 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     padding: var(--space-5);
     background: color-mix(in srgb, var(--color-bg) 85%, transparent);
     border-radius: 20px;
-    // margin-top: var(--space-9);
   }
   .col-3 {
     grid-column: 4 / span 2;
@@ -118,6 +111,17 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
     color: var(--color-paragraph-strong);
   }
 
+  @media only screen and (min-width: $breakpoint-md) {
+    .avatar {
+      margin-left: -150px;
+    }
+    .section {
+      grid-column: 1 / span all;
+      display: grid;
+      grid-template-columns: repeat(5, 200px);
+      gap: 20px;
+    }
+  }
   @media only screen and (min-width: $breakpoint-xl) {
     .title {
       left: -232px;

@@ -185,9 +185,6 @@ interface Props {
     font-family: "Poppins", system-ui, sans-serif !important;
   }
 
-  /* main {
-    background: var(--color-bg);
-  } */
   h1,
   h2,
   h3,
@@ -304,50 +301,3 @@ interface Props {
     --header-logo: url(../images/dallas-black.png);
   }
 </style>
-
-<!-- <script lang="ts">
-  document.addEventListener("DOMContentLoaded", () => {
-    const aboutTarget = document.getElementById("about");
-    const aboutTitle = document.getElementById("about-title");
-    const workTarget = document.getElementById("work");
-    const workTitle = document.getElementById("work-title");
-
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3, // Changed to 0.1 for earlier detection
-    };
-
-    const aboutCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("About section is visible");
-          aboutTitle.classList.add("visible");
-          workTitle.classList.remove("visible");
-        } else {
-          console.log("About section is not visible");
-          aboutTitle.classList.remove("visible");
-        }
-      });
-    };
-
-    const aboutObserver = new IntersectionObserver(aboutCallback, options);
-    aboutObserver.observe(aboutTarget);
-
-    const workCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("Work section is visible");
-          workTitle.classList.add("visible");
-          aboutTitle.classList.remove("visible");
-        } else {
-          console.log("Work section is not visible");
-          workTitle.classList.remove("visible");
-        }
-      });
-    };
-
-    const workObserver = new IntersectionObserver(workCallback, options);
-    workObserver.observe(workTarget);
-  });
-</script> -->

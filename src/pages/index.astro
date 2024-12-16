@@ -11,7 +11,7 @@ import Footer from "../components/footer/footer.astro";
   <main class="main">
     <Hero />
     <About />
-    <Work />
+    <!-- <Work /> -->
   </main>
   <Footer />
 </Layout>
@@ -19,10 +19,10 @@ import Footer from "../components/footer/footer.astro";
 <style lang="scss">
   @import "../scss/breakpoints.scss";
   .main {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: var(--grid-gap);
+
     color: white;
     font-size: 20px;
     line-height: 1;
@@ -34,6 +34,8 @@ import Footer from "../components/footer/footer.astro";
   @media (min-width: $breakpoint-md) {
     .main {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
+      gap: var(--grid-gap);
     }
   }
 </style>

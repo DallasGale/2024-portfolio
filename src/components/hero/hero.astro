@@ -22,37 +22,39 @@ import { Image } from "astro:assets";
   });
 </script>
 <section class="section">
-  <div class="grid">
-    <h1 class="hero">
-      FRONT END DEVELOPER
-      <br /><div class="hero-line-2">+</div> DIGITAL
-      <br />DESIGNER
-    </h1>
-  </div>
-  <div id="hero-image" class="bgImageContainer">
-    <Image
-      src={Bg}
-      class="bgImage"
-      alt="descriptive text"
-      width={2000}
-      height={1333}
-      quality="max"
-      style="opacity: 0.4"
-    />
-  </div>
+  <h1 class="hero">
+    FRONT END DEVELOPER
+    <br /><div class="hero-line-2">+</div> DIGITAL
+    <br />DESIGNER
+  </h1>
 </section>
+<div id="hero-image" class="bgImageContainer">
+  <Image
+    src={Bg}
+    class="bgImage"
+    alt="descriptive text"
+    width={2000}
+    height={1333}
+    quality="max"
+    style="opacity: 0.4"
+  />
+</div>
 
 <style lang="scss">
   @import "../../scss/animations.scss";
   @import "../../scss/breakpoints.scss";
 
   .section {
-    grid-column: 2 / span 5;
+    grid-column: 1 / span 3;
     min-height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
     overflow: hidden;
+    position: relative;
+
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 140px;
   }
 
   .bgImageContainer {
@@ -88,6 +90,15 @@ import { Image } from "astro:assets";
     color: var(--color-title-stop);
     animation: fadeOut 80s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
       forwards;
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .section {
+      grid-column: 2 / span 5;
+      align-items: center;
+      margin-top: 0;
+      padding: 0;
+    }
   }
 
   @media only screen and (min-width: $breakpoint-xl) {
