@@ -1,0 +1,37 @@
+---
+import Ball from "@components/ball/index.astro";
+---
+
+<div class="container">
+  <Ball />
+  <div class="line"></div>
+</div>
+
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+  .container {
+    z-index: 10;
+    left: 0;
+    right: 0;
+    width: 31px;
+    margin-inline: auto;
+    height: 45dvh;
+    position: absolute;
+    bottom: 0;
+    @include respond-to(tablet-up) {
+      display: none;
+    }
+  }
+
+  .line {
+    width: 1px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    top: 0;
+    position: absolute;
+    background-color: var(--color-primary);
+    opacity: 0.2;
+  }
+</style>

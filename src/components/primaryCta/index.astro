@@ -1,0 +1,12 @@
+---
+import styles from "./styles.module.scss";
+
+import { type ButtonProps } from "./types";
+
+type Props = ButtonProps;
+const { label, onClick }: Props = Astro.props;
+---
+
+<button class={styles.button} onclick={onClick}>
+  {label}
+</button>

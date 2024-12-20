@@ -1,0 +1,58 @@
+---
+import PrimaryCta from "../primaryCta/index.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  id: number;
+  dotPoints: string[];
+}
+let { id, title, description, dotPoints }: Props = Astro.props;
+---
+
+<div id={`service-${id}`} class="service">
+  <div style="max-width: 80%;">
+    <h3 class="display3">{title}<span class="accent">.</span></h3>
+  </div>
+  <p class="paragraph" set:html={description} />
+  {
+    dotPoints.map((point, index) => (
+      <ul class="ul">
+        <li class="li paragraph">{point}</li>
+      </ul>
+    ))
+  }
+
+  <div class="cta-wrapper">
+    <PrimaryCta label="Steps involved" onClick={() => null} />
+  </div>
+</div>
+
+<style>
+  .service {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .cta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ul {
+    padding-left: 0;
+  }
+  .li {
+    position: relative;
+    list-style: none;
+    padding-left: 30px;
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "👉";
+      margin-right: var(--space-2);
+    }
+  }
+</style>

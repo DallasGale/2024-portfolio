@@ -3,13 +3,11 @@ import "@fontsource/poppins/300.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
-import "swiper/css";
 
 import "antd/dist/reset.css";
 
 import Header from "../components/header/header.astro";
-import Mood from "@components/mood";
-import Footer from "@components/footer/index.astro";
+import Sidebar from "../components/sidebar/sidebar.astro";
 interface Props {
   title: string;
 }
@@ -80,14 +78,12 @@ interface Props {
   </head>
   <body>
     <Header />
+    <Sidebar />
     <slot />
-    <Mood client:load />
-    <Footer />
   </body>
 </html>
 
 <style is:global lang="scss">
-  @import "../scss/typography.scss";
   @import "../scss/breakpoints.scss";
   :root {
     --font-weight-bold: 700;
@@ -136,28 +132,20 @@ interface Props {
     --grid-column-negative: -200px;
 
     --header-logo: url(../images/dallas-white.png);
-    --color-primary: #fff3bc;
-    --color-primary-text: #fff;
-    --color-primary-description-text: #cecece;
-    --color-primary-text-accent: var(--color-primary-accent);
-    --color-house-stroke: #fff;
-    --color-footer-icon: #fff;
-    --color-ball: #fff;
-    --color-hamburger: #fff;
+
     --color-nav: #fff;
-    --color-accent: #ff4cd2;
+    --color-accent: #a620aa;
     --color-accent-dark: #436e27;
-    --color-active: #ff4cd2;
-    --color-bg: rgb(22, 11, 28);
+    --color-active: #a620aa;
+    --color-bg: #1d172b;
     --color-title: #ffffff;
     --color-title-stop: #ffffff;
     --color-paragraph: #bababa;
     --color-paragraph-strong: #ffffff;
-
-    // --color-modal-title: #ffffff;
-    // --color-modal-link: var(--color-accent);
-    // --color-modal-paragraph: #bababa;
-    // --color-modal-paragraph-strong: #ffffff;
+    --color-modal-title: #ffffff;
+    --color-modal-link: var(--color-accent);
+    --color-modal-paragraph: #bababa;
+    --color-modal-paragraph-strong: #ffffff;
     --color-button-active-bg: #000000;
     --color-button: #ffffff;
     --color-button-text: #000000;
@@ -165,9 +153,9 @@ interface Props {
     --color-link: #ffffff;
     --color-toggle-on: #fff;
     --color-togglef: #000000;
-    // --color-modal-bg: #000000;
-    // --color-modal-content: #fff;
-    // --color-modal-border: #494949;
+    --color-modal-bg: #000000;
+    --color-modal-content: #fff;
+    --color-modal-border: #494949;
 
     --color-cube-instruction: #000;
 
@@ -211,107 +199,48 @@ interface Props {
     cursor: pointer;
   }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  .primary-text {
+    font-size: var(--font-7);
+    color: var(--color-paragraph);
+  }
+  .link {
+    color: var(--color-link);
+    font-weight: var(--font-weight-semibold);
   }
 
-  .svg-title {
-    width: auto;
-    height: 100px;
+  .modal-text,
+  .modal-text-strong {
+    color: var(--color-modal-paragraph);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-3);
+    font-family: "Poppins", system-ui, sans-serif !important;
+  }
+
+  @media only screen and (min-width: $breakpoint-xxl) {
+    .modal-text,
+    .modal-text-strong {
+      font-size: var(--font-5);
+    }
+  }
+  .modal-text-strong {
+    color: var(--color-modal-paragraph-strong);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .modal-text-row {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    @include respond-to(tablet-up) {
-      align-items: center;
-      height: auto;
-      width: 800px;
-      justify-content: flex-start;
-      padding-bottom: 100px;
-    }
-    @include respond-to(desktop-up) {
-      height: auto;
-      width: 1000px;
-    }
+    flex-direction: row;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
   }
-
-  .section-title {
-    // animation: float 35s infinite ease-in-out forwards;
-    opacity: 0.9;
-  }
-
-  .svg-icon {
-    &:hover {
-      path {
-        fill: var(--color-accent);
-      }
-    }
-  }
-
-  .section {
-    padding-bottom: 80px;
-  }
-
-  .content-bg {
-    padding: var(--space-5);
-    border-radius: var(--space-5);
-    // border: 1px solid var(--color-primary);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-    -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-    -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  }
-
-  // .primary-text {
-  //   font-size: var(--font-7);
-  //   color: var(--color-paragraph);
-  // }
-  // .link {
-  //   color: var(--color-link);
-  //   font-weight: var(--font-weight-semibold);
-  // }
-
-  // .modal-text,
-  // .modal-text-strong {
-  //   color: var(--color-modal-paragraph);
-  //   font-weight: var(--font-weight-regular);
-  //   font-size: var(--font-3);
-  //   font-family: "Poppins", system-ui, sans-serif !important;
-  // }
-
-  // @media only screen and (min-width: $breakpoint-xxl) {
-  //   .modal-text,
-  //   .modal-text-strong {
-  //     font-size: var(--font-5);
-  //   }
-  // }
-  // .modal-text-strong {
-  //   color: var(--color-modal-paragraph-strong);
-  //   font-weight: var(--font-weight-bold);
-  // }
-
-  // .modal-text-row {
-  //   display: flex;
-  //   flex-direction: row;
-  //   gap: var(--space-3);
-  //   margin-bottom: var(--space-3);
-  // }
   [data-theme="1"] {
-    --color-accent: #ff4cd2;
+    --color-accent: #a620aa;
     --color-title-stop: #ffffff;
     --color-bg: #1d172b;
     --color-cube-instruction: #fff;
     --color-button-text-active: #fff;
 
-    --color-modal-link: #ff4cd2;
+    --color-modal-link: #a620aa;
   }
   [data-theme="3"] {
     --color-accent: #aefc79;

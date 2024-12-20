@@ -1,0 +1,96 @@
+---
+import Title from "./title.astro";
+import Service from "./service.astro";
+import FloatingElement from "@components/floatingElement";
+---
+
+<section class="section">
+  <div class="sticky-container">
+    <div class="section-title">
+      <FloatingElement duration={60} client:load>
+        <Title />
+      </FloatingElement>
+    </div>
+    <h2 class="visually-hidden">Services</h2>
+  </div>
+  <div class="container content-bg">
+    <Service
+      id={1}
+      title="Web Design"
+      description="Like an architect, we plan out the look & feel. Think of it like building a custom home - every element is thoughtfully designed around how you want to welcome and guide your visitors.<br /><br />From the first impression to the final interaction, I create an experience that's uniquely yours. "
+      dotPoints={[
+        "A website that stands out from your competitors",
+        "Design that captures the essence of your brand ",
+        "User experience",
+        "Thoughtful user experiences that guide visitors",
+      ]}
+    />
+    <Service
+      id={1}
+      title="Web Development"
+      description="Building your website with rock-solid foundations and modern technology that's made to last. Just like quality construction, great websites need the right materials and expert craftsmanship. <br /><br />Your visitors experience instant page loads and seamless navigation, thanks to modern building techniques that prepare everything in advance. Paired with premium hosting through Vercel, your site delivers the kind of performance usually reserved for major tech companies. <br /><br />Every site is built with accessibility in mind - ensuring your content is available to everyone, regardless of how they browse the web. From keyboard navigation to screen reader compatibility, your site welcomes all visitors. "
+      dotPoints={[
+        "A website that feels instant and responsive",
+        "Compliance with web accessibility standards",
+        "Professional, reliable hosting",
+        "Superior visitor experience",
+      ]}
+    />
+    <Service
+      id={1}
+      title="Content Management"
+      description="Instead of overwhelming you with complex systems and features you'll never use, I provide a clean, simple way to update your content. No technical expertise required. Using modern tools like Sanity.io gives you: "
+      dotPoints={[
+        "A simple but endlessly customisable  dashboard built exactly for your needs",
+        "Freedom to update content from any device",
+        "No more wrestling with  complicated plugins or features",
+      ]}
+    />
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+  .section {
+    margin-bottom: var(--space-9);
+    position: relative;
+    margin-inline: auto;
+    padding: 0 33px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-inline: auto;
+    max-width: 600px;
+    position: relative;
+    @include respond-to(tablet-up) {
+      max-width: 1440px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 5%;
+    }
+    @include respond-to(widescreen-up) {
+      grid-template-columns: 410px 410px 410px;
+      gap: auto;
+    }
+  }
+
+  .sticky-container {
+    position: sticky;
+    top: 100px;
+    height: auto;
+    max-width: 600px;
+    margin-inline: auto;
+    // z-index: 0;
+
+    @include respond-to(tablet-up) {
+      margin-inline: 0;
+      max-width: 100%;
+    }
+  }
+</style>

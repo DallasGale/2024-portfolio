@@ -1,0 +1,43 @@
+---
+import Title from "./title.astro";
+import Parallax from "./parallax";
+import FloatingElement from "@components/floatingElement";
+---
+
+<section id="process-section" class="section">
+  <div class="sticky-container">
+    <div class="section-title">
+      <FloatingElement duration={60} client:load>
+        <Title />
+      </FloatingElement>
+    </div>
+    <h2 class="visually-hidden">Process</h2>
+    <Parallax client:load />
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+  .section {
+    height: 4000px;
+    position: relative;
+    // max-width: 600px;
+    margin-inline: auto;
+    @include respond-to(tablet-up) {
+      // height: auto;
+      // max-width: 1440px;
+    }
+  }
+
+  .title {
+    position: sticky;
+    top: 90px;
+    height: 80px;
+  }
+
+  .sticky-container {
+    position: sticky;
+    top: 100px;
+    height: 1000px;
+  }
+</style>

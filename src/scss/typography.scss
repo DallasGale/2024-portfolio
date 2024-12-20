@@ -1,0 +1,97 @@
+@import "./breakpoints.scss";
+.heroDisplay {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 90%;
+  color: transparent;
+  text-shadow:
+    2px 2px 0 var(--color-primary),
+    -2px 2px 0 var(--color-primary),
+    -2px -2px 0 var(--color-primary),
+    2px -2px 0 var(--color-primary);
+  // -webkit-text-stroke
+  &.top {
+    z-index: 4;
+    grid-area: heroDisplay;
+  }
+  &.middle1 {
+    z-index: 3;
+    grid-area: heroDisplay;
+    filter: blur(1px);
+  }
+  &.middle2 {
+    z-index: 2;
+    grid-area: heroDisplay;
+    filter: blur(5px);
+  }
+  &.bottom {
+    z-index: 1;
+    grid-area: heroDisplay;
+    filter: blur(15px);
+  }
+}
+
+.display2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-primary-text);
+  @include respond-to(tablet-up) {
+    font-size: 34px;
+  }
+}
+
+.display3 {
+  font-weight: 700;
+  color: var(--color-primary-text);
+  line-height: 100%;
+  font-size: 28px;
+  @include respond-to(tablet-up) {
+    font-size: 38px;
+  }
+}
+.display4 {
+  font-weight: 700;
+  color: var(--color-primary-text);
+  line-height: 90%;
+  font-size: 42px;
+  @include respond-to(tablet-up) {
+    font-size: 79px;
+  }
+}
+.display5 {
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 90%;
+  font-size: 14px;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--color-primary-text);
+
+  // @include respond-to(tablet-up) {
+  //   font-size: 14px;
+  // }
+}
+
+.paragraph2 {
+  font-size: 16px;
+  line-height: 190%;
+  color: var(--color-primary-description-text);
+
+  // @include respond-to(tablet-up) {
+  //   font-size: 16px;
+  // }
+}
+
+.small-text {
+  font-size: 12px;
+  color: var(--color-primary-text);
+  font-weight: 600;
+}

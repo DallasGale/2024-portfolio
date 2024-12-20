@@ -1,39 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Hero from "../components/hero/hero.astro";
-import About from "../components/about/about.astro";
-import Work from "../components/work/work.astro";
-import Footer from "../components/footer/footer.astro";
+import Hero from "../components/hero/index.astro";
+import Intro from "../components/intro/index.astro";
+import Projects from "../components/projects/index.astro";
+import Process from "../components/process/index.astro";
+import Services from "../components/services/index.astro";
+import Enquire from "../components/enquire/index.astro";
 ---
 
 <Layout title="Welcome to DallasGale.dev">
   <main class="main">
     <Hero />
-    <About />
-    <Work />
+    <Intro />
+    <Projects />
+    <Services />
+    <Process />
+    <Enquire />
   </main>
-  <Footer />
 </Layout>
 
 <style lang="scss">
   @import "../scss/breakpoints.scss";
   .main {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(var(--grid-column), 1fr));
-    justify-content: center;
-    gap: var(--grid-gap);
-    color: white;
-    font-size: 20px;
-    line-height: 1;
-    width: 100%;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  @media (min-width: $breakpoint-md) {
-    .main {
-      display: grid;
-    }
+    box-sizing: border-box;
   }
 </style>

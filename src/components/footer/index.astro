@@ -1,0 +1,185 @@
+---
+import Logo from "@components/logo/index.astro";
+import GithubIcon from "@components/icons/github.astro";
+import LinkedInIcon from "@components/icons/linkedin.astro";
+import SignatureWhite from "@images/dallas-white.png";
+---
+
+<section class="section">
+  <footer class="footer">
+    <div class="container">
+      <!-- head -->
+
+      <div class="column head">
+        <Logo />
+        <div class="icons">
+          <a
+            href="https://github.com/DallasGale"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon />
+          </a>
+        </div>
+      </div>
+
+      <!-- mid -->
+
+      <div class="column middle">
+        <div class="list-wrapper">
+          <h4 class="display5">Projects</h4>
+          <ul class="list">
+            <li class="list-item">
+              <a class="link" href="">The Kayo Callup</a>
+            </li>
+            <li><a class="link" href="">Regulate It</a></li>
+            <li><a class="link" href="">Open Universities Australia</a></li>
+            <li><a class="link" href="">Yarra Valley Choose Tap</a></li>
+            <li><a class="link" href="">DataBeast</a></li>
+            <li><a class="link" href="">Caravan Cleaning Melbourne</a></li>
+          </ul>
+        </div>
+
+        <div class="list-wrapper">
+          <h4 class="display5">Services</h4>
+          <ul class="list">
+            <li><a class="link" href="">Web Design</a></li>
+            <li><a class="link" href="">Web Development</a></li>
+            <li><a class="link" href="">Content Management</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- bottom -->
+
+      <div class="column bottom">
+        <ul class="list">
+          <li>
+            <p class="small-text">
+              &copy; 2021 Dallas Gale. All rights reserved.
+            </p>
+          </li>
+          <li>
+            <p class="small-text">ABN : 26 985 063 007</p>
+          </li>
+          <li>
+            <p class="small-text">Yarra Valley, Australia</p>
+          </li>
+          <li>
+            <a class="link" href="tel:+61409235082">+61 409 235 082</a>
+          </li>
+          <li>
+            <a class="link" href="mailto:hello@dallasgale.com"
+              >hello@dallasgale.com</a
+            >
+          </li>
+        </ul>
+        <img
+          src={SignatureWhite.src}
+          alt="Dallas"
+          class="signature"
+          width="100"
+        />
+      </div>
+    </div>
+  </footer>
+</section>
+
+<style lang="scss">
+  @import "../../scss/breakpoints.scss";
+  .section {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: relative;
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+    margin-inline: auto;
+    @include respond-to(tablet-up) {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      max-width: 1132px;
+    }
+  }
+
+  .column {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+    position: relative;
+  }
+
+  .head {
+    align-items: center;
+    border-bottom: 1px solid var(--color-primary-text);
+  }
+  .middle {
+    align-items: flex-start;
+    gap: var(--space-5);
+    border-bottom: 1px solid var(--color-primary-text);
+    flex-direction: column;
+    @include respond-to(tablet-up) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+    .list {
+      @include respond-to(tablet-up) {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+  }
+  .list {
+    display: flex;
+    gap: var(--space-2);
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .list-wrapper {
+    display: flex;
+    gap: var(--space-2);
+    flex-direction: column;
+  }
+  .link {
+    color: var(--color-primary-text);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-accent);
+    }
+  }
+
+  .small-text {
+    color: rgb(186, 186, 186);
+  }
+
+  .signature {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+</style>

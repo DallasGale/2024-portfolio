@@ -1,0 +1,42 @@
+---
+import Form from "../form";
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="display4">
+      Let’s turn your house into a home<span class="accent">.</span>
+    </h2>
+  </div>
+
+  <Form client:load />
+</section>
+
+<style lang="scss">
+  @import "../../scss/animations.scss";
+  @import "../../scss/breakpoints.scss";
+  .section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding-top: var(--space-6);
+    z-index: 3;
+    text-align: center;
+    background-color: var(--color-bg);
+    @include respond-to(phone-up) {
+      background-color: transparent;
+    }
+  }
+
+  .container {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+    @include respond-to(tablet-up) {
+      max-width: 667px;
+      margin-inline: auto;
+    }
+  }
+</style>
