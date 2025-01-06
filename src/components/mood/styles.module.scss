@@ -1,18 +1,16 @@
 .moodContainer {
   position: fixed;
-  bottom: 0;
+  bottom: 40px;
   height: 60px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  left: 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: auto;
   right: 0;
-  z-index: 10;
-  background-color: var(--color-bg);
-  box-shadow: 1px -8px 45px 0px var(--color-bg);
-  -webkit-box-shadow: 1px -8px 45px 0px var(--color-bg);
-  -moz-box-shadow: 1px -8px 45px 0px var(--color-bg);
+  padding-right: 60px;
+  max-width: 1600px;
+  width: 100%;
+  margin-inline: auto;
 }
 .moodToggler {
   background: none;
@@ -23,39 +21,51 @@
   position: relative;
   box-sizing: border-box;
   transition: all 0.15s ease-in-out;
+  cursor: pointer;
+
   &:hover {
     transition: all 0.15s ease-in-out;
-    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    .toggle {
+      background-color: var(--color-primary);
+    }
   }
 
-  &:after {
-    content: "mood";
+  span {
     font-weight: 400;
     position: absolute;
     color: var(--color-primary-text);
     font-size: 12px;
     right: 9px;
     top: 4px;
-  }
-
-  .toggle {
-    width: 20px;
-    height: 20px;
-    border-radius: 48px;
-    background-color: var(--color-accent);
-    position: absolute;
-    left: 0;
-    top: 2px;
-    border: 1px solid var(--color-bg);
-    box-sizing: border-box;
+    &.on {
+      right: auto;
+      left: 8px;
+    }
   }
 }
 
-.on {
-  transform: translateX(52px);
-  transition: all 0.15s ease-in-out;
+.toggle {
+  width: 20px;
+  height: 20px;
+  border-radius: 48px;
+  background-color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  border: 1px solid var(--color-bg);
+  box-sizing: border-box;
+  transform: translateX(2px) translateY(-5px);
+  &.on {
+    transform: translateX(75px) translateY(-5px);
+    transition: all 0.15s ease-in-out;
+  }
+  &.off {
+    transform: translateX(2px) translateY(-5px);
+    transition: all 0.15s ease-in-out;
+  }
 }
-.off {
-  transform: translateX(2px);
-  transition: all 0.15s ease-in-out;
+
+.moodMenu {
+  left: 90px;
 }

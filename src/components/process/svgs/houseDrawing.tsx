@@ -16,10 +16,10 @@ const HouseDrawing = ({ transition, opacity, activeSection }: Props) => {
         initial={{ pathLength: 0 }}
         animate={{ pathLength: animate }}
         transition={transition}
+        opacity={opacity}
         d="M153.052 408.931L273.88 478.691L394.614 409.014L273.785 339.253L153.052 408.931Z"
         stroke="var(--color-primary-text)"
         stroke-width="2"
-        opacity={opacity}
       />
       <motion.path
         initial={{ pathLength: 0 }}

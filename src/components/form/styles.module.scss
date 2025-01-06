@@ -5,7 +5,7 @@
   padding: var(--space-5);
   @include respond-to(phone-up) {
     background-color: transparent;
-    max-width: 1012px;
+    max-width: 1000px;
     margin-inline: auto;
   }
 }
@@ -19,25 +19,27 @@
 }
 
 .fieldset {
-  @include respond-to(tablet-up) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-  }
+  // @include respond-to(tablet-up) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  width: 100%;
+  // grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  // }
 }
 
 .label {
   font-size: 18px;
   font-weight: 700;
   color: var(--color-primary-text);
-  padding-left: 10px;
 }
 
 .input,
 .select {
   color: var(--color-primary-text);
   width: 100%;
-  height: 40px;
+  height: 60px;
   border: 0;
   padding-left: 10px;
   background-color: transparent;
@@ -49,6 +51,10 @@
     border-bottom: 2px solid var(--color-accent);
     outline: 2px;
   }
+}
+
+.input {
+  background: var(--color-bg);
 }
 
 .select {
@@ -94,4 +100,17 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+}
+
+.formGroupTwo {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  width: 100%;
+  width: 100%;
+}
+
+.textarea {
+  height: 300px;
 }

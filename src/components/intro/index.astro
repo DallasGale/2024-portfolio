@@ -2,9 +2,26 @@
 import SignatureWhite from "@images/dallas-white.png";
 ---
 
-<section class="container">
+<script type="module">
+  function workParallax() {
+    const el = document.querySelector(".parallax-scroll");
+    const pos = window.scrollY * -0.4;
+    el.style.transform = `translateY(${pos}px)`;
+  }
+
+  document.addEventListener("scroll", () => {
+    workParallax();
+  });
+</script>
+
+<section id="intro" class="container parallax-scroll">
   <div class="text-wrap">
-    <h2 class="display2 one">
+    <h2 class="display4">
+      👋 I'm Dallas Gale,<br />Yarra Valley-based <span>digital craftsman</span
+      >, transforming visions into exceptional web experiences.
+      <!-- <img src={SignatureWhite.src} alt="Dallas" class="signature" /> -->
+
+      <!-- <h2 class="display2">
       Based in the Yarra Valley, Australia, I bring over a decade of experience
       crafting digital experiences at <span>leading agencies</span>, <span
         >ABC News</span
@@ -12,6 +29,33 @@ import SignatureWhite from "@images/dallas-white.png";
       and through <span>freelance projects</span>, I now offer specialised web
       design and development services to turn your vision into reality.
       <img src={SignatureWhite.src} alt="Dallas" class="signature" />
+    </h2> -->
+
+      <!-- <h2 class="display2">
+      Hey there!👋 I'm Dallas Gale, a digital craftsman nestled in the beautiful
+      Yarra Valley. I bring over a decade of experience crafting digital
+      experiences at <span>leading agencies</span>, <span>ABC News</span>, <span
+        >innovative startups</span
+      >
+      and through <span>freelance projects</span>, I now offer specialised web
+      design and development services to turn your vision into reality.
+      <img src={SignatureWhite.src} alt="Dallas" class="signature" />
+    </h2> -->
+
+      <!-- <h2 class="display2">
+      From bringing stories to life at <span>ABC News</span> to cooking up innovative
+      solutions with <a href="">cutting-edge agencies</a> and <a href=""
+        >bold startups</a
+      >, I've spent the last decade turning wild ideas into stunning digital
+      experiences.
+    </h2>
+
+    <h2 class="display2">
+      When I'm not <span>freelancing on exciting projects</span>, you'll find me
+      crafting pixel-perfect websites that make your vision shine brighter than
+      a Valley sunset.
+      <img src={SignatureWhite.src} alt="Dallas" class="signature" />
+    </h2> -->
     </h2>
   </div>
 
@@ -24,28 +68,29 @@ import SignatureWhite from "@images/dallas-white.png";
       margin-bottom: var(--space-9);
       padding: var(--space-5);
       margin-inline: auto;
-      height: 100vh;
+      height: 50vh;
       @include respond-to(tablet-up) {
-        max-width: 950px;
+        max-width: 1440px;
+        display: flex;
+        align-items: center;
       }
     }
 
     .text-wrap {
-      position: sticky;
-      top: 30%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 940px;
+      margin-inline: auto;
+      // top: 30%;
     }
     h2 {
       text-align: center;
-      // &.one {
-      //   animation: float 86s infinite ease-in-out forwards;
-      // }
-      // &.two {
-      //   animation: float 46s infinite ease-in-out forwards;
-      // }
     }
     span {
-      font-weight: 600;
-      color: var(--color-primary);
+      // font-weight: 600;
+      color: var(--color-accent);
     }
 
     .signature {
@@ -55,8 +100,6 @@ import SignatureWhite from "@images/dallas-white.png";
       @include respond-to(tablet-up) {
         width: 180px;
         bottom: -100px;
-        // left: var(--space-7);
-        // right: auto;
       }
     }
   </style>

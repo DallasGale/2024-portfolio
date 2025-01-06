@@ -4,17 +4,22 @@ import Parallax from "./parallax";
 import FloatingElement from "@components/floatingElement";
 ---
 
-<section id="process-section" class="section">
-  <div class="sticky-container">
-    <div class="section-title">
-      <FloatingElement duration={60} client:load>
-        <Title />
-      </FloatingElement>
-    </div>
-    <h2 class="visually-hidden">Process</h2>
-    <Parallax client:load />
+<section id="process" class="section">
+  <div class="title-container" id="process-title">
+    <FloatingElement duration={4} client:load>
+      <Title />
+    </FloatingElement>
+    <h2 class="visually-hidden">Projects</h2>
   </div>
+  <Parallax client:load />
 </section>
+
+<script>
+  import { ToggleTitle } from "../../utils/toggleTitle";
+  document.addEventListener("DOMContentLoaded", () => {
+    new ToggleTitle("process", "process-title");
+  });
+</script>
 
 <style lang="scss">
   @import "../../scss/breakpoints.scss";
@@ -33,11 +38,5 @@ import FloatingElement from "@components/floatingElement";
     position: sticky;
     top: 90px;
     height: 80px;
-  }
-
-  .sticky-container {
-    position: sticky;
-    top: 100px;
-    height: 1000px;
   }
 </style>

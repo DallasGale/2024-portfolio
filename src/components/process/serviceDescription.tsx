@@ -19,7 +19,7 @@ const ServiceDescription = forwardRef(
       <div
         ref={ref}
         id={`process-${id}`}
-        className={`${styles.process} ${active ? styles.active : styles.inactive}`}
+        className={` content-bg ${styles.process} ${active ? styles.active : styles.inactive} `}
       >
         <h3 className="display3">
           {title}

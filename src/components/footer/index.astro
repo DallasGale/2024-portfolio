@@ -1,5 +1,5 @@
 ---
-import Logo from "@components/logo/index.astro";
+import Logo from "@components/logo/badge/index.astro";
 import GithubIcon from "@components/icons/github.astro";
 import LinkedInIcon from "@components/icons/linkedin.astro";
 import SignatureWhite from "@images/dallas-white.png";
@@ -11,7 +11,9 @@ import SignatureWhite from "@images/dallas-white.png";
       <!-- head -->
 
       <div class="column head">
-        <Logo />
+        <div class="logo-container">
+          <Logo />
+        </div>
         <div class="icons">
           <a
             href="https://github.com/DallasGale"
@@ -106,6 +108,10 @@ import SignatureWhite from "@images/dallas-white.png";
       -webkit-backdrop-filter: none;
       max-width: 1132px;
     }
+  }
+
+  .logo-container {
+    width: 50px;
   }
 
   .column {

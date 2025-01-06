@@ -1,16 +1,15 @@
 import styles from "./styles.module.scss";
+import type { InputTypes } from "./types";
 
-interface InputProps {
-  label: string;
-  placeholder?: string;
-}
-const Input = ({ label, placeholder }: InputProps) => {
+const Input = ({ label, placeholder, value, setValue }: InputTypes) => {
   return (
     <div className={styles.inputContainer}>
       <label className={styles.label} htmlFor={label}>
         {label}
       </label>
       <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         name="name"
         className={styles.input}
         type="text"

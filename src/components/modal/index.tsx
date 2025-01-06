@@ -4,7 +4,7 @@ import Draggable, {
   type DraggableData,
   type DraggableEvent,
 } from "react-draggable";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   logo: string;
@@ -17,7 +17,6 @@ interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
-
 const DraggableModal = ({
   logo,
   title,

@@ -1,9 +1,16 @@
 .button {
   background-color: var(--color-primary);
   height: 50px;
+  border: 2px solid transparent;
   border-radius: 80px;
   min-width: 200px;
   font-weight: 600;
   font-size: 16px;
-  border: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: var(--color-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
 }

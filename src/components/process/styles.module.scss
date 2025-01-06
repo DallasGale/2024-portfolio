@@ -7,10 +7,10 @@
   transition: opacity 0.5s ease;
   position: absolute;
   width: 100%;
-  padding: 0 var(--space-5);
+  padding: var(--space-5);
   z-index: 1;
   @include respond-to(phone-up) {
-    padding: 0;
+    // padding: 0;
   }
   @include respond-to(tablet-up) {
     /* height: 2000px; */
@@ -40,17 +40,20 @@
     max-width: 1440px;
     margin-inline: auto;
   }
+  @include respond-to(desktop-up) {
+    padding-top: 20vh;
+  }
 }
 
 .stepWrapper {
   // animation: float 35s infinite ease-in-out forwards;
-  position: absolute;
+  position: fixed;
   top: 220px;
-  width: 100%;
+  width: 50vw;
   height: auto;
   z-index: 0;
   @include respond-to(tablet-up) {
-    right: -20%;
+    right: 0vw;
     top: 0px;
   }
 
@@ -61,4 +64,11 @@
 
 .accent {
   color: var(--color-accent);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 100px;
+  height: 1000px;
+  width: 100vw;
 }

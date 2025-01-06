@@ -9,8 +9,10 @@ import MobileMenu from "@components/mobileMenu";
 
 <header class="header">
   <div class="content">
-    <Logo />
-    <span style="visibility: hidden">Dallas Gale. creative</span>
+    <div class="logo-container">
+      <Logo />
+      <span class="visually-hidden">Dallas Gale. creative</span>
+    </div>
     <!-- <ThemeCube client:load /> -->
     <MobileMenu client:load />
   </div>
@@ -20,20 +22,20 @@ import MobileMenu from "@components/mobileMenu";
   @import "../../scss/breakpoints.scss";
   .header {
     position: fixed;
-
-    padding: var(--space-5);
+    max-width: 1600px;
+    margin-inline: auto;
+    // padding: var(--space-5);
     z-index: 20;
     height: 110px;
+    top: 30px;
     width: 100%;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    @include respond-to(phone-up) {
-      // backdrop-filter: none;
-      // -webkit-backdrop-filter: none;
-    }
+    height: auto;
+    left: 0;
+    right: 0;
+    padding: 0 var(--space-5);
+
     @include respond-to(desktop-up) {
-      left: 0;
-      right: 0;
+      max-width: 95vw;
     }
   }
 
@@ -42,8 +44,15 @@ import MobileMenu from "@components/mobileMenu";
     align-items: flex-start;
     justify-content: space-between;
     @include respond-to(desktop-up) {
-      max-width: 1400px;
+      max-width: 98vw;
       margin-inline: auto;
     }
+  }
+
+  .logo-container {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    width: 180px;
   }
 </style>

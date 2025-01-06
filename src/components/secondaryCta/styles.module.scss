@@ -1,0 +1,17 @@
+.button {
+  background-color: var(--color-bg);
+  color: var(--color-primary-text);
+  height: 50px;
+  border: 2px solid var(--color-accent);
+  border-radius: 80px;
+  min-width: 200px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-bg);
+  }
+}

@@ -7,6 +7,9 @@ import Projects from "../components/projects/index.astro";
 import Process from "../components/process/index.astro";
 import Services from "../components/services/index.astro";
 import Enquire from "../components/enquire/index.astro";
+import FloatingElement from "@components/floatingElement";
+import Title from "@components/projects/title.astro";
+import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 ---
 
 <Layout title="Welcome to DallasGale.dev">
@@ -24,5 +27,19 @@ import Enquire from "../components/enquire/index.astro";
   @import "../scss/breakpoints.scss";
   .main {
     box-sizing: border-box;
+  }
+
+  .sticky-container {
+    position: sticky;
+    top: 100px;
+    height: auto;
+    max-width: 600px;
+    margin-inline: auto;
+    z-index: 0;
+
+    @include respond-to(tablet-up) {
+      margin-inline: 0;
+      max-width: 100%;
+    }
   }
 </style>

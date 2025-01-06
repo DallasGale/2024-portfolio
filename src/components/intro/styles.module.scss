@@ -2,25 +2,27 @@
 
 .container {
   z-index: 2;
-  margin-bottom: var(--space-9);
+  // margin-bottom: var(--space-9);
   padding: var(--space-5);
   margin-inline: auto;
   position: sticky;
   top: 20%;
-  height: 150vh;
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
 
   @include respond-to(tablet-up) {
-    max-width: 950px;
+    max-width: 1440px;
   }
 }
 
 .word {
   display: inline-block;
-  white-space: pre; // Preserves spacing between words
 }
 
 .highlight {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-accent);
 }
 

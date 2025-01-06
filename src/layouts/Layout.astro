@@ -10,10 +10,19 @@ import "antd/dist/reset.css";
 import Header from "@components/header/header.astro";
 import Mood from "@components/mood";
 import Footer from "@components/footer/index.astro";
+
 interface Props {
   title: string;
 }
+const themes = {
+  "#252525": "theme-dark",
+  "#DDD": "theme-light",
+  "#415A77": "theme-blue",
+  "#FCBA28": "theme-yellow",
+};
 ---
+
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 <script type="application/ld+json">
   {
@@ -89,6 +98,7 @@ interface Props {
 <style is:global lang="scss">
   @import "../scss/typography.scss";
   @import "../scss/breakpoints.scss";
+
   :root {
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
@@ -154,10 +164,10 @@ interface Props {
     --color-paragraph: #bababa;
     --color-paragraph-strong: #ffffff;
 
-    // --color-modal-title: #ffffff;
-    // --color-modal-link: var(--color-accent);
-    // --color-modal-paragraph: #bababa;
-    // --color-modal-paragraph-strong: #ffffff;
+    --color-modal-title: #ffffff;
+    --color-modal-link: var(--color-accent);
+    --color-modal-paragraph: #bababa;
+    --color-modal-paragraph-strong: #ffffff;
     --color-button-active-bg: #000000;
     --color-button: #ffffff;
     --color-button-text: #000000;
@@ -165,9 +175,9 @@ interface Props {
     --color-link: #ffffff;
     --color-toggle-on: #fff;
     --color-togglef: #000000;
-    // --color-modal-bg: #000000;
-    // --color-modal-content: #fff;
-    // --color-modal-border: #494949;
+    --color-modal-bg: #000000;
+    --color-modal-content: #fff;
+    --color-modal-border: #494949;
 
     --color-cube-instruction: #000;
 
@@ -238,6 +248,9 @@ interface Props {
     }
     @include respond-to(desktop-up) {
       height: auto;
+      width: 40vw;
+    }
+    @include respond-to(widescreen-up) {
       width: 1000px;
     }
   }
@@ -245,6 +258,23 @@ interface Props {
   .section-title {
     // animation: float 35s infinite ease-in-out forwards;
     opacity: 0.9;
+    position: absolute;
+  }
+
+  .title-container {
+    position: fixed;
+    top: 150px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+    &.visible {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+      z-index: 0;
+    }
+    @include respond-to(desktop-up) {
+      left: 80px;
+    }
   }
 
   .svg-icon {
@@ -261,7 +291,7 @@ interface Props {
 
   .content-bg {
     padding: var(--space-5);
-    border-radius: var(--space-5);
+    border-radius: var(--space-3);
     // border: 1px solid var(--color-primary);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

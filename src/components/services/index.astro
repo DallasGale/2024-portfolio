@@ -4,13 +4,11 @@ import Service from "./service.astro";
 import FloatingElement from "@components/floatingElement";
 ---
 
-<section class="section">
-  <div class="sticky-container">
-    <div class="section-title">
-      <FloatingElement duration={60} client:load>
-        <Title />
-      </FloatingElement>
-    </div>
+<section class="section" id="services">
+  <div class="title-container" id="services-title">
+    <FloatingElement duration={4} client:load>
+      <Title />
+    </FloatingElement>
     <h2 class="visually-hidden">Services</h2>
   </div>
   <div class="container content-bg">
@@ -28,7 +26,7 @@ import FloatingElement from "@components/floatingElement";
     <Service
       id={1}
       title="Web Development"
-      description="Building your website with rock-solid foundations and modern technology that's made to last. Just like quality construction, great websites need the right materials and expert craftsmanship. <br /><br />Your visitors experience instant page loads and seamless navigation, thanks to modern building techniques that prepare everything in advance. Paired with premium hosting through Vercel, your site delivers the kind of performance usually reserved for major tech companies. <br /><br />Every site is built with accessibility in mind - ensuring your content is available to everyone, regardless of how they browse the web. From keyboard navigation to screen reader compatibility, your site welcomes all visitors. "
+      description="Building your website with rock-solid foundations and modern technology that's made to last. Just like quality construction, great websites need the right materials and expert craftsmanship. <br /><br />Your visitors experience instant page loads and seamless navigation, thanks to modern building techniques that prepare everything in advance. Paired with premium hosting through Vercel, your site delivers the kind of performance usually reserved for major tech companies. <br /><br />Every site is built with accessibility in mind - ensuring your content is available to everyone, regardless of how they browse the web. From keyboard navigation to screen reader compatibility, your site welcomes all visitors.<br /><br /><a href=''>Already invested in Shopify or Wix?</a> "
       dotPoints={[
         "A website that feels instant and responsive",
         "Compliance with web accessibility standards",
@@ -49,6 +47,12 @@ import FloatingElement from "@components/floatingElement";
   </div>
 </section>
 
+<script>
+  import { ToggleTitle } from "../../utils/toggleTitle";
+  document.addEventListener("DOMContentLoaded", () => {
+    new ToggleTitle("services", "services-title");
+  });
+</script>
 <style lang="scss">
   @import "../../scss/breakpoints.scss";
   .section {
@@ -73,6 +77,10 @@ import FloatingElement from "@components/floatingElement";
       flex-direction: row;
       justify-content: space-between;
       gap: 5%;
+      margin-top: 20vh;
+    }
+    @include respond-to(desktop-up) {
+      margin-top: 20vh;
     }
     @include respond-to(widescreen-up) {
       grid-template-columns: 410px 410px 410px;
@@ -92,5 +100,9 @@ import FloatingElement from "@components/floatingElement";
       margin-inline: 0;
       max-width: 100%;
     }
+  }
+
+  .title {
+    position: relative !important;
   }
 </style>

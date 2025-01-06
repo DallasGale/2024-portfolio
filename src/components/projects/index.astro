@@ -1,105 +1,22 @@
 ---
 import Accordion from "@components/accordion/index.astro";
 import Title from "./title.astro";
-import Carousel from "@components/carousel";
 import FloatingElement from "@components/floatingElement";
-
-// images
-import KayoDesktop from "../../images/projects/thinkerbell/kayo/desktop.jpg";
-import KayoMobile from "../../images/projects/thinkerbell/kayo/mobile.jpg";
-import KayoLogo from "../../images/logos/KayoSports_Logo_Negative.png";
-import PeningtonMobile from "../../images/projects/thinkerbell/penington/mobile.png";
-import PeningtonDesktop from "../../images/projects/thinkerbell/penington/desktop.png";
-import PeningtonLogo from "../../images/logos/penington.svg";
-
-export type ProjectTypes = {
-  id: number;
-  project: string;
-  contracted: boolean;
-  agency: string;
-  client?: string;
-  hashtags: string[];
-  logo: string;
-  images: {
-    mobile: string;
-    desktop: string;
-  };
-  videos?: {
-    vimeoId: number;
-    title: string;
-  }[];
-  description: string;
-};
-const data: ProjectTypes[] = [
-  {
-    id: 2,
-    project: "The Kayo Callup!",
-    contracted: true,
-    agency: "Thinkerbell",
-    client: "Kayo Sports",
-    logo: KayoLogo.src,
-    hashtags: ["Development", "React", "Firebase", "Astro"],
-    images: {
-      mobile: KayoMobile.src,
-      desktop: KayoDesktop.src,
-    },
-    videos: [
-      {
-        vimeoId: 1040940197,
-        title: "Kayo Callup!",
-      },
-      {
-        vimeoId: 1040946036,
-        title: "Kayo Callup!",
-      },
-    ],
-
-    description:
-      "As the lead developer for advertising agency <strong>Thinkerbell</strong>, I spearheaded the <strong>full-stack development</strong> of <strong>Kayo Sports Call Up!</strong>, a platform enabling amateur commentators to submit entries for AFL commentary opportunities. <br /><br />Using <strong>Astro, React</strong>, and <strong>Google Firebase</strong>, I architected and delivered a high-performance solution within a two-week timeline. The platform featured an engaging UI/UX with <strong>animations</strong>, <strong>audio integration</strong>, and <strong>interactive celebration effects</strong>. <br /><br />I implemented Firebase Cloud Functions to efficiently process competition entries in batches and enable CSV export functionality.",
-  },
-  {
-    id: 1,
-    project: "Regulate It!",
-    contracted: true,
-    agency: "Thinkerbell",
-    client: "Penington Institute",
-    logo: PeningtonLogo.src,
-    hashtags: ["Development", "React", "Firebase", "Astro"],
-    images: {
-      mobile: PeningtonMobile.src,
-      desktop: PeningtonDesktop.src,
-    },
-    videos: [
-      {
-        vimeoId: 1040996087,
-        title: "Regulate It!",
-      },
-      // {
-      //   vimeoId: 1040946036,
-      //   title: "Kayo Callup!",
-      // },
-    ],
-
-    description:
-      "As the lead developer for advertising agency <strong>Thinkerbell</strong>, I spearheaded the <strong>full-stack development</strong> of <strong>Kayo Sports Call Up!</strong>, a platform enabling amateur commentators to submit entries for AFL commentary opportunities. <br /><br />Using <strong>Astro, React</strong>, and <strong>Google Firebase</strong>, I architected and delivered a high-performance solution within a two-week timeline. The platform featured an engaging UI/UX with <strong>animations</strong>, <strong>audio integration</strong>, and <strong>interactive celebration effects</strong>. <br /><br />I implemented Firebase Cloud Functions to efficiently process competition entries in batches and enable CSV export functionality.",
-  },
-];
+import ProjectList from "./projectList";
+import { data } from "./data";
 ---
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<section class="section">
-  <div class="sticky-container">
-    <div class="section-title">
-      <FloatingElement duration={60} client:load>
-        <Title />
-      </FloatingElement>
-    </div>
+<section class="section" id="projects">
+  <div class="title-container" id="projects-title">
+    <FloatingElement duration={4} client:load>
+      <Title />
+    </FloatingElement>
     <h2 class="visually-hidden">Projects</h2>
   </div>
+
   <div class="container">
     <div class="carousel-container">
-      <Carousel client:load projects={data} />
+      <ProjectList client:load projects={data} />
     </div>
     <!-- <div class="accordion-container">
       <Accordion projects={data} />
@@ -109,6 +26,7 @@ const data: ProjectTypes[] = [
 
 <style lang="scss">
   @import "../../scss/breakpoints.scss";
+
   .section {
     display: flex;
     flex-direction: column;
@@ -126,6 +44,7 @@ const data: ProjectTypes[] = [
     }
   }
   .carousel-container {
+    // overflow: hidden;
     @include respond-to(phone-up) {
       display: block;
       height: 100%;
@@ -144,3 +63,9 @@ const data: ProjectTypes[] = [
     }
   }
 </style>
+<script>
+  import { ToggleTitle } from "../../utils/toggleTitle";
+  document.addEventListener("DOMContentLoaded", () => {
+    new ToggleTitle("projects", "projects-title");
+  });
+</script>
