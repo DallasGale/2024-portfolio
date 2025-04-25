@@ -1,27 +1,29 @@
 ---
+import FloatingElement from "@components/floatingElement";
+import Title from "./title.astro";
 import SignatureWhite from "@images/dallas-white.png";
 ---
 
-<script type="module">
-  function workParallax() {
-    const el = document.querySelector(".parallax-scroll");
-    const pos = window.scrollY * -0.4;
-    el.style.transform = `translateY(${pos}px)`;
-  }
-
-  document.addEventListener("scroll", () => {
-    workParallax();
+<script>
+  import { ToggleTitle } from "../../utils/toggleTitle";
+  document.addEventListener("DOMContentLoaded", () => {
+    new ToggleTitle("about", "about-title");
   });
 </script>
-
-<section id="intro" class="container parallax-scroll">
+<section id="about" class="container parallax-scroll">
+  <!-- <div class="title-container" id="about-title">
+    <FloatingElement duration={4} client:load>
+      <Title />
+    </FloatingElement>
+    <h2 class="visually-hidden">About</h2>
+  </div> -->
   <div class="text-wrap">
-    <h2 class="display4">
+    <!-- <h2 class="display4">
       👋 I'm Dallas Gale,<br />Yarra Valley-based <span>digital craftsman</span
-      >, transforming visions into exceptional web experiences.
-      <!-- <img src={SignatureWhite.src} alt="Dallas" class="signature" /> -->
+      >, transforming visions into exceptional web experiences. -->
+    <!-- <img src={SignatureWhite.src} alt="Dallas" class="signature" /> -->
 
-      <!-- <h2 class="display2">
+    <h2 class="display2">
       Based in the Yarra Valley, Australia, I bring over a decade of experience
       crafting digital experiences at <span>leading agencies</span>, <span
         >ABC News</span
@@ -29,9 +31,9 @@ import SignatureWhite from "@images/dallas-white.png";
       and through <span>freelance projects</span>, I now offer specialised web
       design and development services to turn your vision into reality.
       <img src={SignatureWhite.src} alt="Dallas" class="signature" />
-    </h2> -->
+    </h2>
 
-      <!-- <h2 class="display2">
+    <!-- <h2 class="display2">
       Hey there!👋 I'm Dallas Gale, a digital craftsman nestled in the beautiful
       Yarra Valley. I bring over a decade of experience crafting digital
       experiences at <span>leading agencies</span>, <span>ABC News</span>, <span
@@ -42,7 +44,7 @@ import SignatureWhite from "@images/dallas-white.png";
       <img src={SignatureWhite.src} alt="Dallas" class="signature" />
     </h2> -->
 
-      <!-- <h2 class="display2">
+    <!-- <h2 class="display2">
       From bringing stories to life at <span>ABC News</span> to cooking up innovative
       solutions with <a href="">cutting-edge agencies</a> and <a href=""
         >bold startups</a
@@ -56,7 +58,7 @@ import SignatureWhite from "@images/dallas-white.png";
       a Valley sunset.
       <img src={SignatureWhite.src} alt="Dallas" class="signature" />
     </h2> -->
-    </h2>
+    <!-- </h2> -->
   </div>
 
   <style lang="scss">
@@ -66,9 +68,9 @@ import SignatureWhite from "@images/dallas-white.png";
     .container {
       z-index: 2;
       margin-bottom: var(--space-9);
-      padding: var(--space-5);
+      padding: 30vh var(--space-5) var(--space-5) var(--space-5);
       margin-inline: auto;
-      height: 50vh;
+      height: 80vh;
       @include respond-to(tablet-up) {
         max-width: 1440px;
         display: flex;

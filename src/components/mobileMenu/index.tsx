@@ -12,13 +12,13 @@ const MobileMenu = () => {
 export default MobileMenu;
 
 const items = [
-  { label: "Projects", url: "/projects" },
-  { label: "Services", url: "/services" },
-  { label: "Process", url: "/process" },
-  { label: "About", url: "/about" },
-  { label: "Contact", url: "/contact" },
-  { label: "Github", url: "" },
-  { label: "LinkedIn", url: "https://www.linkedin.com/in/andrew-j-lee/" },
+  { label: "About", url: "/#about", id: 1 },
+  { label: "Projects", url: "/#projects", id: 2 },
+  // { label: "Services", url: "/#services" },
+  // { label: "Process", url: "/#process" },
+  { label: "Enquire", url: "/#enquire", id: 3 },
+  { label: "Github", url: "https://github.com/DallasGale", id: 4 },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/dallas-gale/", id: 5 },
 ];
 
 const Icon = () => {
@@ -36,7 +36,7 @@ const Icon = () => {
         buttonRef.current &&
         !buttonRef.current.contains(event.target as Node)
       ) {
-        setIsVisible(false);
+        setIsVisible(true);
       }
     };
 
@@ -79,13 +79,7 @@ const Icon = () => {
         </svg>
       </motion.button>
       <AnimatePresence mode="wait">
-        {isVisible ? (
-          <Menu
-            modifier={styles.mobileMenu}
-            items={items}
-            onClick={() => (window.location.href = "/")}
-          />
-        ) : null}
+        {isVisible ? <Menu items={items} /> : null}
       </AnimatePresence>
     </div>
   );

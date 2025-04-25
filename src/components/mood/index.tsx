@@ -42,7 +42,7 @@ const Mood = () => {
     color: string;
     label: string;
   };
-  const [currentTheme, setCurrentTheme] = useState("1");
+  const [currentTheme, setCurrentTheme] = useState("2");
   const [rotation, setRotation] = useState({ x: -22.5, y: 38 });
 
   const themes = [
@@ -92,6 +92,8 @@ const Mood = () => {
     [styles.off]: toggleState === "off",
     [styles.on]: toggleState === "on",
   });
+
+  console.log({ currentMood });
 
   return (
     <div className={styles.moodContainer}>

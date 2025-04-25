@@ -7,135 +7,117 @@ import { useState } from "react";
 import { serverTimestamp } from "firebase/firestore";
 import Textarea from "./textarea";
 
+const key = "27e8dd92-ca7d-4ad3-9e17-12d3c46e19f1";
+
+type SubmitTypes = {
+  state: StateTypes;
+  message: string;
+};
+
+type StateTypes = "initial" | "submitting" | "succeeded" | "error";
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [budget, setBudget] = useState("");
+  const [result, setResult] = useState("");
+  const [status, setStatus] = useState<SubmitTypes>({
+    state: "initial",
+    message: "",
+  });
+  const onSubmit = async (event: any) => {
+    event.preventDefault();
+    setStatus({
+      state: "submitting",
+      message: "",
+    });
+    const formData = new FormData(event.target);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // setShowLoading(true);
-    // setIsSubmitting(true);
-    // setSubmitStatus("submitting");
+    formData.append("access_key", key);
 
-    // try {
-    //   const submissionData = {
-    //     name,
-    //     createdAt: serverTimestamp(), // Use serverTimestamp() from firebase/firestore
-    //     answers: {
-    //       q1: answers[1],
-    //       q2: answers[2],
-    //       q3: answers[3],
-    //       q4: answers[4],
-    //       q5: answers[5],
-    //     },
-    //     results: {
-    //       r1: formData.results.r1,
-    //       r2: formData.results.r2,
-    //     } satisfies ResultsType,
-    //   };
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-    //   // Add to queue collection
-    //   // await addDoc(collection(db, "submissions"), submissionData);
-    //   await saveSubmissions(submissionData);
+    const data = await response.json();
+    console.log({ data });
 
-    //   // Record attempt in cookie
-    //   // await recordAttempt(QUIZ_ID, submissionData.results);
-
-    //   // Also add results to local storage
-    //   localStorage.setItem("results", JSON.stringify(submissionData.results));
-    //   const cookiesAccepted = localStorage.getItem("cookieAccepted") === "true";
-    //   console.log({ cookiesAccepted });
-
-    //   // setStatusMessage("Quiz submitted successfully!");
-    //   // setSubmitStatus("success");
-    //   window.location.href = "/results";
-    // } catch (error) {
-    //   console.error("Error submitting quiz:", error);
-    //   // setStatusMessage("Error submitting quiz");
-    //   // setSubmitStatus("error");
-    // } finally {
-    //   // setIsSubmitting(false);
-    // }
+    if (data.success) {
+      setStatus({ state: "succeeded", message: data.success });
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setStatus({ state: "error", message: data.message });
+    }
   };
+
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
-        <fieldset className={styles.fieldset}>
-          <div>
-            <Input
-              // placeholder="name"
-              label="Name"
-              value={name}
-              setValue={(e) => setName(e)}
+      {status.state === "submitting" && (
+        <p className="display6">
+          Submitting<span className="accent">…</span>
+        </p>
+      )}
+      {status.state === "succeeded" && (
+        <p className="display6">
+          Thanks for your enquiry, I will be in touch soon
+          <span className="accent">.</span>
+        </p>
+      )}
+      {status.state === "initial" && (
+        <>
+          <h2 className="display6">
+            Let's chat about your vision<span className="accent">.</span>
+            <br />
+            <br />
+          </h2>
+          <form className={styles.form} onSubmit={onSubmit}>
+            <input type="hidden" name="subject" value="New Website Enquiry" />
+            <input
+              type="hidden"
+              name="from_name"
+              value="DallasGale.com  Website Enquiry"
             />
-            <Input
-              // placeholder="name@email.com"
-              label="Email"
-              value={email}
-              setValue={(e) => setEmail(e)}
-            />
-            <Input
-              // placeholder="phone"
-              label="Mobile or home"
-              value={phone}
-              setValue={(e) => setPhone(e)}
-            />
-          </div>
-          <Textarea
-            value={message}
-            setValue={(e) => setMessage(e)}
-            // placeholder="Message"
-            label="Message"
-          />
-          {/* <div className={styles.formGroupTwo}>
-            <div className={styles.checkboxContainer}>
-              <p className={styles.label}>What are you after?</p>
-              <Checkbox />
-              <Checkbox />
-              <Checkbox />
-              <Checkbox />
-              <Checkbox />
-            </div>
+            <input type="hidden" name="replyto" value="hello@dallasgale.com" />
 
-            <div>
-              <Input
-                placeholder="phone"
-                label="Mobile or home"
-                value={phone}
-                setValue={(e) => setPhone(e)}
-              />
-              <div className={styles.selectContainer}>
-                <label className={styles.label}>Approx. Budget</label>
-                <select
-                  className={styles.select}
-                  name="Appox. Budget"
-                  defaultValue="3" // This should match an option's value
-                >
-                  <option className={styles.option} value="1" defaultChecked>
-                    Less than $1000
-                  </option>
-                  <option className={styles.option} value="2">
-                    $1000 - $5000
-                  </option>
-
-                  <option className={styles.option} value="2">
-                    More than $5000
-                  </option>
-                  <option className={styles.option} value="3">
-                    No set budget
-                  </option>
-                </select>
+            <fieldset className={styles.fieldset}>
+              <div>
+                <Input
+                  label="Name"
+                  value={name}
+                  id="name"
+                  setValue={(e) => setName(e)}
+                />
+                <Input
+                  label="Email"
+                  value={email}
+                  id="email"
+                  setValue={(e) => setEmail(e)}
+                />
+                <Input
+                  label="Mobile or home"
+                  value={phone}
+                  id="phone"
+                  setValue={(e) => setPhone(e)}
+                />
               </div>
+              <Textarea
+                value={message}
+                setValue={(e) => setMessage(e)}
+                id="message"
+                label="Message"
+              />
+            </fieldset>
+            <div>
+              <SecondaryCta
+                label="Send enquiry"
+                onClick={() => console.log("")}
+              />
             </div>
-          </div> */}
-        </fieldset>
-        <div>
-          <SecondaryCta label="Send enquiry" onClick={() => console.log("")} />
-        </div>
-      </form>
+          </form>
+        </>
+      )}
     </div>
   );
 };

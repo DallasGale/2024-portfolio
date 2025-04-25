@@ -100,8 +100,8 @@ import SignatureWhite from "@images/dallas-white.png";
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     position: relative;
-    padding-left: var(--space-5);
-    padding-right: var(--space-5);
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
     margin-inline: auto;
     @include respond-to(tablet-up) {
       backdrop-filter: none;
@@ -142,6 +142,7 @@ import SignatureWhite from "@images/dallas-white.png";
     align-items: flex-start;
     gap: var(--space-5);
     .list {
+      align-items: center;
       @include respond-to(tablet-up) {
         flex-direction: row;
         justify-content: flex-start;
@@ -157,11 +158,16 @@ import SignatureWhite from "@images/dallas-white.png";
   }
   .list {
     display: flex;
-    gap: var(--space-2);
-    flex-direction: column;
+    gap: var(--space-5);
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
+    @include respond-to(tablet-up) {
+      gap: var(--space-2);
+      flex-direction: column;
+    }
   }
   .list-wrapper {
     display: flex;

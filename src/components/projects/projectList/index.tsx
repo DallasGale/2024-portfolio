@@ -4,9 +4,9 @@ import Accordion from "@components/accordion";
 import PrimaryCta from "@components/primaryCta";
 import SecondaryCta from "@components/secondaryCta";
 import type { ProjectTypes } from "../data";
-import DraggableModal from "@components/modal";
 import { useEffect, useRef, useState } from "react";
 import { parallax } from "src/utils/parallax";
+import ContentModal from "@components/contentModal";
 
 interface Props {
   projects: ProjectTypes[];
@@ -15,6 +15,8 @@ const ProjectList = ({ projects }: Props) => {
   const [selectedProject, setSelectedProject] = useState<ProjectTypes | null>();
   const [toggleModal, setToggleModal] = useState(false);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  console.log({ selectedProject });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +46,11 @@ const ProjectList = ({ projects }: Props) => {
       window.removeEventListener("resize", handleScroll);
     };
   }, [projects]);
+
+  // const handleDetailsClick = (project: ProjectTypes) => {
+  //   setToggleModal(true);
+  //   setSelectedProject(project);
+  // };
   return (
     <>
       <div className={styles.swiper}>
@@ -74,13 +81,13 @@ const ProjectList = ({ projects }: Props) => {
                     </picture>
                   </div>
 
-                  <div className={styles.ctaWrapper}>
+                  {/* <div className={styles.ctaWrapper}>
                     <SecondaryCta
                       label="Details"
-                      onClick={() => setToggleModal(true)}
+                      onClick={() => handleDetailsClick(project)}
                     />
                     <SecondaryCta label="Visit" onClick={() => null} />
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -91,35 +98,37 @@ const ProjectList = ({ projects }: Props) => {
                   <picture
                     className={`${styles.picture} ${styles.pictureMacBook}`}
                   >
+                    {/* <FloatingElement duration={13}> */}
                     <img
                       src={desktop}
                       alt={projectName}
                       className={styles.desktop}
                     />
+                    {/* </FloatingElement> */}
                   </picture>
                 </div>
                 <div className={styles.iPhoneContainer}>
                   <picture
                     className={`${styles.picture} ${styles.pictureIphone} iphone-scroll-${id}`}
                   >
-                    <FloatingElement duration={3}>
-                      <img
-                        src={mobile[0]}
-                        alt={projectName}
-                        className={styles.mobile}
-                      />
-                    </FloatingElement>
+                    {/* <FloatingElement duration={3}> */}
+                    <img
+                      src={mobile[0]}
+                      alt={projectName}
+                      className={styles.mobile}
+                    />
+                    {/* </FloatingElement> */}
                   </picture>
                   <picture
                     className={`${styles.picture} ${styles.pictureIphone} iphone-scroll-${id}`}
                   >
-                    <FloatingElement duration={5}>
-                      <img
-                        src={mobile[1]}
-                        alt={projectName}
-                        className={styles.mobile}
-                      />
-                    </FloatingElement>
+                    {/* <FloatingElement duration={5}> */}
+                    <img
+                      src={mobile[1]}
+                      alt={projectName}
+                      className={styles.mobile}
+                    />
+                    {/* </FloatingElement> */}
                   </picture>
                 </div>
               </div>
@@ -128,7 +137,7 @@ const ProjectList = ({ projects }: Props) => {
         })}
       </div>
       {/* // Details Modal */}
-      <DraggableModal
+      <ContentModal
         open={toggleModal}
         {...selectedProject}
         logo={`${selectedProject?.logo}`}

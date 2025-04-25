@@ -91,18 +91,19 @@ export const data: ProjectTypes[] = [
     description:
       "As the lead developer for advertising agency <strong>Thinkerbell</strong>, I spearheaded the <strong>full-stack development</strong> of <strong>Kayo Sports Call Up!</strong>, a platform enabling amateur commentators to submit entries for AFL commentary opportunities. <br /><br />Using <strong>Astro, React</strong>, and <strong>Google Firebase</strong>, I architected and delivered a high-performance solution within a two-week timeline. The platform featured an engaging UI/UX with <strong>animations</strong>, <strong>audio integration</strong>, and <strong>interactive celebration effects</strong>. <br /><br />I implemented Firebase Cloud Functions to efficiently process competition entries in batches and enable CSV export functionality.",
   },
+
   {
     id: 2,
-    project: "Regulate It!",
+    project: "Open Universities Australia",
     contracted: true,
     agency: "Thinkerbell",
-    client: "Penington Institute",
-    logo: PeningtonLogo.src,
+    client: "Open Universities Australia",
+    logo: OpenUniLogo.src,
     agencyLogo: ThinkebellLogo.src,
     hashtags: ["Development", "React", "Firebase", "Astro"],
     images: {
-      mobile: [PeningtonMb1.src, PeningtonMb2.src],
-      desktop: PeningtonDesktop.src,
+      mobile: [OuaMb1.src, OuaMb2.src],
+      desktop: OuaDesktop.src,
     },
     videos: [
       {
@@ -116,16 +117,16 @@ export const data: ProjectTypes[] = [
   },
   {
     id: 3,
-    project: "Open Universities Australia",
+    project: "Regulate It!",
     contracted: true,
     agency: "Thinkerbell",
-    client: "Open Universities Australia",
-    logo: OpenUniLogo.src,
+    client: "Penington Institute",
+    logo: PeningtonLogo.src,
     agencyLogo: ThinkebellLogo.src,
     hashtags: ["Development", "React", "Firebase", "Astro"],
     images: {
-      mobile: [OuaMb1.src, OuaMb2.src],
-      desktop: OuaDesktop.src,
+      mobile: [PeningtonMb1.src, PeningtonMb2.src],
+      desktop: PeningtonDesktop.src,
     },
     videos: [
       {

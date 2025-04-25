@@ -17,6 +17,9 @@
     max-width: 476px;
     left: 20%;
   }
+  @include respond-to(widescreen-up) {
+    left: 10%;
+  }
 }
 
 .active {

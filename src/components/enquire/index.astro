@@ -2,13 +2,7 @@
 import Form from "../form";
 ---
 
-<section class="section">
-  <div class="container">
-    <h2 class="display6">
-      Let's chat about your vision<span class="accent">.</span>
-    </h2>
-  </div>
-
+<section id="enquire" class="section">
   <Form client:load />
 </section>
 
@@ -22,21 +16,8 @@ import Form from "../form";
     justify-content: center;
     flex-direction: column;
     gap: var(--space-5);
-    padding-top: var(--space-6);
+    padding-top: 20vh;
     z-index: 3;
     text-align: center;
-    background-color: var(--color-bg);
-    @include respond-to(phone-up) {
-      background-color: transparent;
-    }
-  }
-
-  .container {
-    padding-left: var(--space-5);
-    padding-right: var(--space-5);
-    @include respond-to(tablet-up) {
-      max-width: 867px;
-      margin-inline: auto;
-    }
   }
 </style>

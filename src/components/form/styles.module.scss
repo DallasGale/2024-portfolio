@@ -1,10 +1,8 @@
 @import "../../scss/breakpoints.scss";
 .container {
   width: 100%;
-  background-color: var(--color-bg);
   padding: var(--space-5);
   @include respond-to(phone-up) {
-    background-color: transparent;
     max-width: 1000px;
     margin-inline: auto;
   }
@@ -19,14 +17,14 @@
 }
 
 .fieldset {
-  // @include respond-to(tablet-up) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  // grid-template-columns: 1fr 1fr;
   gap: 20px;
-  // }
+  @include respond-to(phone-up) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .label {
@@ -44,7 +42,8 @@
   padding-left: 10px;
   background-color: transparent;
   border-bottom: 1px solid var(--color-accent);
-  color: var(--color-bg);
+  // color: var(--color-bg);
+  color: white;
   font-weight: 600;
   &:focus-visible {
     background-color: var(--color-accent);
@@ -82,7 +81,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-2);
+  gap: var(--space-3);
   width: 100%;
   margin-bottom: var(--space-5);
 }
@@ -113,4 +112,5 @@
 
 .textarea {
   height: 300px;
+  padding-top: var(--space-4);
 }

@@ -1,14 +1,14 @@
 .container {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
+  // backdrop-filter: blur(10px);
+  // -webkit-backdrop-filter: blur(10px);
+  // box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
+  // -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
+  // -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
 
-  position: absolute;
+  position: fixed;
   color: var(--color-primary-text);
   // left: 87px;
-  height: 26px;
+  height: 85px;
   width: auto;
   padding: var(--space-5);
   display: flex;
@@ -16,7 +16,11 @@
   top: 0;
   flex-direction: row;
   justify-content: center;
-  border-radius: var(--space-6);
+  top: 0;
+  background-color: black;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }
 
 .list {
@@ -37,12 +41,20 @@
 
 .button {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 12px;
   background: none;
   border: none;
-  color: var(--color-primary-text);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 10px;
+  text-decoration-color: transparent;
   cursor: pointer;
-  &:hover {
-    color: var(--color-accent);
+  transition: all 0.15s ease-in-out;
+  &:hover,
+  &.active {
+    transition: all 0.15s ease-in-out;
+    color: var(--color-primary-text);
+    text-decoration-color: var(--color-accent);
   }
 }

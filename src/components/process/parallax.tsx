@@ -63,7 +63,7 @@ const Parallax = () => {
           id={1}
           active={activeSection === 1}
           title="Design"
-          description="Like an architect, we plan out the look & feel. Think of it like building a custom home - every element is thoughtfully designed around how you want to welcome and guide your visitors.<br /><br />From the first impression to the final interaction, I create an experience that's uniquely yours."
+          description="Like an architect, I plan out the look & feel. Think of it like building a custom home - every element is thoughtfully designed around how you want to welcome and guide your visitors.<br /><br />From the first impression to the final interaction, I create an experience that's uniquely yours."
         />
 
         <ServiceDescription

@@ -1,4 +1,5 @@
 ---
+import SecondaryCta from "@components/secondaryCta";
 import PrimaryCta from "../primaryCta/index.astro";
 
 interface Props {
@@ -11,20 +12,20 @@ let { id, title, description, dotPoints }: Props = Astro.props;
 ---
 
 <div id={`service-${id}`} class="service">
-  <div style="max-width: 80%;">
+  <div class="content-wrapper content-bg">
     <h3 class="display3">{title}<span class="accent">.</span></h3>
-  </div>
-  <p class="paragraph" set:html={description} />
-  {
-    dotPoints.map((point, index) => (
-      <ul class="ul">
-        <li class="li paragraph">{point}</li>
-      </ul>
-    ))
-  }
+    <p class="paragraph" set:html={description} />
+    <ul class="ul">
+      {dotPoints.map((point, index) => <li class="li paragraph">{point}</li>)}
+    </ul>
 
-  <div class="cta-wrapper">
-    <PrimaryCta label="Steps involved" onClick={() => null} />
+    <div class="cta-wrapper">
+      <SecondaryCta
+        icon
+        label={`Contact me about ${title}`}
+        onClick={() => null}
+      />
+    </div>
   </div>
 </div>
 
@@ -38,11 +39,14 @@ let { id, title, description, dotPoints }: Props = Astro.props;
   .cta-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .ul {
     padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   .li {
     position: relative;
@@ -54,5 +58,11 @@ let { id, title, description, dotPoints }: Props = Astro.props;
       content: "👉";
       margin-right: var(--space-2);
     }
+  }
+
+  .content-wrapper {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 </style>

@@ -1,10 +1,6 @@
-import { Modal } from "antd";
+import { Divider, Modal } from "antd";
 import styles from "./styles.module.css";
-import Draggable, {
-  type DraggableData,
-  type DraggableEvent,
-} from "react-draggable";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 interface Props {
   logo: string;
@@ -17,7 +13,7 @@ interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
-const DraggableModal = ({
+const ContentModal = ({
   logo,
   title,
   url,
@@ -46,19 +42,6 @@ const DraggableModal = ({
     setOpen(false);
   };
 
-  const onStart = (_event: DraggableEvent, uiData: DraggableData) => {
-    const { clientWidth, clientHeight } = window.document.documentElement;
-    const targetRect = dragRef.current?.getBoundingClientRect();
-    if (!targetRect) {
-      return;
-    }
-    setBounds({
-      left: -targetRect.left + uiData.x,
-      right: clientWidth - (targetRect.right - uiData.x),
-      top: -targetRect.top + uiData.y,
-      bottom: clientHeight - (targetRect.bottom - uiData.y),
-    });
-  };
   return (
     <Modal
       footer={null}
@@ -68,47 +51,23 @@ const DraggableModal = ({
         header: styles.modalHeader,
       }}
       title={
-        <div
-          style={{ width: "100%", cursor: "move" }}
-          onMouseOver={() => {
-            if (disabled) {
-              setDisabled(false);
-            }
-          }}
-          onMouseOut={() => {
-            setDisabled(true);
-          }}
-          onFocus={() => {}}
-          onBlur={() => {}}
-        >
-          <div className={styles.modalHeaderRow}>
-            <h2 className={styles.title}>{title}</h2>
-            <img
-              src={`${logo}`}
-              alt={title}
-              style={{
-                height: "100%",
-                width: "100%",
-                maxWidth: 90,
-              }}
-            />
-          </div>
+        <div className={styles.modalHeaderRow}>
+          <h2 className={styles.title}>{title}</h2>
+          <img
+            src={`${logo}`}
+            alt={title}
+            style={{
+              height: "100%",
+              width: "100%",
+              maxWidth: 90,
+            }}
+          />
         </div>
       }
       open={open}
       onOk={handleOk}
       onCancel={handleCancel}
-      modalRender={(modal) => (
-        <Draggable
-          disabled={disabled}
-          bounds={bounds}
-          nodeRef={dragRef}
-          onStart={(event, uiData) => onStart(event, uiData)}
-          position={{ x: 500, y: 0 }}
-        >
-          <div ref={dragRef}>{modal}</div>
-        </Draggable>
-      )}
+      modalRender={(modal) => <div ref={dragRef}>{modal}</div>}
     >
       <div className={styles.modal}>
         {company && (
@@ -143,4 +102,4 @@ const DraggableModal = ({
   );
 };
 
-export default DraggableModal;
+export default ContentModal;

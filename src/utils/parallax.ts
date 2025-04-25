@@ -20,8 +20,6 @@ export const parallax = (
 
   const scrollProgress = getRelativeScroll(container);
 
-  console.log({ scrollProgress });
-
   // Only apply parallax when element is in or near viewport
   if (scrollProgress >= -0.5 && scrollProgress <= 1.5) {
     // Calculate transform based on container's position

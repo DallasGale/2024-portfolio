@@ -90,7 +90,7 @@ const themes = {
   <body>
     <Header />
     <slot />
-    <Mood client:load />
+    <!-- <Mood client:load /> -->
     <Footer />
   </body>
 </html>
@@ -146,7 +146,7 @@ const themes = {
     --grid-column-negative: -200px;
 
     --header-logo: url(../images/dallas-white.png);
-    --color-primary: #fff3bc;
+    --color-primary: #ff4cd2;
     --color-primary-text: #fff;
     --color-primary-description-text: #cecece;
     --color-primary-text-accent: var(--color-primary-accent);
@@ -156,9 +156,14 @@ const themes = {
     --color-hamburger: #fff;
     --color-nav: #fff;
     --color-accent: #ff4cd2;
-    --color-accent-dark: #436e27;
+    --color-accent-dark: #7c5510;
+    --color-bg: #140f08;
+    --color-toggle-on: #e7a42f;
+
+    --color-button-text-active: #e7a42f;
+    --color-modal-link: #e7a42f;
+
     --color-active: #ff4cd2;
-    --color-bg: rgb(22, 11, 28);
     --color-title: #ffffff;
     --color-title-stop: #ffffff;
     --color-paragraph: #bababa;
@@ -173,7 +178,6 @@ const themes = {
     --color-button-text: #000000;
     --color-button-text-active: #aefc79;
     --color-link: #ffffff;
-    --color-toggle-on: #fff;
     --color-togglef: #000000;
     --color-modal-bg: #000000;
     --color-modal-content: #fff;
@@ -205,6 +209,7 @@ const themes = {
   }
   html {
     font-family: "Poppins", system-ui, sans-serif !important;
+    scroll-behavior: smooth;
   }
 
   /* main {
@@ -240,19 +245,19 @@ const themes = {
     justify-content: flex-start;
     margin-bottom: 30px;
     @include respond-to(tablet-up) {
+      height: 200px;
       align-items: center;
-      height: auto;
-      width: 800px;
+      // width: 800px;
       justify-content: flex-start;
       padding-bottom: 100px;
     }
     @include respond-to(desktop-up) {
       height: auto;
-      width: 40vw;
+      width: 600px;
     }
-    @include respond-to(widescreen-up) {
-      width: 1000px;
-    }
+    // @include respond-to(widescreen-up) {
+    //   width: 1000px;
+    // }
   }
 
   .section-title {
@@ -264,6 +269,7 @@ const themes = {
   .title-container {
     position: fixed;
     top: 150px;
+    left: 20px;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
     z-index: -1;
@@ -292,12 +298,32 @@ const themes = {
   .content-bg {
     padding: var(--space-5);
     border-radius: var(--space-3);
-    // border: 1px solid var(--color-primary);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-    -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-    -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
+    box-shadow: -1px -29px 122px 20px rgba(38, 15, 29, 0.2);
+    -webkit-box-shadow: -1px -29px 122px 20px rgba(38, 15, 29, 0.2);
+    -moz-box-shadow: -1px -29px 122px 20px rgba(38, 15, 29, 0.2);
+  }
+
+  .button {
+    background-color: transparent;
+    height: 50px;
+    border: 2px solid var(--color-primary);
+    border-radius: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 0 25px;
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-bg);
+    }
   }
 
   // .primary-text {

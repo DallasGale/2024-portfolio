@@ -1,4 +1,4 @@
-import DraggableModal from "@components/modal";
+import DraggableModal from "@components/contentModal";
 import Card, { type PopupInfo } from "./card";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";

@@ -1,8 +1,6 @@
 @import "../../../scss/breakpoints.scss";
 @import "../../../scss/animations.scss";
 .container {
-  display: grid;
-  grid-template-columns: 500px 1fr;
   gap: 0;
   height: auto;
   padding: 0 20px;
@@ -10,9 +8,13 @@
   width: auto;
   margin-inline: auto;
   margin-bottom: 180px;
+  display: grid;
+  grid-template-columns: 0px 1fr;
+
   @include respond-to(phone-up) {
-    grid-template-columns: 40vw 1fr;
+    grid-template-columns: 140px 1fr;
   }
+
   @include respond-to(desktop-up) {
     padding: 0 0;
     grid-template-columns: 400px 1fr;
@@ -26,18 +28,15 @@
   height: auto;
   position: relative;
   flex-direction: column;
-  @include respond-to(phone-up) {
-    height: auto;
-  }
 }
 
 .swiper {
   display: block;
   position: relative;
   margin-inline: auto;
-  @include respond-to(phone-up) {
-    width: 100%;
-  }
+  // @include respond-to(phone-up) {
+  width: 100%;
+  // }
   @include respond-to(desktop-up) {
     width: 100vw;
   }
@@ -49,8 +48,11 @@
   gap: 30px;
   position: relative;
   height: auto;
-  min-height: 100vh;
+  min-height: 130vh;
   margin-bottom: 100px;
+  @include respond-to(phone-up) {
+    min-height: 100vh;
+  }
 }
 
 .video {
@@ -82,9 +84,6 @@
     flex-direction: column;
     gap: 80px;
   }
-  // @include respond-to(desktop-up) {
-  //   flex-direction: row;
-  // }
 }
 .imagesContainerDesktop {
   height: 800px;
@@ -98,9 +97,6 @@
   height: 100%;
   display: block;
   width: 100%;
-  // box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  // -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  // -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
 
   img {
     width: 100%;
@@ -150,25 +146,22 @@
 }
 
 .stickyContainer {
-  @include respond-to(phone-up) {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-left: 80px;
-    position: sticky;
-    top: 80vh;
-    height: auto;
-    max-width: 600px;
-    margin-inline: auto;
-    z-index: 1;
-    margin-inline: 0;
-    max-width: 100%;
-  }
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: 90vh;
+  height: auto;
+  max-width: 600px;
+  margin-inline: auto;
+  z-index: 1;
+  margin-inline: 0;
+  max-width: 100%;
   @include respond-to(desktop-up) {
-    // align-items: center;
     display: flex;
     flex-direction: column;
+    padding-left: 80px;
   }
 }
 
@@ -232,21 +225,13 @@
 
 .videoContainer {
   position: relative;
-  // padding-bottom: 36.25%; // 16:9 aspect ratio
   height: 256px;
   overflow: hidden;
   width: 40vw;
-  // max-width: 30vw;
-  // background: rgba(0, 0, 0, 0.1); // placeholder before iframe loads
   transform: translateZ(0);
   will-change: transform;
-  // box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  // -webkit-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
-  // -moz-box-shadow: -1px -29px 122px 20px rgba(22, 11, 28, 0.7);
   @include respond-to(desktop-up) {
     height: 416px;
-    // width: 100%;
-    // padding-bottom: 32.25%; // 16:9 aspect ratio
   }
 
   iframe {
@@ -273,18 +258,20 @@
 
 .mockUpContainer {
   position: relative;
-  // overflow: hidden;
   height: auto;
 }
 
 .macBookContainer {
   position: relative;
-  min-width: 60vw;
-  max-width: 1332px;
+  min-width: 45vw;
+  max-width: 1100px;
   left: 0;
   right: 0;
   margin-inline: auto;
-  // top: 200px;
+  @include respond-to(widescreen-up) {
+    min-width: 50vw;
+    max-width: 1000px;
+  }
 
   picture,
   img {
@@ -295,10 +282,19 @@
 
 .iPhoneContainer {
   position: relative;
-  width: 260px;
+  width: 120px;
   left: 0;
   right: 0;
   margin-inline: auto;
+  @include respond-to(phone-up) {
+    width: 160px;
+  }
+  @include respond-to(tablet-up) {
+    width: 200px;
+  }
+  @include respond-to(widescreen-up) {
+    width: 190px;
+  }
 
   picture,
   img {
@@ -310,12 +306,22 @@
 .pictureIphone {
   &:nth-child(1) {
     img {
-      transform: translateY(-200px) translateX(-200px);
+      transform: translateY(100px) translateX(-80px);
+      @include respond-to(phone-up) {
+        transform: translateY(-200px) translateX(-200px);
+      }
     }
   }
   &:nth-of-type(2) {
     img {
-      transform: translateY(-280px) translateX(200px);
+      transform: translateY(100px) translateX(80px);
+      @include respond-to(phone-up) {
+        transform: translateY(-280px) translateX(40px);
+      }
+
+      @include respond-to(tablet-up) {
+        transform: translateY(-280px) translateX(200px);
+      }
     }
   }
 }

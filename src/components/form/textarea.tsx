@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import type { InputTypes } from "./types";
 
-const Textarea = ({ label, placeholder, value, setValue }: InputTypes) => {
+const Textarea = ({ id, label, placeholder, value, setValue }: InputTypes) => {
   return (
     <div className={styles.inputContainer}>
       <label className={styles.label} htmlFor={label}>
@@ -10,7 +10,8 @@ const Textarea = ({ label, placeholder, value, setValue }: InputTypes) => {
       <textarea
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        name="name"
+        name={id}
+        id={id}
         className={`${styles.input} ${styles.textarea}`}
         placeholder={placeholder}
       />
