@@ -1,48 +1,48 @@
 // images
-import KayoLogo from "./images/logos/Kayo.png";
-import PeningtonMobile from "./images/projects/thinkerbell/penington/penn-mb1.png";
-import PeningtonLogo from "./images/logos/penington.svg";
+import KayoLogo from "/images/logos/Kayo.png";
+import PeningtonMobile from "/images/projects/thinkerbell/penington/penn-mb1.png";
+import PeningtonLogo from "/images/logos/penington.svg";
 
-import ThinkebellLogo from "./images/logos/thinkerbell.png";
-import OpenUniLogo from "./images/logos/oua.png";
-import CCMLogo from "./images/logos/ccm.svg";
-import YarraValleyLogo from "./images/logos/yvwlogo.png";
-import GigabuddyLogo from "./images/logos/gigabuddy.png";
-import AbcLogo from "./images/logos/abc.png";
+import ThinkebellLogo from "/images/logos/thinkerbell.png";
+import OpenUniLogo from "/images/logos/oua.png";
+import CCMLogo from "/images/logos/ccm.svg";
+import YarraValleyLogo from "/images/logos/yvwlogo.png";
+import GigabuddyLogo from "/images/logos/gigabuddy.png";
+import AbcLogo from "/images/logos/abc.png";
 
 // KayoSports
-import KayoDesktop from "./images/projects/thinkerbell/kayo/desktop.png";
-import KayoSportsMb1 from "./images/projects/thinkerbell/kayo/kayo-mb1.png";
-import KayoSportsMb2 from "./images/projects/thinkerbell/kayo/kayo-mb2.png";
+import KayoDesktop from "/images/projects/thinkerbell/kayo/desktop.png";
+import KayoSportsMb1 from "/images/projects/thinkerbell/kayo/kayo-mb1.png";
+import KayoSportsMb2 from "/images/projects/thinkerbell/kayo/kayo-mb2.png";
 
 // Penington
-import PeningtonDesktop from "./images/projects/thinkerbell/penington/desktop.png";
-import PeningtonMb1 from "./images/projects/thinkerbell/penington/penn-mb1.png";
-import PeningtonMb2 from "./images/projects/thinkerbell/penington/penn-mb2.png";
+import PeningtonDesktop from "/images/projects/thinkerbell/penington/desktop.png";
+import PeningtonMb1 from "/images/projects/thinkerbell/penington/penn-mb1.png";
+import PeningtonMb2 from "/images/projects/thinkerbell/penington/penn-mb2.png";
 
 // OUA
-import OuaDesktop from "./images/projects/thinkerbell/oua/desktop.png";
-import OuaMb1 from "./images/projects/thinkerbell/oua/mb-1.png";
-import OuaMb2 from "./images/projects/thinkerbell/oua/mb-2.png";
+import OuaDesktop from "/images/projects/thinkerbell/oua/desktop.png";
+import OuaMb1 from "/images/projects/thinkerbell/oua/mb-1.png";
+import OuaMb2 from "/images/projects/thinkerbell/oua/mb-2.png";
 
 // Caravan Cleaning Melbourne
-import CcmDesktop from "./images/projects/freelance/ccm/desktop.png";
-import CcmMb1 from "./images/projects/freelance/ccm/mb-1.png";
-import CcmMb2 from "./images/projects/freelance/ccm/mb-2.png";
+import CcmDesktop from "/images/projects/freelance/ccm/desktop.png";
+import CcmMb1 from "/images/projects/freelance/ccm/mb-1.png";
+import CcmMb2 from "/images/projects/freelance/ccm/mb-2.png";
 
 // Yarra Valley Water
-import YvwDesktop from "./images/projects/hardhat/yvw/desktop.png";
-import YvwMb1 from "./images/projects/hardhat/yvw/mb-1.png";
-import YvwMb2 from "./images/projects/hardhat/yvw/mb-2.png";
+import YvwDesktop from "/images/projects/hardhat/yvw/desktop.png";
+import YvwMb1 from "/images/projects/hardhat/yvw/mb-1.png";
+import YvwMb2 from "/images/projects/hardhat/yvw/mb-2.png";
 
 // Data Beast
-import DbDesktop from "./images/projects/gigabuddy/databeast/desktop.png";
-import DbMb1 from "./images/projects/gigabuddy/databeast/mb-1.png";
-import DbMb2 from "./images/projects/gigabuddy/databeast/mb-2.png";
+import DbDesktop from "/images/projects/gigabuddy/databeast/desktop.png";
+import DbMb1 from "/images/projects/gigabuddy/databeast/mb-1.png";
+import DbMb2 from "/images/projects/gigabuddy/databeast/mb-2.png";
 // ABC
-import AbcDesktop from "./images/projects/abc/desktop.png";
-import AbcMb1 from "./images/projects/abc/mb-1.png";
-import AbcMb2 from "./images/projects/abc/mb-2.png";
+import AbcDesktop from "/images/projects/abc/desktop.png";
+import AbcMb1 from "/images/projects/abc/mb-1.png";
+import AbcMb2 from "/images/projects/abc/mb-2.png";
 
 export type ProjectTypes = {
   id: number;
