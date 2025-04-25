@@ -1,0 +1,122 @@
+---
+// src/components/BaseHead.astro
+// This component can be imported into your layout files
+
+// You might want to make some of these props dynamic
+const {
+  title = "Dallas Gale | Web Designer & Developer | Yarra Valley, Australia",
+  description = "Based in the Yarra Valley, Australia, I bring over a decade of experience crafting digital experiences at leading agencies, ABC News, innovative startups and through freelance projects.",
+  keywords = "HTML, CSS, JavaScript, React.js, Frontend development, react developer, web design, web developer, web development, responsive web design, custom website development, Yarra Valley web design, Melbourne web developer,  Victorian web design, Australian web design, freelance web developer, freelance web designer,independent web consultant, small business web design, small business web developer, startup web solutions, local business websites, custom React.js development for small businesses, custom web development for small businesses, custom frontend development for small businesses, custom web design for small businesses, hire freelance web developer Yarra Valley, hire freelance web designer Yarra Valley, hire freelance web developer Melbourne, hire freelance web designer Melbourne, hire freelance web developer Australia, hire freelance web designer Australia, portfolio sites for creatives, brochure sites for small business, fast turnaround web design, bespoke web design, hand-crafted web design, fast turnaround web development, affordable custom websites, progressive web app developer, JAMstack websites",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+} = Astro.props;
+
+// Schema.org data for structured data
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dallas Gale",
+  description:
+    "Web designer and developer with over a decade of experience crafting digital experiences at leading agencies, ABC News, innovative startups and through freelance projects.",
+  url: "https://www.dallasgale.com/",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Yarra Valley",
+    addressRegion: "VIC",
+    addressCountry: "AU",
+  },
+  sameAs: [
+    // Add your social media profiles here
+    // "https://www.linkedin.com/in/dallasgale",
+    // "https://github.com/dallasgale",
+    // "https://twitter.com/dallasgale"
+  ],
+  image: "https://dallasgale.com/images/dallas-gale-profile.jpg",
+  jobTitle: "Web Designer & Developer",
+  workLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Yarra Valley",
+      addressRegion: "VIC",
+      addressCountry: "AU",
+    },
+  },
+  knowsAbout: [
+    "Web Development",
+    "Web Design",
+    "UI/UX Design",
+    "Frontend Development",
+    "JavaScript",
+    "React",
+    "Astro",
+    "Responsive Design",
+  ],
+};
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta property="og:url" content="https://www.dallasgale.dev" />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Dallas Gale" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta
+  property="og:image"
+  content={"https://www.dallasgale.dev/images/og-image.jpg"}
+/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta
+  property="twitter:image"
+  content={"https://www.dallasgale.dev/images/og-image.jpg"}
+/>
+
+<!-- Keywords -->
+<meta
+  name="keywords"
+  content="
+  Web Design,
+  Web Development,
+  Frontend Development,
+  UI Design,
+  UX Design,
+  Responsive Design,
+  Website Development,
+  Custom Website,
+  Yarra Valley Web Developer,
+  Melbourne Web Designer,
+  Australian Web Developer,
+  React Developer,
+  Svelte Developer,
+  Astro Developer,
+  Portfolio Website,
+  Business Website Design
+"
+/>
+
+<!-- Robots -->
+<meta name="robots" content="index, follow" />
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

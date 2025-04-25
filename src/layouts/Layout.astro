@@ -10,6 +10,7 @@ import "antd/dist/reset.css";
 import Header from "@components/header/header.astro";
 import Mood from "@components/mood";
 import Footer from "@components/footer/index.astro";
+import BaseHead from "./BaseHead.astro";
 
 interface Props {
   title: string;
@@ -20,9 +21,8 @@ const themes = {
   "#415A77": "theme-blue",
   "#FCBA28": "theme-yellow",
 };
+const { title } = Astro.props;
 ---
-
-<script src="https://player.vimeo.com/api/player.js"></script>
 
 <script type="application/ld+json">
   {
@@ -54,38 +54,7 @@ const themes = {
     <title>
       Dallas Gale | Web Developer & Designer | Yarra Valley Based Web Services
     </title>
-    <meta
-      name="description"
-      content="Experienced frontend developer and digital designer based in Yarra Valley, Victoria. Over a decade of expertise in web development for agencies and startups across Australia, LA, and NYC. View my portfolio and contact me for custom web solutions."
-    />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, React.js, Frontend development, react developer, web design, web developer, web development, responsive web design, custom website development, Yarra Valley web design, Melbourne web developer,  Victorian web design, Australian web design, freelance web developer, freelance web designer,independent web consultant, small business web design, small business web developer, startup web solutions, local business websites, custom React.js development for small businesses, custom web development for small businesses, custom frontend development for small businesses, custom web design for small businesses, hire freelance web developer Yarra Valley, hire freelance web designer Yarra Valley, hire freelance web developer Melbourne, hire freelance web designer Melbourne, hire freelance web developer Australia, hire freelance web designer Australia, portfolio sites for creatives, brochure sites for small business, fast turnaround web design, bespoke web design, hand-crafted web design, fast turnaround web development, affordable custom websites, progressive web app developer, JAMstack websites"
-    />
-    <meta name="author" content="Dallas Gale" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <!-- <link rel="canonical" href="https://www.dallasgale.dev/services" /> -->
-    <meta
-      property="og:title"
-      content="Dallas Gale - Web Developer & Digital Designer"
-    />
-    <meta
-      property="og:description"
-      content="Experienced frontend web developer and digital designer based in Yarra Valley. View my portfolio and contact me for custom web solutions."
-    />
-    <meta
-      property="og:image"
-      content="https://www.dallasgale.dev/images/og-image.jpg"
-    />
-    <meta
-      property="og:logo"
-      content="https://www.dallasgale.dev/images/og-logo.jpg"
-    />
-    <meta property="og:url" content="https://www.dallasgale.dev" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <BaseHead title={title} />
   </head>
   <body>
     <Header />
