@@ -85,18 +85,18 @@ import SectionTitle from "@components/sectionTitle/sectionTitle.astro";
 </style>
 
 <script type="module">
-  function workParallax() {
-    document.querySelectorAll(".parallax-scroll").forEach((item) => {
-      if (item.dataset.direction === "verticle") {
-        const pos = window.scrollY * item.dataset.rate;
-        item.style.transform = `translateY(${pos}px)`;
-      }
-    });
-  }
+  // function workParallax() {
+  //   document.querySelectorAll(".parallax-scroll").forEach((item) => {
+  //     if (item.dataset.direction === "verticle") {
+  //       const pos = window.scrollY * item.dataset.rate;
+  //       item.style.transform = `translateY(${pos}px)`;
+  //     }
+  //   });
+  // }
 
-  document.addEventListener("scroll", () => {
-    workParallax();
-  });
+  // document.addEventListener("scroll", () => {
+  //   workParallax();
+  // });
 
   const target2 = document.getElementById("work");
   const title2 = document.getElementById("work-title");
